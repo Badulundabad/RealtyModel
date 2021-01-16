@@ -1,0 +1,6 @@
+C:\Users\Бадулундабад\Desktop\RealtyModel\obj\Debug\RealtyModel.csprojAssemblyReference.cache
+C:\Users\Бадулундабад\Desktop\RealtyModel\obj\Debug\RealtyModel.csproj.CoreCompileInputs.cache
+C:\Users\Бадулундабад\Desktop\RealtyModel\bin\Debug\RealtyModel.dll
+C:\Users\Бадулундабад\Desktop\RealtyModel\bin\Debug\RealtyModel.pdb
+C:\Users\Бадулундабад\Desktop\RealtyModel\obj\Debug\RealtyModel.dll
+C:\Users\Бадулундабад\Desktop\RealtyModel\obj\Debug\RealtyModel.pdb
