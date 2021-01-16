@@ -2,7 +2,7 @@
 
 namespace RealtyModel.Interface
 {
-    interface IIntegerNumericUpDown
+    public interface IIntegerNumericUpDown
     {
         CustomCommand IncreaseInteger
         {

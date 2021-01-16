@@ -2,7 +2,7 @@
 
 namespace RealtyModel.Interface
 {
-    interface IDoubleNumericUpDown
+    public interface IDoubleNumericUpDown
     {
         CustomCommand IncreaseDouble
         {
