@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Model
@@ -12,7 +10,7 @@ namespace RealtyModel.Model
     {
         Int32 id = -1;
         String name = "";
-        string phoneNumbers = "";
+        String phoneNumbers = "";
 
         public Int32 Id
         {
@@ -32,7 +30,7 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        public string PhoneNumbers
+        public String PhoneNumbers
         {
             get => phoneNumbers;
             set
@@ -48,7 +46,7 @@ namespace RealtyModel.Model
         } 
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = null)
+        public void OnPropertyChanged([CallerMemberName] String prop = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }

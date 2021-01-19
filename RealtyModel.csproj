@@ -45,13 +45,14 @@
   <ItemGroup>
     <Compile Include="Interface\IDoubleNumericUpDown.cs" />
     <Compile Include="Interface\IIntegerNumericUpDown.cs" />
-    <Compile Include="Model\Agent.cs" />
     <Compile Include="Model\Album.cs" />
     <Compile Include="Model\Base\BaseInfo.cs" />
+    <Compile Include="Model\Base\BaseRealtorDBObject .cs" />
     <Compile Include="Model\Base\BaseRealtorObject.cs" />
     <Compile Include="Model\Cost.cs" />
     <Compile Include="Model\Credential.cs" />
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Derived\DBFlat .cs" />
     <Compile Include="Model\Derived\Flat.cs" />
     <Compile Include="Model\Derived\FlatInfo.cs" />
     <Compile Include="Model\Derived\House.cs" />

@@ -7,10 +7,10 @@ namespace RealtyModel.Model
 {
     public class Album : INotifyPropertyChanged
     {
-        Int32 id;
-        string location;
-        byte[] preview;
-        byte[] photoList;
+        Int32 id = -1;
+        String location = "";
+        Byte[] preview = null;
+        Byte[] photoList = null;
 
         public Int32 Id
         {
@@ -21,7 +21,7 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        public string Location
+        public String Location
         {
             get => location;
             set
@@ -30,7 +30,7 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        public byte[] Preview
+        public Byte[] Preview
         {
             get => preview;
             set
@@ -39,7 +39,7 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        public byte[] PhotoList
+        public Byte[] PhotoList
         {
             get => photoList;
             set

@@ -4,15 +4,15 @@ using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Model.Base
 {
-    public class BaseRealtorObject : INotifyPropertyChanged
+    public class BaseRealtorDBObject : INotifyPropertyChanged
     {
         Int32 id = -1;
         Boolean isSold = false;
-        Credential credential = new Credential();
-        Customer customer = new Customer();
+        Int32 credentialId = -1;
+        Int32 customerId = -1;
+        Int32 albumId = -1;
         Location location = new Location();
         Cost cost = new Cost();
-        Album album = new Album();
 
         public Int32 Id
         {
@@ -32,21 +32,30 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Credential Credential
+        public Int32 CredentialId
         {
-            get => credential;
+            get => credentialId;
             set
             {
-                credential = value;
+                credentialId = value;
                 OnPropertyChanged();
             }
         }
-        public Customer Customer
+        public Int32 CustomerId
         {
-            get => customer;
+            get => customerId;
             set
             {
-                customer = value;
+                customerId = value;
+                OnPropertyChanged();
+            }
+        }
+        public Int32 AlbumId
+        {
+            get => albumId;
+            set
+            {
+                albumId = value;
                 OnPropertyChanged();
             }
         }
@@ -65,15 +74,6 @@ namespace RealtyModel.Model.Base
             set
             {
                 cost = value;
-                OnPropertyChanged();
-            }
-        }
-        public Album Album
-        {
-            get => album;
-            set
-            {
-                album = value;
                 OnPropertyChanged();
             }
         }

@@ -24,6 +24,7 @@ namespace RealtyModel.Model
     {
         Flat = 0,
         House = 1,
-        Photo = 2
+        Customer = 2,
+        Album = 3
     }
 }

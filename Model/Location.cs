@@ -8,15 +8,15 @@ namespace RealtyModel.Model
     [ComplexType]
     public class Location : INotifyPropertyChanged
     {
-        string city = "";
-        string district = "";
-        string street = "";
+        String city = "";
+        String district = "";
+        String street = "";
         Int16 houseNumber = 0;
         Int16 flatNumber = 0;
         bool banner = false;
         bool exchange = false;
 
-        public string City
+        public String City
         {
             get => city;
             set
@@ -25,7 +25,7 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        public string District
+        public String District
         {
             get => district;
             set
@@ -34,7 +34,7 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        public string Street
+        public String Street
         {
             get => street;
             set
@@ -81,7 +81,7 @@ namespace RealtyModel.Model
             }
         }
 
-        public void OnPropertyChanged([CallerMemberName] string property = null)
+        public void OnPropertyChanged([CallerMemberName] String property = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
