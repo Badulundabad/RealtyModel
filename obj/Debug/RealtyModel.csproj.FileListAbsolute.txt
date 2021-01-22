@@ -10,3 +10,9 @@ C:\Users\Public\Projects\RealtyModel\obj\Debug\RealtyModel.csprojAssemblyReferen
 C:\Users\Public\Projects\RealtyModel\obj\Debug\RealtyModel.csproj.CoreCompileInputs.cache
 C:\Users\Public\Projects\RealtyModel\obj\Debug\RealtyModel.dll
 C:\Users\Public\Projects\RealtyModel\obj\Debug\RealtyModel.pdb
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\RealtyModel.dll
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\RealtyModel.pdb
+C:\Users\Badulundabad\Desktop\RealtyModel\obj\Debug\RealtyModel.csprojAssemblyReference.cache
+C:\Users\Badulundabad\Desktop\RealtyModel\obj\Debug\RealtyModel.csproj.CoreCompileInputs.cache
+C:\Users\Badulundabad\Desktop\RealtyModel\obj\Debug\RealtyModel.dll
+C:\Users\Badulundabad\Desktop\RealtyModel\obj\Debug\RealtyModel.pdb

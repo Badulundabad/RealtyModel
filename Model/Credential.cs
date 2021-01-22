@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Model
@@ -8,7 +9,6 @@ namespace RealtyModel.Model
     {
         Int32 id = -1;
         String name = "";
-        String password = "";
         DateTime registrationDate = new DateTime();
 
         public Int32 Id
@@ -29,10 +29,7 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        public String Password 
-        {
-            get; set; 
-        }
+        public String Password { get; set; }
         public DateTime RegistrationDate
         {
             get => registrationDate;
@@ -42,6 +39,8 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
+        [NotMapped]
+        public String Token { get; set; }
 
         public void OnPropertyChanged([CallerMemberName] String property = null)
         {

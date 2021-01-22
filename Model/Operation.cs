@@ -16,12 +16,13 @@ namespace RealtyModel.Model
     public enum OperationType
     {
         Register = 0,
-        Login = 1,
-        Logout =2,
-        Add = 3,
-        Change = 4,
-        Remove = 5,
-        Update = 6
+        ToFire = 1,
+        Login = 2,
+        Logout =3,
+        Add = 4,
+        Change = 5,
+        Remove = 6,
+        Update = 7
     }
     public enum ObjectType
     {
