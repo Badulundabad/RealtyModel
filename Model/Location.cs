@@ -5,18 +5,28 @@ using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Model
 {
-    [ComplexType]
     public class Location : INotifyPropertyChanged
     {
-        String city = "";
-        String district = "";
-        String street = "";
+        Int32 id = -1;
+        City city = new City();
+        District district = new District();
+        Street street = new Street();
         Int16 houseNumber = 0;
         Int16 flatNumber = 0;
-        bool banner = false;
-        bool exchange = false;
+        Boolean hasBanner = false;
+        Boolean hasExchange = false;
 
-        public String City
+        public Int32 Id 
+        { 
+            get => id;
+            set
+            {
+                id = value;
+                OnPropertyChanged();
+            }
+        }
+        public Int32 CityId { get; set; }
+        public City City
         {
             get => city;
             set
@@ -25,7 +35,8 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        public String District
+        public Int32 DistrictId { get; set; }
+        public District District
         {
             get => district;
             set
@@ -34,7 +45,8 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        public String Street
+        public Int32 StreetId { get; set; }
+        public Street Street
         {
             get => street;
             set
@@ -62,21 +74,21 @@ namespace RealtyModel.Model
             }
         }
 
-        public bool Exchange
+        public Boolean HasExchange
         {
-            get => exchange;
+            get => hasExchange;
             set
             {
-                exchange = value;
+                hasExchange = value;
                 OnPropertyChanged();
             }
         }
-        public bool Banner
+        public Boolean HasBanner
         {
-            get => banner;
+            get => hasBanner;
             set
             {
-                banner = value;
+                hasBanner = value;
                 OnPropertyChanged();
             }
         }
