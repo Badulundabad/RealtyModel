@@ -6,6 +6,7 @@ namespace RealtyModel.Model
     {
         public Guid OperationNumber { get; set; }
         public String IpAddress { get; set; }
+        public String Name { get; set; }
         public String Token { get; set; }
         public String Part { get; set; }
         public OperationParameters OperationParameters { get; set; }
@@ -38,7 +39,9 @@ namespace RealtyModel.Model
     {
         Flat = 0,
         House = 1,
-        Customer = 2,
-        Album = 3
+        Agent = 2,
+        Customer = 3,
+        Album = 4,
+        All = 5
     }
 }
