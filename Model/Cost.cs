@@ -8,50 +8,53 @@ namespace RealtyModel.Model
     [ComplexType]
     public class Cost : INotifyPropertyChanged
     {
-        Single area = 0;
+        Int32 area = 0;
         Int32 price = 0;
         bool hasVAT = false; // НДС
         bool hasMortgage = false; //Ипотека
-
-        public Single Area
-        {
+        bool hasPercents = false;
+        public Int32 Area {
             get => area;
-            set
-            {
-                area = value;
-                OnPropertyChanged();
+            set {
+                if (value >= 0 && value < 10000) {
+                    area = value;
+                    OnPropertyChanged();
+                }
             }
         }
-        public Int32 Price
-        {
+        public Int32 Price {
             get => price;
-            set
-            {
-                price = value;
-                OnPropertyChanged();
+            set {
+                if (value >= 0 && value <= 100000000) {
+                    price = value;
+                    OnPropertyChanged();
+                }
             }
         }
-        public bool HasVAT
-        {
+        public bool HasVAT {
             get => hasVAT;
-            set
-            {
+            set {
                 hasVAT = value;
                 OnPropertyChanged();
             }
         }
-        public bool HasMortgage
-        {
+        public bool HasMortgage {
             get => hasMortgage;
-            set
-            {
+            set {
                 hasMortgage = value;
                 OnPropertyChanged();
             }
         }
 
-        public void OnPropertyChanged([CallerMemberName] string property = null)
-        {
+        public bool HasPercents {
+            get => hasPercents;
+            set {
+                hasPercents = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public void OnPropertyChanged([CallerMemberName] string property = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
         public event PropertyChangedEventHandler PropertyChanged;

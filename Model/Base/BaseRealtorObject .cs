@@ -6,18 +6,20 @@ namespace RealtyModel.Model.Base
 {
     public class BaseRealtorObject : INotifyPropertyChanged
     {
-        Int32 id = -1;
-        Boolean isSold = false;
-        Int32 agentId = -1;
-        Agent agent = new Agent();
-        Int32 customerId = -1;
-        Customer customer = new Customer();
-        Int32 albumId = -1;
-        Album album = new Album();
-        Int32 locationId = -1;
-        Location location = new Location();
-        Cost cost = new Cost();
-
+        private Int32 id = -1;
+        private Int32 agentId = -1;
+        private Int32 customerId = -1;
+        private Int32 albumId = -1;
+        private Int32 locationId = -1;
+        
+        private Agent agent = new Agent();
+        private Customer customer = new Customer();
+        private Album album = new Album();
+        private Location location = new Location();
+        private Cost cost = new Cost();
+        private bool isSold = false;
+        private bool hasExclusive = false;
+        private DateTime registrationDate = new DateTime();
         public Int32 Id
         {
             get => id;
@@ -27,7 +29,7 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Boolean IsSold
+        public bool IsSold
         {
             get => isSold;
             set
@@ -114,6 +116,21 @@ namespace RealtyModel.Model.Base
             set
             {
                 cost = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public DateTime RegistrationDate {
+            get => registrationDate;
+            protected set {
+                registrationDate = value;
+            }
+        }
+
+        public bool HasExclusive {
+            get => hasExclusive;
+            set {
+                hasExclusive = value;
                 OnPropertyChanged();
             }
         }

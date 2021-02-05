@@ -60,6 +60,7 @@
     <Compile Include="Model\District.cs" />
     <Compile Include="Model\FlatOptions.cs" />
     <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\LocationOptions.cs" />
     <Compile Include="Model\LogMessage.cs" />
     <Compile Include="Model\Operation.cs" />
     <Compile Include="Model\Street.cs" />

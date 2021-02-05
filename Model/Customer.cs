@@ -12,42 +12,38 @@ namespace RealtyModel.Model
         String name = "";
         String phoneNumbers = "";
 
-        public Int32 Id
-        {
+        public Int32 Id {
             get => id;
-            set
-            {
+            set {
                 id = value;
                 OnPropertyChanged();
             }
         }
-        public String Name
-        {
+        public String Name {
             get => name;
-            set
-            {
-                name = value;
-                OnPropertyChanged();
+            set {
+                if (value.Length <= 32) {
+                    name = value;
+                    OnPropertyChanged();
+                }
             }
         }
-        public String PhoneNumbers
-        {
+        public String PhoneNumbers {
             get => phoneNumbers;
-            set
-            {
-                phoneNumbers = value;
-                OnPropertyChanged();
+            set {
+                if (value.Length <= 39) {
+                    phoneNumbers = value;
+                    OnPropertyChanged();
+                }
             }
         }
         [NotMapped]
-        public ObservableCollection<String> PhoneNumberList
-        {
-            get => new ObservableCollection<String>(phoneNumbers.Trim().Split(new Char[] { ';', ',' })); 
-        } 
+        public ObservableCollection<String> PhoneNumberList {
+            get => new ObservableCollection<String>(phoneNumbers.Trim().Split(new Char[] { ';', ',' }));
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] String prop = null)
-        {
+        public void OnPropertyChanged([CallerMemberName] String prop = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
     }

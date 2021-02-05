@@ -32,8 +32,10 @@ namespace RealtyModel.Model.Base
             get => ceiling;
             set
             {
-                ceiling = value;
-                OnPropertyChanged();
+                if (value >= 0 && value <= 10f) {
+                    ceiling = value;
+                    OnPropertyChanged();
+                }
             }
         }
         public string Convenience
@@ -70,8 +72,10 @@ namespace RealtyModel.Model.Base
             get => year;
             set
             {
-                year = value;
-                OnPropertyChanged();
+                if (value >= 1950 && value <= 2050) {
+                    year = value;
+                    OnPropertyChanged();
+                }
             }
         }
         public Int32 RoomCount
@@ -79,8 +83,10 @@ namespace RealtyModel.Model.Base
             get => roomCount;
             set
             {
-                roomCount = value;
-                OnPropertyChanged();
+                if (value >= 0 && value <= 100) {
+                    roomCount = value;
+                    OnPropertyChanged();
+                }
             }
         }
         public Single General
@@ -88,8 +94,10 @@ namespace RealtyModel.Model.Base
             get => general;
             set
             {
-                general = value;
-                OnPropertyChanged();
+                if (value >= 0 && value <= 500f) {
+                    general = value;
+                    OnPropertyChanged();
+                }
             }
         }
         public Single Living
@@ -97,8 +105,10 @@ namespace RealtyModel.Model.Base
             get => living;
             set
             {
-                living = value;
-                OnPropertyChanged();
+                if (value >= 0 && value <= 500f) {
+                    living = value;
+                    OnPropertyChanged();
+                }
             }
         }
         public Single Kitchen
@@ -106,8 +116,10 @@ namespace RealtyModel.Model.Base
             get => kitchen;
             set
             {
-                kitchen = value;
-                OnPropertyChanged();
+                if (value >= 0 && value <= 500f) {
+                    kitchen = value;
+                    OnPropertyChanged();
+                }
             }
         }
         public string Description
