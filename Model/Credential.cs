@@ -8,8 +8,16 @@ namespace RealtyModel.Model
 {
     public class Credential : INotifyPropertyChanged
     {
+        Agent agent = new Agent();
         String password = "";
         DateTime registrationDate = new DateTime();
+
+        [NotMapped]
+        public Agent Agent { get => agent; set => agent = value; }
+        [NotMapped]
+        public String IpAddress { get; set; }
+        [NotMapped]
+        public String Token { get; set; }
 
         public Int32 Id
         {
@@ -47,12 +55,7 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        [NotMapped]
-        public Agent Agent { get; set; }
-        [NotMapped]
-        public String IpAddress { get; set; }
-        [NotMapped]
-        public String Token { get; set; }
+        
 
         public void OnPropertyChanged([CallerMemberName] String property = null)
         {
