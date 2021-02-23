@@ -7,8 +7,8 @@ namespace RealtyModel.Model
 {
     public class Agent : INotifyPropertyChanged
     {
-        Int32 id = -1;
-        String name = "";
+        Int32 id;
+        String name;
         public Int32 Id
         {
             get => id;

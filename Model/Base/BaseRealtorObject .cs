@@ -12,11 +12,11 @@ namespace RealtyModel.Model.Base
         private Int32 albumId = -1;
         private Int32 locationId = -1;
         
-        private Agent agent = new Agent();
-        private Customer customer = new Customer();
-        private Album album = new Album();
-        private Location location = new Location();
-        private Cost cost = new Cost();
+        private Agent agent;
+        private Customer customer;
+        private Album album;
+        private Location location;
+        private Cost cost;
         private bool isSold = false;
         private bool hasExclusive = false;
         private DateTime registrationDate = DateTime.Now;

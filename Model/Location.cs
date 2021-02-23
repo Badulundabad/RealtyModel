@@ -8,9 +8,9 @@ namespace RealtyModel.Model
     public class Location : INotifyPropertyChanged
     {
         Int32 id = -1;
-        City city = new City();
-        District district = new District();
-        Street street = new Street();
+        City city;
+        District district;
+        Street street;
         Int16 houseNumber = 0;
         Int16 flatNumber = 0;
         Boolean hasBanner = false;
