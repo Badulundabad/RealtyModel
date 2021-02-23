@@ -19,7 +19,8 @@ namespace RealtyModel.Model.Base
         private Cost cost = new Cost();
         private bool isSold = false;
         private bool hasExclusive = false;
-        private DateTime registrationDate = new DateTime();
+        private DateTime registrationDate = DateTime.Now;
+
         public Int32 Id
         {
             get => id;

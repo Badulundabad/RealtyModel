@@ -16,19 +16,27 @@ namespace RealtyModel.Model
         public Int32 Area {
             get => area;
             set {
-                if (value >= 0 && value < 10000) {
+                if (value < 0) {
+                    area = 0;
+                } else if (value > 1500) {
+                    area = 1500;
+                } else {
                     area = value;
-                    OnPropertyChanged();
                 }
+                OnPropertyChanged();
             }
         }
         public Int32 Price {
             get => price;
             set {
-                if (value >= 0 && value <= 100000000) {
+                if (value < 0) {
+                    price = 0;
+                } else if (value > 20000000) {
+                    price = 20000000;
+                } else {
                     price = value;
-                    OnPropertyChanged();
                 }
+                OnPropertyChanged();
             }
         }
         public bool HasVAT {
