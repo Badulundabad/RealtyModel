@@ -8,12 +8,11 @@ namespace RealtyModel.Model
 {
     public class Credential : INotifyPropertyChanged
     {
-        Agent agent = new Agent();
-        String password = "";
+        Int32 id;
+        String name;
+        String password;
         DateTime registrationDate = new DateTime();
 
-        [NotMapped]
-        public Agent Agent { get => agent; set => agent = value; }
         [NotMapped]
         public String IpAddress { get; set; }
         [NotMapped]
@@ -21,19 +20,19 @@ namespace RealtyModel.Model
 
         public Int32 Id
         {
-            get => Agent.Id;
+            get => id;
             set
             {
-                Agent.Id = value;
+                id = value;
                 OnPropertyChanged();
             }
         }
         public String Name
         {
-            get => Agent.Name;
+            get => name;
             set
             {
-                Agent.Name = value;
+                name = value;
                 OnPropertyChanged();
             }
         }

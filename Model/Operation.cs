@@ -18,6 +18,11 @@ namespace RealtyModel.Model
         public OperationDirection Direction { get; set; }
         public OperationType Type { get; set; }
         public TargetType Target { get; set; }
+
+        public Boolean HasBaseChanges { get; set; }
+        public Boolean HasAlbumChanges { get; set; }
+        public Boolean HasCustomerChanges { get; set; }
+        public Boolean HasLocationChanges { get; set; }
     }
     public enum OperationDirection
     {
@@ -33,7 +38,7 @@ namespace RealtyModel.Model
         Add = 4,
         Change = 5,
         Remove = 6,
-        Update = 7,
+        Update = 7
     }
     public enum TargetType
     {
@@ -41,7 +46,6 @@ namespace RealtyModel.Model
         House = 1,
         Agent = 2,
         Customer = 3,
-        Album = 4,
-        All = 5
+        All = 4
     }
 }

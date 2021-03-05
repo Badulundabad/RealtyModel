@@ -6,13 +6,12 @@ namespace RealtyModel.Model.Base
 {
     public class BaseRealtorObject : INotifyPropertyChanged
     {
-        private Int32 id = -1;
-        private Int32 agentId = -1;
-        private Int32 customerId = -1;
-        private Int32 albumId = -1;
-        private Int32 locationId = -1;
+        private Int32 id;
+        private Int32 customerId;
+        private Int32 albumId;
+        private Int32 locationId;
         
-        private Agent agent;
+        private String agent;
         private Customer customer;
         private Album album;
         private Location location;
@@ -39,16 +38,7 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Int32 AgentId
-        {
-            get => agentId;
-            set
-            {
-                agentId = value;
-                OnPropertyChanged();
-            }
-        }
-        public Agent Agent
+        public String Agent
         {
             get => agent;
             set
