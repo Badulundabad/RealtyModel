@@ -6,17 +6,17 @@ namespace RealtyModel.Model.Base
 {
     public class BaseInfo : INotifyPropertyChanged
     {
-        Int32 year = 0;
-        Int32 roomCount = 0;
-        Single general = 0;
-        Single living = 0;
-        Single kitchen = 0;
-        string description = "";
-        string water = "";
-        Single ceiling = 0;
-        string convenience = "";
-        string heating = "";
-        string condition = "";
+        private Int32 year = 0;
+        private Int32 roomCount = 0;
+        private Single general = 0;
+        private Single living = 0;
+        private Single kitchen = 0;
+        private string description = "";
+        private string water = "";
+        private Single ceiling = 0;
+        private string convenience = "";
+        private string heating = "";
+        private string condition = "";
 
         public string Water
         {

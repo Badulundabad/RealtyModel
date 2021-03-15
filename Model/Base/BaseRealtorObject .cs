@@ -11,6 +11,8 @@ namespace RealtyModel.Model.Base
         private Int32 albumId;
         private Int32 locationId;
         
+        private BaseInfo generalInfo = new BaseInfo();
+        private string objectType = "";
         private String agent;
         private Customer customer;
         private Album album;
@@ -20,6 +22,13 @@ namespace RealtyModel.Model.Base
         private bool hasExclusive = false;
         private DateTime registrationDate = DateTime.Now;
 
+        public string ObjectType {
+            get => objectType;
+            set {
+                objectType = value;
+                OnPropertyChanged();
+            }
+        }
         public Int32 Id
         {
             get => id;
@@ -124,6 +133,11 @@ namespace RealtyModel.Model.Base
                 hasExclusive = value;
                 OnPropertyChanged();
             }
+        }
+
+        public BaseInfo GeneralInfo {
+            get => generalInfo;
+            set => generalInfo = value;
         }
 
         public void OnPropertyChanged([CallerMemberName] String property = null)

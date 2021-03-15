@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event\EventHandlers.cs" />
+    <Compile Include="Event\ILogged.cs" />
+    <Compile Include="Event\LoggedEventArgs.cs" />
+    <Compile Include="Event\Window.cs" />
     <Compile Include="Model\City.cs" />
     <Compile Include="Interface\IDoubleNumericUpDown.cs" />
     <Compile Include="Interface\IIntegerNumericUpDown.cs" />

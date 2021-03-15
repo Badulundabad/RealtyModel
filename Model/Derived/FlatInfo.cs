@@ -1,11 +1,13 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.CompilerServices;
 using RealtyModel.Model.Base;
 
 namespace RealtyModel.Model.Derived
 {
     [ComplexType]
-    public class FlatInfo : BaseInfo
+    public class FlatInfo : INotifyPropertyChanged
     {
         private string material = "";
         private string fund = "";
@@ -167,7 +169,6 @@ namespace RealtyModel.Model.Derived
                 OnPropertyChanged();
             }
         }
-
         public bool IsSeparated {
             get => isSeparated;
             set {
@@ -179,5 +180,9 @@ namespace RealtyModel.Model.Derived
                 }
             }
         }
+        public void OnPropertyChanged([CallerMemberName] string property = null) {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
