@@ -28,3 +28,9 @@ C:\Users\Gvozd\Desktop\realtymodel\obj\Debug\RealtyModel.csprojAssemblyReference
 C:\Users\Gvozd\Desktop\realtymodel\obj\Debug\RealtyModel.csproj.CoreCompileInputs.cache
 C:\Users\Gvozd\Desktop\realtymodel\obj\Debug\RealtyModel.dll
 C:\Users\Gvozd\Desktop\realtymodel\obj\Debug\RealtyModel.pdb
+C:\Users\NotABugAbuser\Desktop\realtorproject\realtymodel\bin\Debug\RealtyModel.dll
+C:\Users\NotABugAbuser\Desktop\realtorproject\realtymodel\bin\Debug\RealtyModel.pdb
+C:\Users\NotABugAbuser\Desktop\realtorproject\realtymodel\obj\Debug\RealtyModel.csprojAssemblyReference.cache
+C:\Users\NotABugAbuser\Desktop\realtorproject\realtymodel\obj\Debug\RealtyModel.csproj.CoreCompileInputs.cache
+C:\Users\NotABugAbuser\Desktop\realtorproject\realtymodel\obj\Debug\RealtyModel.dll
+C:\Users\NotABugAbuser\Desktop\realtorproject\realtymodel\obj\Debug\RealtyModel.pdb

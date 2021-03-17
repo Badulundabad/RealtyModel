@@ -33,6 +33,15 @@ namespace RealtyModel.Service
         private bool isTPS = true;
         private bool isNozzle = true;
         private bool isElectro = true;
+        bool isTPSWater = true;
+        bool isAGVWater = true;
+        bool isBoilerRoomWater = true;
+        bool isStandPipe = true;
+        bool isBoilerWater = true;
+        bool isElectroWater = true;
+        bool isTrulyBoilerWater = true;
+
+
         private List<BaseRealtorObject> filteredObjects = new List<BaseRealtorObject>();
         public List<BaseRealtorObject> CreateFilteredList(List<BaseRealtorObject> allObjects) {
             FilteredObjects.Clear();
@@ -44,11 +53,34 @@ namespace RealtyModel.Service
             FilterByObjectType();
             FilterByCondition();
             FilterByHeating();
-            var newFilteredObjects = new List<BaseRealtorObject>();
-            for (int i = 0; i < 50; i++) {
-                newFilteredObjects.Add(FilteredObjects[i]);
-            }
+            FilterByHotWater();
+            //------------------------------ Потом убрать --------------------------
+         
+                var newFilteredObjects = new List<BaseRealtorObject>();
+                for (int i = 0; i < 50; i++) { newFilteredObjects.Add(FilteredObjects[i]); }
+
+            //----------------------------------------------------------------------
             return newFilteredObjects;
+        }
+        private void FilterByHotWater() {
+            if (!IsTPSWater) {
+                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "ТЭЦ");
+            }
+            if (!IsAGVWater) {
+                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "АГВ");
+            }
+            if (!IsStandPipe) {
+                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "Колонка");
+            }
+            if (!IsBoilerRoomWater) {
+                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "Котельная");
+            }
+            if (!IsElectroWater) {
+                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "Электро");
+            }
+            if (!IsTrulyBoilerWater) {
+                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "Бойлер");
+            }
         }
         private void FilterByHeating() {
             if (!IsAGV) {
@@ -234,6 +266,34 @@ namespace RealtyModel.Service
         public List<BaseRealtorObject> FilteredObjects {
             get => filteredObjects;
             set => filteredObjects = value;
+        }
+        public bool IsTPSWater {
+            get => isTPSWater;
+            set => isTPSWater = value;
+        }
+        public bool IsAGVWater {
+            get => isAGVWater;
+            set => isAGVWater = value;
+        }
+        public bool IsBoilerRoomWater {
+            get => isBoilerRoomWater;
+            set => isBoilerRoomWater = value;
+        }
+        public bool IsStandPipe {
+            get => isStandPipe;
+            set => isStandPipe = value;
+        }
+        public bool IsBoilerWater {
+            get => isBoilerWater;
+            set => isBoilerWater = value;
+        }
+        public bool IsElectroWater {
+            get => isElectroWater;
+            set => isElectroWater = value;
+        }
+        public bool IsTrulyBoilerWater {
+            get => isTrulyBoilerWater;
+            set => isTrulyBoilerWater = value;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
