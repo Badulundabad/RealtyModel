@@ -1,4 +1,5 @@
 ﻿using RealtyModel.Model.Base;
+using RealtyModel.Model.Derived;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,15 +34,20 @@ namespace RealtyModel.Service
         private bool isTPS = true;
         private bool isNozzle = true;
         private bool isElectro = true;
-        bool isTPSWater = true;
-        bool isAGVWater = true;
-        bool isBoilerRoomWater = true;
-        bool isStandPipe = true;
-        bool isBoilerWater = true;
-        bool isElectroWater = true;
-        bool isTrulyBoilerWater = true;
-
-
+        private bool isTPSWater = true;
+        private bool isAGVWater = true;
+        private bool isBoilerRoomWater = true;
+        private bool isStandPipe = true;
+        private bool isBoilerWater = true;
+        private bool isElectroWater = true;
+        private bool isTrulyBoilerWater = true;
+        private bool isArchived = false;
+        private bool isPlanned = true;
+        private bool isActive = true;
+        private bool isAllCities = true;
+        private bool isAllDistricts = true;
+        private string city = "";
+        private string district = "";
         private List<BaseRealtorObject> filteredObjects = new List<BaseRealtorObject>();
         public List<BaseRealtorObject> CreateFilteredList(List<BaseRealtorObject> allObjects) {
             FilteredObjects.Clear();
@@ -51,16 +57,38 @@ namespace RealtyModel.Service
                 FilteredObjects.RemoveAll(x => x.Cost.HasMortgage == false);
             }
             FilterByObjectType();
+            FilterByStatus();
             FilterByCondition();
             FilterByHeating();
             FilterByHotWater();
+            FilterByLocation();
             //------------------------------ Потом убрать --------------------------
          
                 var newFilteredObjects = new List<BaseRealtorObject>();
-                for (int i = 0; i < 50; i++) { newFilteredObjects.Add(FilteredObjects[i]); }
+                int count = FilteredObjects.Count > 50 ? 50 : FilteredObjects.Count;
+                for (int i = 0; i < count; i++) { newFilteredObjects.Add(FilteredObjects[i]); }
 
             //----------------------------------------------------------------------
             return newFilteredObjects;
+        }
+        private void FilterByLocation() {
+            if (!IsAllCities) {
+                FilteredObjects.RemoveAll(x => !x.Location.City.Name.ToLower().Contains(City.ToLower()));
+            }
+            if (!IsAllDistricts) {
+                FilteredObjects.RemoveAll(x => !x.Location.District.Name.ToLower().Contains(District.ToLower()));
+            }
+        }
+        private void FilterByStatus() {
+            if (!IsActive) {
+                FilteredObjects.RemoveAll(x => x.Status == Status.Active);
+            }
+            if (!IsPlanned) {
+                FilteredObjects.RemoveAll(x => x.Status == Status.Planned);
+            }
+            if (!IsArchived) {
+                FilteredObjects.RemoveAll(x => x.Status == Status.Archived);
+            }
         }
         private void FilterByHotWater() {
             if (!IsTPSWater) {
@@ -294,6 +322,46 @@ namespace RealtyModel.Service
         public bool IsTrulyBoilerWater {
             get => isTrulyBoilerWater;
             set => isTrulyBoilerWater = value;
+        }
+        public bool IsArchived {
+            get => isArchived;
+            set => isArchived = value;
+        }
+        public bool IsPlanned {
+            get => isPlanned;
+            set => isPlanned = value;
+        }
+        public bool IsActive {
+            get => isActive;
+            set => isActive = value;
+        }
+        public bool IsAllCities {
+            get => isAllCities;
+            set {
+                isAllCities = value;
+                OnPropertyChanged();
+            }
+        }
+        public bool IsAllDistricts {
+            get => isAllDistricts;
+            set {
+                isAllDistricts = value;
+                OnPropertyChanged();
+            }
+        }
+        public string City {
+            get => city;
+            set {
+                city = value;
+                OnPropertyChanged();
+            }
+        }
+        public string District {
+            get => district;
+            set {
+                district = value;
+                OnPropertyChanged();
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

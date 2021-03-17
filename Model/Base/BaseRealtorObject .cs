@@ -21,7 +21,7 @@ namespace RealtyModel.Model.Base
         private bool isSold = false;
         private bool hasExclusive = false;
         private DateTime registrationDate = DateTime.Now;
-
+        private Status status = Status.Active;
         public string ObjectType {
             get => objectType;
             set {
@@ -119,14 +119,12 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-
         public DateTime RegistrationDate {
             get => registrationDate;
             protected set {
                 registrationDate = value;
             }
         }
-
         public bool HasExclusive {
             get => hasExclusive;
             set {
@@ -134,10 +132,13 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-
         public BaseInfo GeneralInfo {
             get => generalInfo;
             set => generalInfo = value;
+        }
+        public Status Status {
+            get => status;
+            set => status = value;
         }
 
         public void OnPropertyChanged([CallerMemberName] String property = null)
@@ -145,5 +146,11 @@ namespace RealtyModel.Model.Base
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
         public event PropertyChangedEventHandler PropertyChanged;
+    }
+    public enum Status
+    {
+        Active,
+        Archived,
+        Planned
     }
 }
