@@ -5,6 +5,7 @@ namespace RealtyModel.Model.Derived
 {
     public class Flat : BaseRealtorObject
     {
+
         private FlatInfo info = new FlatInfo();
         public Flat() {
         }

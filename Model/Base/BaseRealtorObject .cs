@@ -10,8 +10,9 @@ namespace RealtyModel.Model.Base
         private Int32 customerId;
         private Int32 albumId;
         private Int32 locationId;
-        
         private BaseInfo generalInfo = new BaseInfo();
+
+
         private string objectType = "";
         private String agent;
         private Customer customer;
@@ -22,28 +23,13 @@ namespace RealtyModel.Model.Base
         private bool hasExclusive = false;
         private DateTime registrationDate = DateTime.Now;
         private Status status = Status.Active;
-        public string ObjectType {
-            get => objectType;
-            set {
-                objectType = value;
-                OnPropertyChanged();
-            }
-        }
+
         public Int32 Id
         {
             get => id;
             set
             {
                 id = value;
-                OnPropertyChanged();
-            }
-        }
-        public bool IsSold
-        {
-            get => isSold;
-            set
-            {
-                isSold = value;
                 OnPropertyChanged();
             }
         }
@@ -119,10 +105,32 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
+        public BaseInfo GeneralInfo
+        {
+            get => generalInfo;
+            set => generalInfo = value;
+        }
+
         public DateTime RegistrationDate {
             get => registrationDate;
             protected set {
                 registrationDate = value;
+            }
+        }
+        public string ObjectType {
+            get => objectType;
+            set {
+                objectType = value;
+                OnPropertyChanged();
+            }
+        }
+        public bool IsSold
+        {
+            get => isSold;
+            set
+            {
+                isSold = value;
+                OnPropertyChanged();
             }
         }
         public bool HasExclusive {
@@ -131,10 +139,6 @@ namespace RealtyModel.Model.Base
                 hasExclusive = value;
                 OnPropertyChanged();
             }
-        }
-        public BaseInfo GeneralInfo {
-            get => generalInfo;
-            set => generalInfo = value;
         }
         public Status Status {
             get => status;

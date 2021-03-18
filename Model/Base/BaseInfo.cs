@@ -1,12 +1,14 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Model.Base
 {
+    [ComplexType]
     public class BaseInfo : INotifyPropertyChanged
     {
-        private Int32 year = 0;
+        private Int32 year = 1950;
         private Int32 roomCount = 0;
         private Single general = 0;
         private Single living = 0;
