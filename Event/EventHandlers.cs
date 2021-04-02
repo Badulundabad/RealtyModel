@@ -7,4 +7,5 @@ using System.Threading.Tasks;
 namespace RealtyModel.Event
 {
     public delegate void LoggedEventHandler(object sender, LoggedEventArgs e);
+    public delegate void FlatCreatedEventHandler(object sender, FlatCreatedEventArgs e);
 }

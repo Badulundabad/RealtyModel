@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event\FlatCreatedEventArgs.cs" />
     <Compile Include="Event\EventHandlers.cs" />
-    <Compile Include="Event\ILogged.cs" />
     <Compile Include="Event\LoggedEventArgs.cs" />
     <Compile Include="Event\Window.cs" />
     <Compile Include="Model\City.cs" />

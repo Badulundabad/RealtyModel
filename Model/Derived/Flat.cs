@@ -10,6 +10,9 @@ namespace RealtyModel.Model.Derived
         public Flat() {
         }
         public Flat(bool isNewInstance) {
+            Customer = new Customer();
+            Album = new Album();
+            Location = new Location();
             if (isNewInstance)
                 this.RegistrationDate = DateTime.Now;
         }

@@ -18,7 +18,7 @@ namespace RealtyModel.Model.Base
         private Customer customer;
         private Album album;
         private Location location;
-        private Cost cost;
+        private Cost cost = new Cost();
         private bool isSold = false;
         private bool hasExclusive = false;
         private DateTime registrationDate = DateTime.Now;
