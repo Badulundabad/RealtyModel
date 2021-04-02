@@ -66,7 +66,11 @@
     <Compile Include="Model\LocationOptions.cs" />
     <Compile Include="Model\LogMessage.cs" />
     <Compile Include="Model\Operation.cs" />
+    <Compile Include="Model\OperationDirection.cs" />
+    <Compile Include="Model\OperationParameters.cs" />
+    <Compile Include="Model\OperationType.cs" />
     <Compile Include="Model\Street.cs" />
+    <Compile Include="Model\TargetType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\CustomCommand.cs" />
     <Compile Include="Service\CheckAndHeightPair.cs" />
