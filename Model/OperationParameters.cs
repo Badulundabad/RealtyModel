@@ -9,7 +9,7 @@ namespace RealtyModel.Model
     public class OperationParameters
     {
         private bool hasBaseChanges;
-        private bool hasALbumChanges;
+        private bool hasAlbumChanges;
         private bool hasCustomerChanges;
         private bool hasLocationChanges;
         private TargetType target;
@@ -20,9 +20,9 @@ namespace RealtyModel.Model
             get => hasBaseChanges;
             set => hasBaseChanges = value;
         }
-        public bool HasALbumChanges {
-            get => hasALbumChanges;
-            set => hasALbumChanges = value;
+        public bool HasAlbumChanges {
+            get => hasAlbumChanges;
+            set => hasAlbumChanges = value;
         }
         public bool HasCustomerChanges {
             get => hasCustomerChanges;

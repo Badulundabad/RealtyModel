@@ -4,14 +4,6 @@ namespace RealtyModel.Model
 {
     public class Operation
     {
-        public Operation() {
-        }
-        public Operation(string name, string data, OperationDirection direction, OperationType type) {
-            this.Name = name;
-            this.Data = data;
-            this.OperationParameters.Direction = direction;
-            this.OperationParameters.Type = type;
-        }
         private Guid operationNumber;
         private string ipAddress;
         private string name;
@@ -20,6 +12,23 @@ namespace RealtyModel.Model
         private string part;
         private OperationParameters operationParameters = new OperationParameters();
         private bool isSuccessfully;
+
+        public Operation() {
+        }
+        public Operation(string name, string data, OperationDirection direction, OperationType type) {
+            this.Name = name;
+            this.Data = data;
+            this.OperationParameters.Direction = direction;
+            this.OperationParameters.Type = type;
+        }
+        public Operation(string name, string data, OperationDirection direction, OperationType type, TargetType target)
+        {
+            this.Name = name;
+            this.Data = data;
+            this.OperationParameters.Direction = direction;
+            this.OperationParameters.Type = type;
+            this.OperationParameters.Target = target;
+        }
 
         public Guid OperationNumber {
             get => operationNumber;

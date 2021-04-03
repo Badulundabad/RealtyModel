@@ -53,7 +53,6 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-
         public bool HasPercents {
             get => hasPercents;
             set {
@@ -61,7 +60,6 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-
         public void OnPropertyChanged([CallerMemberName] string property = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
