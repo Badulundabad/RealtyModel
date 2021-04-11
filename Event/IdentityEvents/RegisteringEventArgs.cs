@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RealtyModel.Event
+namespace RealtyModel.Event.IdentityEvents
 {
-    public class LoggingEventArgs
+    public class RegisteringEventArgs
     {
         private String userName = "";
         private String password = "";
 
-        public LoggingEventArgs(String userName, String password)
+        public RegisteringEventArgs(String userName, String password)
         {
             this.userName = userName;
             this.password = password;

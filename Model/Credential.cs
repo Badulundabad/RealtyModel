@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Windows.Threading;
+using RealtyModel.Event;
 
 namespace RealtyModel.Model
 {
@@ -17,7 +18,8 @@ namespace RealtyModel.Model
         private Dispatcher dispatcher;
         public event PropertyChangedEventHandler PropertyChanged;
         public event LoggedInEventHandler LoggedIn;
-        public delegate void LoggedInEventHandler();
+        public event LoggedOutEventHandler LoggedOut;
+        public event RegisteredEventHandler Registered;
 
         public Credential()
         {
@@ -84,7 +86,23 @@ namespace RealtyModel.Model
             dispatcher.Invoke(new Action(() =>
             {
                 IsLoggedIn = true;
-                LoggedIn?.Invoke();
+                LoggedIn?.Invoke(this, new LoggedInEventArgs(Name));
+            }));
+        }
+        public void OnLoggedOut()
+        {
+            dispatcher.Invoke(new Action(() =>
+            {
+                IsLoggedIn = false;
+                LoggedOut?.Invoke(this, new LoggedInEventArgs(Name));
+            }));
+        }
+        public void OnRegistered()
+        {
+            dispatcher.Invoke(new Action(() =>
+            {
+                IsLoggedIn = false;
+                Registered?.Invoke(this, new LoggedInEventArgs(Name));
             }));
         }
         public void OnPropertyChanged([CallerMemberName] String property = null)

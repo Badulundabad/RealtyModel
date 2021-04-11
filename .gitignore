@@ -3,3 +3,4 @@
 *.pdb
 *.cache
 obj/Debug/RealtyModel.dll
+.vs/RealtyModel/v16/.suo

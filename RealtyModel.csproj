@@ -44,12 +44,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Event\DeleteFlatEventArgs.cs" />
-    <Compile Include="Event\FlatCreatedEventArgs.cs" />
+    <Compile Include="Event\IdentityEvents\LoggedOutEventArgs.cs" />
+    <Compile Include="Event\IdentityEvents\LoggingOutEventArgs.cs" />
+    <Compile Include="Event\IdentityEvents\RegisteredEventArgs.cs" />
+    <Compile Include="Event\IdentityEvents\RegisteringEventArgs.cs" />
+    <Compile Include="Event\RealtyEvents\DeleteFlatEventArgs.cs" />
+    <Compile Include="Event\RealtyEvents\DeleteHouseEventArgs.cs" />
+    <Compile Include="Event\RealtyEvents\FlatCreatedEventArgs.cs" />
     <Compile Include="Event\EventHandlers.cs" />
-    <Compile Include="Event\LoggedEventArgs.cs" />
-    <Compile Include="Event\LoggingEventArgs.cs" />
-    <Compile Include="Event\UpdateFlatEventArgs.cs" />
+    <Compile Include="Event\IdentityEvents\LoggedInEventArgs.cs" />
+    <Compile Include="Event\IdentityEvents\LoggingInEventArgs.cs" />
+    <Compile Include="Event\RealtyEvents\UpdateFlatEventArgs.cs" />
+    <Compile Include="Event\RealtyEvents\UpdateHouseEventArgs.cs" />
     <Compile Include="Model\City.cs" />
     <Compile Include="Interface\IDoubleNumericUpDown.cs" />
     <Compile Include="Interface\IIntegerNumericUpDown.cs" />
