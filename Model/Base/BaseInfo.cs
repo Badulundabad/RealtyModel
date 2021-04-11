@@ -19,6 +19,7 @@ namespace RealtyModel.Model.Base
         private string convenience = "";
         private string heating = "";
         private string condition = "";
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public string Water
         {
@@ -138,6 +139,5 @@ namespace RealtyModel.Model.Base
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

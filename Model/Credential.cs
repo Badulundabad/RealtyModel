@@ -3,21 +3,45 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
+using System.Windows.Threading;
 
 namespace RealtyModel.Model
 {
     public class Credential : INotifyPropertyChanged
     {
-        Int32 id;
-        String name;
-        String password;
-        DateTime registrationDate = new DateTime();
+        private Int32 id;
+        private String name;
+        private String password;
+        private Boolean isLoggedIn = false;
+        private DateTime registrationDate = new DateTime();
+        private Dispatcher dispatcher;
+        public event PropertyChangedEventHandler PropertyChanged;
+        public event LoggedInEventHandler LoggedIn;
+        public delegate void LoggedInEventHandler();
+
+        public Credential()
+        {
+
+        }
+        public Credential(Dispatcher dispatcher)
+        {
+            this.dispatcher = dispatcher;
+        }
 
         [NotMapped]
         public String IpAddress { get; set; }
         [NotMapped]
         public String Token { get; set; }
-
+        [NotMapped]
+        public Boolean IsLoggedIn
+        {
+            get => isLoggedIn;
+            private set
+            {
+                isLoggedIn = value;
+                OnPropertyChanged();
+            }
+        }
         public Int32 Id
         {
             get => id;
@@ -54,12 +78,18 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        
 
+        public void OnLoggedIn()
+        {
+            dispatcher.Invoke(new Action(() =>
+            {
+                IsLoggedIn = true;
+                LoggedIn?.Invoke();
+            }));
+        }
         public void OnPropertyChanged([CallerMemberName] String property = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
