@@ -13,6 +13,7 @@ namespace RealtyModel.Model
         private Int32 id;
         private String name;
         private String password;
+        private String email;
         private Boolean isLoggedIn = false;
         private DateTime registrationDate = new DateTime();
         private Dispatcher dispatcher;
@@ -68,6 +69,15 @@ namespace RealtyModel.Model
             set
             {
                 password = value;
+                OnPropertyChanged();
+            }
+        }
+        public String Email
+        {
+            get => email;
+            set
+            {
+                email = value;
                 OnPropertyChanged();
             }
         }
