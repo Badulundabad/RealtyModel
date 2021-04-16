@@ -48,12 +48,16 @@
     <Compile Include="Event\IdentityEvents\LoggingOutEventArgs.cs" />
     <Compile Include="Event\IdentityEvents\RegisteredEventArgs.cs" />
     <Compile Include="Event\IdentityEvents\RegisteringEventArgs.cs" />
+    <Compile Include="Event\RealtyEvents\OpeningFlatFormEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\DeleteFlatEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\DeleteHouseEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\FlatCreatedEventArgs.cs" />
     <Compile Include="Event\EventHandlers.cs" />
     <Compile Include="Event\IdentityEvents\LoggedInEventArgs.cs" />
     <Compile Include="Event\IdentityEvents\LoggingInEventArgs.cs" />
+    <Compile Include="Event\RealtyEvents\FlatModifiedEventArgs.cs" />
+    <Compile Include="Event\RealtyEvents\ReceivedListsEventArgs.cs" />
+    <Compile Include="Event\RealtyEvents\ReceivedObjectDBEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\UpdateFlatEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\UpdateHouseEventArgs.cs" />
     <Compile Include="Model\City.cs" />

@@ -12,6 +12,9 @@ namespace RealtyModel.Model
         House = 1,
         Agent = 2,
         Customer = 3,
-        All = 4
+        City = 4,
+        District = 5,
+        Street = 6,
+        All = 7
     }
 }
