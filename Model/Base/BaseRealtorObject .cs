@@ -10,19 +10,18 @@ namespace RealtyModel.Model.Base
         private Int32 customerId;
         private Int32 albumId;
         private Int32 locationId;
-        private BaseInfo generalInfo = new BaseInfo();
-
-
-        private string objectType = "";
+        private String objectType = "";
         private String agent;
-        private Customer customer;
-        private Album album;
-        private Location location;
-        private Cost cost = new Cost();
-        private bool isSold = false;
-        private bool hasExclusive = false;
-        private DateTime registrationDate = DateTime.Now;
+        private Boolean isSold = false;
+        private Boolean hasExclusive = false;
         private Status status = Status.Active;
+        private Cost cost = new Cost();
+        private Album album = new Album();
+        private Customer customer = new Customer();
+        private Location location = new Location();
+        private BaseInfo generalInfo = new BaseInfo();
+        private DateTime lastUpdateTime = DateTime.Now;
+        private DateTime registrationDate = DateTime.Now;
 
         public Int32 Id
         {
@@ -30,33 +29,6 @@ namespace RealtyModel.Model.Base
             set
             {
                 id = value;
-                OnPropertyChanged();
-            }
-        }
-        public String Agent
-        {
-            get => agent;
-            set
-            {
-                agent = value;
-                OnPropertyChanged();
-            }
-        }
-        public Int32 CustomerId
-        {
-            get => customerId;
-            set
-            {
-                customerId = value;
-                OnPropertyChanged();
-            }
-        }
-        public Customer Customer
-        {
-            get => customer;
-            set
-            {
-                customer = value;
                 OnPropertyChanged();
             }
         }
@@ -69,12 +41,12 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Album Album
+        public Int32 CustomerId
         {
-            get => album;
+            get => customerId;
             set
             {
-                album = value;
+                customerId = value;
                 OnPropertyChanged();
             }
         }
@@ -87,14 +59,41 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Location Location
+        public String Agent
         {
-            get => location;
+            get => agent;
             set
             {
-                location = value;
+                agent = value;
                 OnPropertyChanged();
             }
+        }
+        public String ObjectType {
+            get => objectType;
+            set {
+                objectType = value;
+                OnPropertyChanged();
+            }
+        }
+        public Boolean IsSold
+        {
+            get => isSold;
+            set
+            {
+                isSold = value;
+                OnPropertyChanged();
+            }
+        }
+        public Boolean HasExclusive {
+            get => hasExclusive;
+            set {
+                hasExclusive = value;
+                OnPropertyChanged();
+            }
+        }
+        public Status Status {
+            get => status;
+            set => status = value;
         }
         public Cost Cost
         {
@@ -105,44 +104,48 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
+        public Album Album
+        {
+            get => album;
+            set
+            {
+                album = value;
+                OnPropertyChanged();
+            }
+        }
+        public Customer Customer
+        {
+            get => customer;
+            set
+            {
+                customer = value;
+                OnPropertyChanged();
+            }
+        }
+        public Location Location
+        {
+            get => location;
+            set
+            {
+                location = value;
+                OnPropertyChanged();
+            }
+        }
         public BaseInfo GeneralInfo
         {
             get => generalInfo;
             set => generalInfo = value;
         }
-
+        public DateTime LastUpdateTime
+        {
+            get => lastUpdateTime;
+            set => lastUpdateTime = value;
+        }
         public DateTime RegistrationDate {
             get => registrationDate;
             protected set {
                 registrationDate = value;
             }
-        }
-        public string ObjectType {
-            get => objectType;
-            set {
-                objectType = value;
-                OnPropertyChanged();
-            }
-        }
-        public bool IsSold
-        {
-            get => isSold;
-            set
-            {
-                isSold = value;
-                OnPropertyChanged();
-            }
-        }
-        public bool HasExclusive {
-            get => hasExclusive;
-            set {
-                hasExclusive = value;
-                OnPropertyChanged();
-            }
-        }
-        public Status Status {
-            get => status;
-            set => status = value;
         }
 
         public void OnPropertyChanged([CallerMemberName] String property = null)

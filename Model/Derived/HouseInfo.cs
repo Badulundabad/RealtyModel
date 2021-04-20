@@ -1,9 +1,11 @@
 ﻿using RealtyModel.Model.Base;
 using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Model.Derived
 {
-    public class HouseInfo : BaseInfo
+    public class HouseInfo : INotifyPropertyChanged
     {
         string typeOfHouse = "";
         int levels = 0;
@@ -147,5 +149,11 @@ namespace RealtyModel.Model.Derived
                 OnPropertyChanged();
             }
         }
+
+        public void OnPropertyChanged([CallerMemberName] string property = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -9,7 +9,6 @@ namespace RealtyModel.Model
         private string name;
         private string data;
         private string token;
-        private string part;
         private OperationParameters operationParameters = new OperationParameters();
         private bool isSuccessfully;
 
@@ -49,10 +48,6 @@ namespace RealtyModel.Model
         public string Token {
             get => token;
             set => token = value;
-        }
-        public string Part {
-            get => part;
-            set => part = value;
         }
         public OperationParameters OperationParameters {
             get => operationParameters;

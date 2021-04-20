@@ -180,6 +180,7 @@ namespace RealtyModel.Model.Derived
                 }
             }
         }
+
         public void OnPropertyChanged([CallerMemberName] string property = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
