@@ -25,4 +25,5 @@ namespace RealtyModel.Event
     public delegate void UpdateHouseEventHandler(object sender, UpdateHouseEventArgs e);
     public delegate void DeleteHouseEventHandler(object sender, DeleteHouseEventArgs e);
 
+    public delegate void EnqueuedEventHandler(object sender, EnqueuedEventArgs e);
 }

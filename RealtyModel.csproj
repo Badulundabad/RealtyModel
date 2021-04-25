@@ -44,6 +44,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event\EnqueuedEventArgs.cs" />
     <Compile Include="Event\IdentityEvents\LoggedOutEventArgs.cs" />
     <Compile Include="Event\IdentityEvents\LoggingOutEventArgs.cs" />
     <Compile Include="Event\IdentityEvents\RegisteredEventArgs.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Model\Operation.cs" />
     <Compile Include="Model\OperationDirection.cs" />
     <Compile Include="Model\OperationParameters.cs" />
+    <Compile Include="Model\OperationQueue.cs" />
     <Compile Include="Model\OperationType.cs" />
     <Compile Include="Model\Street.cs" />
     <Compile Include="Model\TargetType.cs" />
