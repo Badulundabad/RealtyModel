@@ -12,13 +12,17 @@ namespace RealtyModel.Model
         private OperationParameters operationParameters = new OperationParameters();
         private bool isSuccessfully;
 
-        public Operation() {
+        public Operation()
+        {
+            EOF = "<EOF>";
         }
-        public Operation(string name, string data, OperationDirection direction, OperationType type) {
+        public Operation(string name, string data, OperationDirection direction, OperationType type)
+        {
             this.Name = name;
             this.Data = data;
             this.OperationParameters.Direction = direction;
             this.OperationParameters.Type = type;
+            EOF = "<EOF>";
         }
         public Operation(string name, string data, OperationDirection direction, OperationType type, TargetType target)
         {
@@ -27,35 +31,47 @@ namespace RealtyModel.Model
             this.OperationParameters.Direction = direction;
             this.OperationParameters.Type = type;
             this.OperationParameters.Target = target;
+            EOF = "<EOF>";
         }
 
-        public Guid OperationNumber {
+        public Guid OperationNumber
+        {
             get => operationNumber;
             set => operationNumber = value;
         }
-        public string IpAddress {
+        public string IpAddress
+        {
             get => ipAddress;
             set => ipAddress = value;
         }
-        public string Name {
+        public string Name
+        {
             get => name;
             set => name = value;
         }
-        public string Data {
+        public string Data
+        {
             get => data;
             set => data = value;
         }
-        public string Token {
+        public string Token
+        {
             get => token;
             set => token = value;
         }
-        public OperationParameters OperationParameters {
+        public OperationParameters OperationParameters
+        {
             get => operationParameters;
             set => operationParameters = value;
         }
-        public bool IsSuccessfully {
+        public bool IsSuccessfully
+        {
             get => isSuccessfully;
             set => isSuccessfully = value;
+        }
+        public String EOF
+        {
+            get; private set;
         }
     }
 }

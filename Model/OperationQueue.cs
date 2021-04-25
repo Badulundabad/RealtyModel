@@ -1,9 +1,11 @@
 ﻿using RealtyModel.Event;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace RealtyModel.Model
 {
@@ -14,7 +16,7 @@ namespace RealtyModel.Model
             base.Enqueue(item);
             OnEnqueue(item);
         }
-
+        
         private void OnEnqueue(Operation item)
         {
             if (Enqueued != null)

@@ -93,10 +93,10 @@ namespace RealtyModel.Model
 
         public void OnLoggedIn()
         {
-            dispatcher.Invoke(new Action(() =>
-            {
                 IsLoggedIn = true;
                 LoggedIn?.Invoke(this, new LoggedInEventArgs(Name));
+            dispatcher.Invoke(new Action(() =>
+            {
             }));
         }
         public void OnLoggedOut()
