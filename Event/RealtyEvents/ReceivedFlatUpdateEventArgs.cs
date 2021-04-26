@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace RealtyModel.Event
 {
-    public class DeleteFlatEventArgs
+    public class ReceivedFlatUpdateEventArgs
     {
         private Flat flat;
         public Flat Flat { get => flat; set => flat = value; }
 
-        public DeleteFlatEventArgs(Flat flat)
+        public ReceivedFlatUpdateEventArgs(Flat flat)
         {
             this.flat = flat;
         }

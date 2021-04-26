@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace RealtyModel.Event
 {
-    public class DeleteHouseEventArgs
+    public class ReceivedHouseDeletionEventArgs
     {
         private House house;
         public House House { get => house; set => house = value; }
-        public DeleteHouseEventArgs(House house)
+        public ReceivedHouseDeletionEventArgs(House house)
         {
             this.house = house;
         }

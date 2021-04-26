@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RealtyModel.Event.RealtyEvents
 {
-    public class ReceivedListsEventArgs
+    public class ReceivedDbUpdateEventArgs
     {
         private object updateData;
         private TargetType targetType;
@@ -23,7 +23,7 @@ namespace RealtyModel.Event.RealtyEvents
             set => targetType = value;
         }
 
-        public ReceivedListsEventArgs(TargetType targetType, object updateData)
+        public ReceivedDbUpdateEventArgs(TargetType targetType, object updateData)
         {
             this.targetType = targetType;
             this.updateData = updateData;

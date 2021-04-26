@@ -14,10 +14,10 @@ namespace RealtyModel.Model
         public new void Enqueue(Operation item)
         {
             base.Enqueue(item);
-            OnEnqueue(item);
+            OnEnqueued(item);
         }
         
-        private void OnEnqueue(Operation item)
+        private void OnEnqueued(Operation item)
         {
             if (Enqueued != null)
                 Enqueued?.Invoke(this, new EnqueuedEventArgs(item));
