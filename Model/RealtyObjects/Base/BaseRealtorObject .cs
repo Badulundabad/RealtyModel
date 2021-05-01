@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
 
 namespace RealtyModel.Model.Base
 {
@@ -11,17 +12,14 @@ namespace RealtyModel.Model.Base
         private Int32 albumId;
         private Int32 locationId;
         private String objectType = "";
-        private String agent;
+        private String agent = "";
         private Boolean isSold = false;
         private Boolean hasExclusive = false;
         private Status status = Status.Active;
         private Cost cost = new Cost();
-        private Album album = new Album();
-        private Customer customer = new Customer();
-        private Location location = new Location();
         private BaseInfo generalInfo = new BaseInfo();
-        private DateTime lastUpdateTime = DateTime.Now;
-        private DateTime registrationDate = DateTime.Now;
+        private DateTime lastUpdateTime;
+        private DateTime registrationDate;
 
         public Int32 Id
         {
@@ -68,9 +66,11 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public String ObjectType {
+        public String ObjectType
+        {
             get => objectType;
-            set {
+            set
+            {
                 objectType = value;
                 OnPropertyChanged();
             }
@@ -84,14 +84,17 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Boolean HasExclusive {
+        public Boolean HasExclusive
+        {
             get => hasExclusive;
-            set {
+            set
+            {
                 hasExclusive = value;
                 OnPropertyChanged();
             }
         }
-        public Status Status {
+        public Status Status
+        {
             get => status;
             set => status = value;
         }
@@ -104,33 +107,9 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Album Album
-        {
-            get => album;
-            set
-            {
-                album = value;
-                OnPropertyChanged();
-            }
-        }
-        public Customer Customer
-        {
-            get => customer;
-            set
-            {
-                customer = value;
-                OnPropertyChanged();
-            }
-        }
-        public Location Location
-        {
-            get => location;
-            set
-            {
-                location = value;
-                OnPropertyChanged();
-            }
-        }
+        public Album Album { get; set; }
+        public Customer Customer { get; set; }
+        public Location Location { get; set; }
         public BaseInfo GeneralInfo
         {
             get => generalInfo;
@@ -141,9 +120,11 @@ namespace RealtyModel.Model.Base
             get => lastUpdateTime;
             set => lastUpdateTime = value;
         }
-        public DateTime RegistrationDate {
+        public DateTime RegistrationDate
+        {
             get => registrationDate;
-            protected set {
+            set
+            {
                 registrationDate = value;
             }
         }

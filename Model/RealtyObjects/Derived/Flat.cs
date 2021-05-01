@@ -5,25 +5,18 @@ namespace RealtyModel.Model.Derived
 {
     public class Flat : BaseRealtorObject
     {
+        public FlatInfo Info { get; set; }
 
-        private FlatInfo info = new FlatInfo();
-        public Flat() {
+        public Flat()
+        {
         }
-        public Flat(bool isNewInstance) {
+        public Flat(bool isNewInstance)
+        {
             Customer = new Customer();
             Album = new Album();
             Location = new Location();
             if (isNewInstance)
                 this.RegistrationDate = DateTime.Now;
-        }
-        public FlatInfo Info
-        {
-            get => info;
-            set
-            {
-                info = value;
-                OnPropertyChanged();
-            }
         }
     }
 }

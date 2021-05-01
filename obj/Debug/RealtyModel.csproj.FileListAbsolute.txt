@@ -34,3 +34,12 @@ C:\Users\NotABugAbuser\Desktop\realtorproject\realtymodel\obj\Debug\RealtyModel.
 C:\Users\NotABugAbuser\Desktop\realtorproject\realtymodel\obj\Debug\RealtyModel.csproj.CoreCompileInputs.cache
 C:\Users\NotABugAbuser\Desktop\realtorproject\realtymodel\obj\Debug\RealtyModel.dll
 C:\Users\NotABugAbuser\Desktop\realtorproject\realtymodel\obj\Debug\RealtyModel.pdb
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\System.Text.Json.dll
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\System.Memory.dll
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\System.Buffers.dll
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Badulundabad\Desktop\RealtyModel\obj\Debug\RealtyModel.csproj.CopyComplete

@@ -17,7 +17,7 @@ namespace RealtyModel.Model.Derived
         private bool isPrivatised = false;
         private bool hasImprovedLayout = false;
         private bool hasRenovation = false;
-        private bool hasChute = false; //мусоропровод
+        private bool hasChute = false;
         private string typeOfRooms = "";
         private string rooms = "";
         private bool hasGarage = false;
@@ -28,160 +28,207 @@ namespace RealtyModel.Model.Derived
         private string bath = "";
         private string bathroom = "";
         private string floor = "";
-        private bool isSeparated = true;
+        private bool isSeparated = false;
 
-        public string Balcony {
+        public string Balcony
+        {
             get => balcony;
-            set {
+            set
+            {
                 balcony = value;
                 OnPropertyChanged();
             }
         }
-        public string Loggia {
+        public string Loggia
+        {
             get => loggia;
-            set {
+            set
+            {
                 loggia = value;
                 OnPropertyChanged();
             }
         }
-        public string Bath {
+        public string Bath
+        {
             get => bath;
-            set {
+            set
+            {
                 bath = value;
                 OnPropertyChanged();
             }
         }
-        public string Bathroom {
+        public string Bathroom
+        {
             get => bathroom;
-            set {
+            set
+            {
                 bathroom = value;
                 OnPropertyChanged();
             }
         }
-        public string Floor {
+        public string Floor
+        {
             get => floor;
-            set {
+            set
+            {
                 floor = value;
                 OnPropertyChanged();
             }
         }
-        public string Material {
+        public string Material
+        {
             get => material;
-            set {
+            set
+            {
                 material = value;
                 OnPropertyChanged();
             }
         }
-        public string Fund {
+        public string Fund
+        {
             get => fund;
-            set {
+            set
+            {
                 fund = value;
                 OnPropertyChanged();
             }
         }
-        public string Type {
+        public string Type
+        {
             get => type;
-            set {
+            set
+            {
                 type = value;
                 OnPropertyChanged();
             }
         }
-        public string Windows {
+        public string Windows
+        {
             get => windows;
-            set {
-                if (value.Length <= 25) {
+            set
+            {
+                if (value.Length <= 25)
+                {
                     windows = value;
                     OnPropertyChanged();
                 }
             }
         }
-        public int Kvl {
+        public int Kvl
+        {
             get => kvl;
-            set {
-                if (value < 100) {
+            set
+            {
+                if (value < 100)
+                {
                     kvl = value;
                     OnPropertyChanged();
                 }
             }
         }
-        public bool IsPrivatised {
+        public bool IsPrivatised
+        {
             get => isPrivatised;
-            set {
+            set
+            {
                 isPrivatised = value;
                 OnPropertyChanged();
             }
         }
-        public bool HasImprovedLayout {
+        public bool HasImprovedLayout
+        {
             get => hasImprovedLayout;
-            set {
+            set
+            {
                 hasImprovedLayout = value;
                 OnPropertyChanged();
             }
         }
-        public bool HasRenovation {
+        public bool HasRenovation
+        {
             get => hasRenovation;
-            set {
+            set
+            {
                 hasRenovation = value;
                 OnPropertyChanged();
             }
         }
-        public bool HasChute {
+        public bool HasChute
+        {
             get => hasChute;
-            set {
+            set
+            {
                 hasChute = value;
                 OnPropertyChanged();
             }
         }
-        public string TypeOfRooms {
+        public string TypeOfRooms
+        {
             get => typeOfRooms;
-            set {
+            set
+            {
                 typeOfRooms = value;
                 OnPropertyChanged();
             }
         }
-        public string Rooms {
+        public string Rooms
+        {
             get => rooms;
-            set {
-                if (value.Length <= 24) {
+            set
+            {
+                if (value.Length <= 24)
+                {
                     rooms = value;
                     OnPropertyChanged();
                 }
             }
         }
-        public bool HasGarage {
+        public bool HasGarage
+        {
             get => hasGarage;
-            set {
+            set
+            {
                 hasGarage = value;
                 OnPropertyChanged();
             }
         }
-        public bool HasElevator {
+        public bool HasElevator
+        {
             get => hasElevator;
-            set {
+            set
+            {
                 hasElevator = value;
                 OnPropertyChanged();
             }
         }
-        public bool IsCorner {
+        public bool IsCorner
+        {
             get => isCorner;
-            set {
+            set
+            {
                 isCorner = value;
                 OnPropertyChanged();
             }
         }
-        public bool IsSeparated {
+        public bool IsSeparated
+        {
             get => isSeparated;
-            set {
+            set
+            {
                 isSeparated = value;
-                if (isSeparated) {
+                if (isSeparated)
+                {
                     TypeOfRooms = "Раздельные";
-                } else {
+                }
+                else
+                {
                     TypeOfRooms = "Смежные";
                 }
             }
         }
 
-        public void OnPropertyChanged([CallerMemberName] string property = null) {
+        public void OnPropertyChanged([CallerMemberName] string property = null)
+        {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
         public event PropertyChangedEventHandler PropertyChanged;

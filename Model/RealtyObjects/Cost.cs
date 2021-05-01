@@ -8,11 +8,11 @@ namespace RealtyModel.Model
     [ComplexType]
     public class Cost : INotifyPropertyChanged
     {
-        Int32 area = 0;
-        Int32 price = 0;
-        bool hasVAT = false; // НДС
-        bool hasMortgage = false; //Ипотека
-        bool hasPercents = false;
+        Int32 area;
+        Int32 price;
+        bool hasVAT; // НДС
+        bool hasMortgage; //Ипотека
+        bool hasPercents;
         public Int32 Area {
             get => area;
             set {

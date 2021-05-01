@@ -10,7 +10,7 @@ namespace RealtyModel.Event
     public class FlatCreatedEventArgs
     {
         private bool isNew = false;
-        private Flat flat = new Flat();
+        private Flat flat;
         public FlatCreatedEventArgs() {
         }
         public FlatCreatedEventArgs(Flat flat) {
