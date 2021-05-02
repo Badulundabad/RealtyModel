@@ -9,6 +9,9 @@ namespace RealtyModel.Model
 {
      public class Street
     {
+        public override string ToString() {
+            return this.Name;
+        }
         public Int32 Id { get; set; }
         public String Name { get; set; }
     }

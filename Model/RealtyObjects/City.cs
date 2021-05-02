@@ -33,7 +33,9 @@ namespace RealtyModel.Model
         //        OnPropertyChanged();
         //    }
         //}
-
+        public override string ToString() {
+            return this.Name;
+        }
         public Int32 Id { get; set; }
         public String Name { get; set; }
 
