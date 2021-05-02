@@ -11,21 +11,21 @@ namespace RealtyModel.Model
 {
     public class LocationOptions
     {
-        private ObservableCollection<string> cities = new ObservableCollection<string>();
-        private ObservableCollection<string> streets = new ObservableCollection<string>();
-        private ObservableCollection<string> districts = new ObservableCollection<string>();
+        private ObservableCollection<City> cities = new ObservableCollection<City>();
+        private ObservableCollection<District> districts = new ObservableCollection<District>();
+        private ObservableCollection<Street> streets = new ObservableCollection<Street>();
 
-        public ObservableCollection<string> Cities {
+        public ObservableCollection<City> Cities {
             get => cities;
             set => cities = value;
         }
-        public ObservableCollection<string> Streets {
-            get => streets;
-            set => streets = value;
-        }
-        public ObservableCollection<string> Districts {
+        public ObservableCollection<District> Districts {
             get => districts;
             set => districts = value;
+        }
+        public ObservableCollection<Street> Streets {
+            get => streets;
+            set => streets = value;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace RealtyModel.Model.Base
         private Boolean hasExclusive = false;
         private Status status = Status.Active;
         private Cost cost = new Cost();
-        private BaseInfo generalInfo = new BaseInfo();
+        private BaseInfo generalInfo;
         private DateTime lastUpdateTime;
         private DateTime registrationDate;
 
