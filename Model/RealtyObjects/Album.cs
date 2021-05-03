@@ -58,6 +58,7 @@ namespace RealtyModel.Model
                 Byte[] data = database.First<Photo>(p => p.Id == key)?.Data;
                 PhotoCollection.Add(data);
             }
+            Preview = PhotoCollection[0];
         }
         public Int32[] GetPhotoKeys()
         {

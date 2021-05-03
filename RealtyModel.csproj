@@ -92,6 +92,7 @@
     <Compile Include="Model\RealtyObjects\Street.cs" />
     <Compile Include="Model\TargetType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BinaryConverter.cs" />
     <Compile Include="Service\CustomCommand.cs" />
     <Compile Include="Service\CheckAndHeightPair.cs" />
     <Compile Include="Service\Filter.cs" />

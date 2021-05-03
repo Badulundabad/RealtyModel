@@ -49,6 +49,11 @@ namespace RealtyModel.Model
         public ObservableCollection<String> PhoneNumberList
         {
             get => new ObservableCollection<String>(phoneNumbers?.Trim().Split(new Char[] { ';', ',' }) ?? new String[] { "" });
+            set
+            {
+                foreach (String s in value)
+                    phoneNumbers += s;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
