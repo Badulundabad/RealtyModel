@@ -87,6 +87,7 @@
     <Compile Include="Model\OperationParameters.cs" />
     <Compile Include="Model\OperationQueue.cs" />
     <Compile Include="Model\OperationType.cs" />
+    <Compile Include="Model\RealtyObjects\Photo.cs" />
     <Compile Include="Model\RealtyObjects\Street.cs" />
     <Compile Include="Model\TargetType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
