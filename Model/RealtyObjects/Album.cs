@@ -52,9 +52,11 @@ namespace RealtyModel.Model
         }
         public void GetPhotosFromDB(IEnumerable<Photo> database)
         {
+            PhotoCollection = new ObservableCollection<byte[]>();
             foreach (Int32 key in GetPhotoKeys())
             {
                 Byte[] data = database.First<Photo>(p => p.Id == key)?.Data;
+                PhotoCollection.Add(data);
             }
         }
         public Int32[] GetPhotoKeys()
