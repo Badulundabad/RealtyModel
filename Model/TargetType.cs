@@ -16,6 +16,7 @@ namespace RealtyModel.Model
         District = 5,
         Street = 6,
         Album = 7,
-        All = 8
+        All = 8,
+        None = 9
     }
 }

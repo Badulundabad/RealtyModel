@@ -11,6 +11,7 @@ namespace RealtyModel.Model.RealtyObjects
     {
         [Key]
         public Int32 Id { get; set; }
+        public Int32 AlbumId { get; set; }
         public Byte[] Data { get; set; }
     }
 }
