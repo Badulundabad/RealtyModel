@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 using RealtyModel.Event;
@@ -93,19 +92,13 @@ namespace RealtyModel.Model
 
         public void OnLoggedIn()
         {
-                IsLoggedIn = true;
-                LoggedIn?.Invoke(this, new LoggedInEventArgs(Name));
-            dispatcher.Invoke(new Action(() =>
-            {
-            }));
+            IsLoggedIn = true;
+            LoggedIn?.Invoke(this, new LoggedInEventArgs(Name));
         }
         public void OnLoggedOut()
         {
-            dispatcher.Invoke(new Action(() =>
-            {
-                IsLoggedIn = false;
-                LoggedOut?.Invoke(this, new LoggedInEventArgs(Name));
-            }));
+            IsLoggedIn = false;
+            LoggedOut?.Invoke(this, new LoggedInEventArgs(Name));
         }
         public void OnRegistered()
         {
