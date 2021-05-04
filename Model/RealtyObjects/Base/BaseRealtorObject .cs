@@ -11,7 +11,7 @@ namespace RealtyModel.Model.Base
         private Int32 customerId;
         private Int32 albumId;
         private Int32 locationId;
-        private String objectType = "";
+        private TargetType type = TargetType.None;
         private String agent = "";
         private Boolean isSold = false;
         private Boolean hasExclusive = false;
@@ -66,12 +66,12 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public String ObjectType
+        public TargetType Type
         {
-            get => objectType;
+            get => type;
             set
             {
-                objectType = value;
+                type = value;
                 OnPropertyChanged();
             }
         }

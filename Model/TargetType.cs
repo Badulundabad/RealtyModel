@@ -10,13 +10,14 @@ namespace RealtyModel.Model
     {
         Flat = 0,
         House = 1,
-        Agent = 2,
-        Customer = 3,
-        City = 4,
-        District = 5,
-        Street = 6,
-        Album = 7,
-        All = 8,
-        None = 9
+        Plot = 2,
+        Agent = 3,
+        Customer = 4,
+        City = 5,
+        District = 6,
+        Street = 7,
+        Album = 8,
+        All = 9,
+        None = 10
     }
 }

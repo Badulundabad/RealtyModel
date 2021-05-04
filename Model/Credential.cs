@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 using RealtyModel.Event;
@@ -31,9 +32,9 @@ namespace RealtyModel.Model
         }
 
         [NotMapped]
-        public String IpAddress { get; set; }
+        public IPAddress IpAddress { get; set; }
         [NotMapped]
-        public String Token { get; set; }
+        public Guid Token { get; set; }
         [NotMapped]
         public Boolean IsLoggedIn
         {

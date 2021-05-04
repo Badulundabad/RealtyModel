@@ -1,4 +1,5 @@
-﻿using RealtyModel.Model.Base;
+﻿using RealtyModel.Model;
+using RealtyModel.Model.Base;
 using RealtyModel.Model.Derived;
 using System;
 using System.Collections.Generic;
@@ -135,13 +136,13 @@ namespace RealtyModel.Service
         }
         private void FilterByObjectType() {
             if (!IsPlot) {
-                FilteredObjects.RemoveAll(x => x.ObjectType == "Земельный участок");
+                FilteredObjects.RemoveAll(x => x.Type == TargetType.Plot);
             }
             if (!IsHouse) {
-                FilteredObjects.RemoveAll(x => x.ObjectType == "Частный дом");
+                FilteredObjects.RemoveAll(x => x.Type == TargetType.House);
             }
             if (!IsFlat) {
-                FilteredObjects.RemoveAll(x => x.ObjectType == "Квартира");
+                FilteredObjects.RemoveAll(x => x.Type == TargetType.Flat);
             }
         }
         private void FilterByCondition() {
