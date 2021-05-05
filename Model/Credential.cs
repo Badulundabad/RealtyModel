@@ -32,7 +32,7 @@ namespace RealtyModel.Model
         }
 
         [NotMapped]
-        public IPAddress IpAddress { get; set; }
+        public String IpAddress { get; set; }
         [NotMapped]
         public Guid Token { get; set; }
         [NotMapped]
