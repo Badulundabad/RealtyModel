@@ -44,5 +44,13 @@ namespace RealtyModel.Model
             get => direction;
             set => direction = value;
         }
+
+        public OperationParameters() { }
+        public OperationParameters(OperationDirection direction, OperationType type, TargetType target)
+        {
+            this.direction = direction;
+            this.type = type;
+            this.target = target;
+        }
     }
 }

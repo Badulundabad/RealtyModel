@@ -65,7 +65,7 @@ namespace RealtyModel.Model
             List<Int32> list = new List<Int32>();
             foreach (String key in PhotoKeys.Split(';'))
                 list.Add(Int32.Parse(key));
-            return list.ToArray();
+            return list?.ToArray();
         }
     }
 }
