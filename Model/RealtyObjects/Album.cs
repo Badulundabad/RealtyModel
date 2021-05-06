@@ -26,13 +26,13 @@ namespace RealtyModel.Model
         {
             UpdatePhotos(photos);
             foreach (Byte[] data in PhotoCollection)
-                JsonPhotoArray += JsonSerializer.Serialize(data) + ";";
-            JsonPhotoArray = JsonPhotoArray.TrimEnd(';');
+                JsonPhotoArray += JsonSerializer.Serialize(data) + "©";
+            JsonPhotoArray = JsonPhotoArray.TrimEnd('©');
         }
         public void Deserialize()
         {
             PhotoCollection = new ObservableCollection<byte[]>();
-            String[] strings = JsonPhotoArray.Split(';');
+            String[] strings = JsonPhotoArray.Split('©');
             foreach (String s in strings)
                 PhotoCollection.Add(JsonSerializer.Deserialize<Byte[]>(s));
         }
@@ -47,8 +47,8 @@ namespace RealtyModel.Model
         {
             PhotoKeys = "";
             foreach (Photo photo in photos)
-                PhotoKeys += $"{photo.Id};";
-            PhotoKeys = PhotoKeys.TrimEnd(';');
+                PhotoKeys += $"{photo.Id}©";
+            PhotoKeys = PhotoKeys.TrimEnd('©');
         }
         public void GetPhotosFromDB(IEnumerable<Photo> database)
         {
