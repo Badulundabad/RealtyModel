@@ -21,7 +21,8 @@ namespace RealtyModel.Event
     public delegate void FlatCreatedEventHandler(object sender, FlatCreatedEventArgs e);
     public delegate void FlatModifiedEventHandler(object sender, FlatModifiedEventArgs e);
 
-    public delegate void ReceivedFlatEventHandler(object sendet, ReceivedFlatEventArgs e);
+    public delegate void ReceivedPhotoEventHandler(object sender, ReceivedPhotoEventArgs e);
+    public delegate void ReceivedFlatEventHandler(object sender, ReceivedFlatEventArgs e);
     public delegate void ReceivedFlatUpdateEventHandler(object sender, ReceivedFlatUpdateEventArgs e);
     public delegate void ReceivedFlatDeletionEventHandler(object sender, ReceivedFlatDeletionEventArgs e);
     public delegate void ReceivedHouseEventHandler(object sender, ReceivedHouseEventArgs e);

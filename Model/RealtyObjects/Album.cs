@@ -13,35 +13,36 @@ namespace RealtyModel.Model
     public class Album
     {
         public Int32 Id { get; set; }
-        public Byte[] Preview { get; set; }
         public String PhotoKeys { get; set; }
         public String Location { get; set; }
+        public Byte[] Preview { get; set; }
 
-        [NotMapped]
-        public String JsonPhotoArray { get; set; }
         [JsonIgnore, NotMapped]
         public ObservableCollection<Byte[]> PhotoCollection { get; set; }
 
-        public void Serialize(IEnumerable<Photo> photos)
-        {
-            UpdatePhotos(photos);
-            foreach (Byte[] data in PhotoCollection)
-                JsonPhotoArray += JsonSerializer.Serialize(data) + "©";
-            JsonPhotoArray = JsonPhotoArray.TrimEnd('©');
-        }
-        public void Deserialize()
+        public void GetPhotosFromCollection(IEnumerable<Photo> photos)
         {
             PhotoCollection = new ObservableCollection<byte[]>();
-            String[] strings = JsonPhotoArray.Split('©');
-            foreach (String s in strings)
-                PhotoCollection.Add(JsonSerializer.Deserialize<Byte[]>(s));
-        }
-        private void UpdatePhotos(IEnumerable<Photo> photos)
-        {
-            PhotoCollection = new ObservableCollection<byte[]>();
-            Preview = photos.First().Data;
             foreach (Photo photo in photos)
                 PhotoCollection.Add(photo.Data);
+        }
+        public void GetPhotosFromDbByKey(IEnumerable<Photo> database)
+        {
+            PhotoCollection = new ObservableCollection<byte[]>();
+            foreach (Int32 key in GetPhotoKeys())
+            {
+                Byte[] data = database.First<Photo>(p => p.Id == key)?.Data;
+                PhotoCollection.Add(data);
+            }
+        }
+        public void GetPhotosFromDbByLocation(IEnumerable<Photo> database)
+        {
+            PhotoCollection = new ObservableCollection<byte[]>();
+            foreach (Int32 key in GetPhotoKeys())
+            {
+                Byte[] data = database.First<Photo>(p => p.Id == key)?.Data;
+                PhotoCollection.Add(data);
+            }
         }
         public void UpdateKeys(IEnumerable<Photo> photos)
         {
@@ -50,22 +51,16 @@ namespace RealtyModel.Model
                 PhotoKeys += $"{photo.Id}©";
             PhotoKeys = PhotoKeys.TrimEnd('©');
         }
-        public void GetPhotosFromDB(IEnumerable<Photo> database)
-        {
-            PhotoCollection = new ObservableCollection<byte[]>();
-            foreach (Int32 key in GetPhotoKeys())
-            {
-                Byte[] data = database.First<Photo>(p => p.Id == key)?.Data;
-                PhotoCollection.Add(data);
-            }
-            Preview = PhotoCollection[0];
-        }
         public Int32[] GetPhotoKeys()
         {
             List<Int32> list = new List<Int32>();
             foreach (String key in PhotoKeys.Split(';'))
                 list.Add(Int32.Parse(key));
             return list?.ToArray();
+        }
+        public void WriteLocation(Location location)
+        {
+            Location = $"{location.City.Name};{location.District.Name};{location.Street.Name};{location.HouseNumber};{location.FlatNumber};";
         }
     }
 }

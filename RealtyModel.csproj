@@ -64,6 +64,7 @@
     <Compile Include="Event\RealtyEvents\ReceivedFlatUpdateEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\ReceivedHouseEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\ReceivedHouseUpdateEventArgs.cs" />
+    <Compile Include="Event\RealtyEvents\ReceivedPhotoEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\UpdateFinishedEventArgs.cs" />
     <Compile Include="Model\RealtyObjects\City.cs" />
     <Compile Include="Interface\IDoubleNumericUpDown.cs" />

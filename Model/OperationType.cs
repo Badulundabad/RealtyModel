@@ -15,6 +15,7 @@ namespace RealtyModel.Model
         Add = 4,
         Change = 5,
         Remove = 6,
-        Update = 7
+        Update = 7,
+        Get = 8
     }
 }
