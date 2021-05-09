@@ -10,17 +10,18 @@ namespace RealtyModel.Event.RealtyEvents
     public class FlatModifiedEventArgs
     {
         private Flat flat = new Flat();
+        public Flat Flat
+        {
+            get => flat;
+            set => flat = value;
+        }
+
         public FlatModifiedEventArgs()
         {
         }
         public FlatModifiedEventArgs(Flat flat)
         {
             this.Flat = flat;
-        }
-        public Flat Flat
-        {
-            get => flat;
-            set => flat = value;
         }
     }
 }

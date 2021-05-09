@@ -46,26 +46,27 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Event\EnqueuedEventArgs.cs" />
+    <Compile Include="Event\CommonEventHandlers.cs" />
+    <Compile Include="Event\CommonEvents\EnqueuedEventArgs.cs" />
     <Compile Include="Event\IdentityEvents\LoggedOutEventArgs.cs" />
     <Compile Include="Event\IdentityEvents\LoggingOutEventArgs.cs" />
     <Compile Include="Event\IdentityEvents\RegisteredEventArgs.cs" />
     <Compile Include="Event\IdentityEvents\RegisteringEventArgs.cs" />
-    <Compile Include="Event\RealtyEvents\OpeningFlatFormEventArgs.cs" />
+    <Compile Include="Event\RealtyEventHandlers.cs" />
+    <Compile Include="Event\UIEventHandlers.cs" />
+    <Compile Include="Event\UIEvents\OpeningFlatFormEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\ReceivedFlarDeletionEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\ReceivedFlatEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\ReceivedHouseDeletionEventArgs.cs" />
-    <Compile Include="Event\RealtyEvents\FlatCreatedEventArgs.cs" />
-    <Compile Include="Event\EventHandlers.cs" />
+    <Compile Include="Event\UIEvents\FlatCreatedEventArgs.cs" />
+    <Compile Include="Event\IdentityEventHandlers.cs" />
     <Compile Include="Event\IdentityEvents\LoggedInEventArgs.cs" />
     <Compile Include="Event\IdentityEvents\LoggingInEventArgs.cs" />
-    <Compile Include="Event\RealtyEvents\FlatModifiedEventArgs.cs" />
-    <Compile Include="Event\RealtyEvents\ReceivedDbUpdateEventArgs.cs" />
+    <Compile Include="Event\UIEvents\FlatModifiedEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\ReceivedFlatUpdateEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\ReceivedHouseEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\ReceivedHouseUpdateEventArgs.cs" />
     <Compile Include="Event\RealtyEvents\ReceivedPhotoEventArgs.cs" />
-    <Compile Include="Event\RealtyEvents\UpdateFinishedEventArgs.cs" />
     <Compile Include="Model\RealtyObjects\City.cs" />
     <Compile Include="Interface\IDoubleNumericUpDown.cs" />
     <Compile Include="Interface\IIntegerNumericUpDown.cs" />
@@ -97,5 +98,6 @@
     <Compile Include="Service\CheckAndHeightPair.cs" />
     <Compile Include="Service\Filter.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
