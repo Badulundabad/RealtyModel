@@ -54,6 +54,7 @@
     <Compile Include="Events\Identity\RegisteringEventArgs.cs" />
     <Compile Include="Events\NetworkEventHandlers.cs" />
     <Compile Include="Events\Network\ConnectedEventArgs.cs" />
+    <Compile Include="Events\Network\ConnectingEventArgs.cs" />
     <Compile Include="Events\Network\DisconnectedEventArgs.cs" />
     <Compile Include="Events\Network\ReconnectedEventArgs.cs" />
     <Compile Include="Events\RealtyEventHandlers.cs" />
