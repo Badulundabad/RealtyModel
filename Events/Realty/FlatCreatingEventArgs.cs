@@ -5,22 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RealtyModel.Events.UI
+namespace RealtyModel.Events.Realty
 {
-    public class FlatModifiedEventArgs
+    public class FlatCreatingEventArgs
     {
-        private Flat flat = new Flat();
-        public Flat Flat
-        {
+        private Flat flat;
+        public Flat Flat {
             get => flat;
             set => flat = value;
         }
 
-        public FlatModifiedEventArgs()
-        {
+        public FlatCreatingEventArgs() {
         }
-        public FlatModifiedEventArgs(Flat flat)
-        {
+        public FlatCreatingEventArgs(Flat flat) {
             this.Flat = flat;
         }
     }

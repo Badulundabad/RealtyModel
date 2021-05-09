@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RealtyModel.Events.UI
 {
-    public class OpeningFlatFormEventArgs
+    public class FlatButtonPressedEventArgs
     {
         private Boolean isNewFlat;
         private Flat flat = new Flat();
@@ -33,16 +33,16 @@ namespace RealtyModel.Events.UI
             }
         }
 
-        public OpeningFlatFormEventArgs(Boolean isNewFlat)
+        public FlatButtonPressedEventArgs(Boolean isNewFlat)
         {
             this.isNewFlat = isNewFlat;
         }
-        public OpeningFlatFormEventArgs(Boolean isNewFlat, Flat flat)
+        public FlatButtonPressedEventArgs(Boolean isNewFlat, Flat flat)
         {
             this.isNewFlat = isNewFlat;
             this.flat = flat;
         }
-        public OpeningFlatFormEventArgs(Boolean isNewFlat, Flat flat, LocationOptions locationOptions)
+        public FlatButtonPressedEventArgs(Boolean isNewFlat, Flat flat, LocationOptions locationOptions)
         {
             this.isNewFlat = isNewFlat;
             this.flat = flat;

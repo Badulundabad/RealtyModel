@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RealtyModel.Model
+namespace RealtyModel.Model.Operations
 {
-    public enum OperationDirection
+    public enum Initiator
     {
-        Identity = 0,
-        Realty = 1
+        Server = 0,
+        User = 1,
+        AnotherUser = 2
     }
 }

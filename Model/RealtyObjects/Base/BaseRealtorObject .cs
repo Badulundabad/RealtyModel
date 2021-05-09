@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RealtyModel.Model.Operations;
+using RealtyModel.Model.RealtyObjects;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
@@ -11,7 +13,7 @@ namespace RealtyModel.Model.Base
         private Int32 customerId;
         private Int32 albumId;
         private Int32 locationId;
-        private TargetType type = TargetType.None;
+        private Target type = Target.None;
         private String agent = "";
         private Boolean isSold = false;
         private Boolean hasExclusive = false;
@@ -66,7 +68,7 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public TargetType Type
+        public Target Type
         {
             get => type;
             set
@@ -134,11 +136,5 @@ namespace RealtyModel.Model.Base
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
         public event PropertyChangedEventHandler PropertyChanged;
-    }
-    public enum Status
-    {
-        Active,
-        Archived,
-        Planned
     }
 }

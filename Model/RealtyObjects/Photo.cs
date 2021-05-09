@@ -1,12 +1,10 @@
-﻿using System;
+﻿using RealtyModel.Model.Operations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace RealtyModel.Model.RealtyObjects
 {
@@ -15,7 +13,7 @@ namespace RealtyModel.Model.RealtyObjects
         [Key]
         public Int32 Id { get; set; }
         public String Location { get; set; }
-        public TargetType ObjectType { get; set; }
+        public Target ObjectType { get; set; }
         public String DataJson { get; set; }
 
         public void FillData()

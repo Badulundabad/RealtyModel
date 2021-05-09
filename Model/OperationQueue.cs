@@ -1,4 +1,5 @@
 ﻿using RealtyModel.Events;
+using RealtyModel.Model.Operations;
 using System.Collections.Generic;
 
 namespace RealtyModel.Model

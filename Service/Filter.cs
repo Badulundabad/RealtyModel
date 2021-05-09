@@ -1,13 +1,6 @@
-﻿using RealtyModel.Model;
-using RealtyModel.Model.Base;
-using RealtyModel.Model.Derived;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RealtyModel.Service
 {
@@ -49,104 +42,7 @@ namespace RealtyModel.Service
         private bool isAllDistricts = true;
         private string city = "";
         private string district = "";
-        private void FilterByLocation() {
-            if (!IsAllCities) {
-                FilteredObjects.RemoveAll(x => !x.Location.City.Name.ToLower().Contains(City.ToLower()));
-            }
-            if (!IsAllDistricts) {
-                FilteredObjects.RemoveAll(x => !x.Location.District.Name.ToLower().Contains(District.ToLower()));
-            }
-        }
-        private void FilterByStatus() {
-            if (!IsActive) {
-                FilteredObjects.RemoveAll(x => x.Status == Status.Active);
-            }
-            if (!IsPlanned) {
-                FilteredObjects.RemoveAll(x => x.Status == Status.Planned);
-            }
-            if (!IsArchived) {
-                FilteredObjects.RemoveAll(x => x.Status == Status.Archived);
-            }
-        }
-        private void FilterByHotWater() {
-            if (!IsTPSWater) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "ТЭЦ");
-            }
-            if (!IsAGVWater) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "АГВ");
-            }
-            if (!IsStandPipe) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "Колонка");
-            }
-            if (!IsBoilerRoomWater) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "Котельная");
-            }
-            if (!IsElectroWater) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "Электро");
-            }
-            if (!IsTrulyBoilerWater) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Water == "Бойлер");
-            }
-        }
-        private void FilterByHeating() {
-            if (!IsAGV) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Heating == "АГВ");
-            }
-            if (!IsBoiler) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Heating == "Котел");
-            }
-            if (!IsLocal) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Heating == "Местное");
-            }
-            if (!IsStove) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Heating == "Печное");
-            }
-            if (!IsTPS) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Heating == "ТЭЦ");
-            }
-            if (!IsNozzle) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Heating == "Форсунка");
-            }
-            if (!IsElectro) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Heating == "Электро");
-            }
-        }
-        private void FilterByObjectType() {
-            if (!IsPlot) {
-                FilteredObjects.RemoveAll(x => x.Type == TargetType.Plot);
-            }
-            if (!IsHouse) {
-                FilteredObjects.RemoveAll(x => x.Type == TargetType.House);
-            }
-            if (!IsFlat) {
-                FilteredObjects.RemoveAll(x => x.Type == TargetType.Flat);
-            }
-        }
-        private void FilterByCondition() {
-            if (!IsEuro) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Condition == "Евро");
-            }
-            if (!IsExcellent) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Condition == "Отличное");
-            }
-            if (!IsGood) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Condition == "Хорошее");
-            }
-            if (!IsLiving) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Condition == "Жилое");
-            }
-            if (!IsCosmeticRequired) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Condition == "Требуется косметический ремонт");
-            }
-            if (!IsMajorRequired) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Condition == "Требуется капитальный ремонт");
-            }
-            if (!IsWithoutDecoration) {
-                FilteredObjects.RemoveAll(x => x.GeneralInfo.Condition == "Без внутренней отделки");
-            }
-        }
-        private List<BaseRealtorObject> filteredObjects = new List<BaseRealtorObject>();
-
+        
         public int MinimumPrice {
             get => minimumPrice;
             set {
@@ -213,7 +109,6 @@ namespace RealtyModel.Service
                 OnPropertyChanged();
             }
         }
-
         public bool IsEuro {
             get => isEuro;
             set => isEuro = value;
@@ -339,32 +234,6 @@ namespace RealtyModel.Service
             }
         }
 
-        public List<BaseRealtorObject> FilteredObjects {
-            get => filteredObjects;
-            set => filteredObjects = value;
-        }
-        public List<BaseRealtorObject> CreateFilteredList(List<BaseRealtorObject> allObjects) {
-            FilteredObjects.Clear();
-            FilteredObjects.AddRange(allObjects.Where(x => MaximumPrice >= x.Cost.Price).Where(x => MinimumPrice <= x.Cost.Price).ToList());
-            FilteredObjects = FilteredObjects.Where(x => MaximumArea >= x.Cost.Area).Where(x => MinimumArea <= x.Cost.Area).ToList();
-            if (HasMortgage) {
-                FilteredObjects.RemoveAll(x => x.Cost.HasMortgage == false);
-            }
-            FilterByObjectType();
-            FilterByStatus();
-            FilterByCondition();
-            FilterByHeating();
-            FilterByHotWater();
-            FilterByLocation();
-            //------------------------------ Потом убрать --------------------------
-         
-                var newFilteredObjects = new List<BaseRealtorObject>();
-                int count = FilteredObjects.Count > 50 ? 50 : FilteredObjects.Count;
-                for (int i = 0; i < count; i++) { newFilteredObjects.Add(FilteredObjects[i]); }
-
-            //----------------------------------------------------------------------
-            return newFilteredObjects;
-        }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string property = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));

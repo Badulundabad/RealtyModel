@@ -1,16 +1,16 @@
 ﻿using System;
-using RealtyModel.Model;
+using RealtyModel.Model.Operations;
 
 namespace RealtyModel.Events.Realty
 {
     public class ReceivedPhotoEventArgs
     {
-        public OperationType OperationType { get; set; }
+        public Act Act { get; set; }
         public String Data { get; set; }
 
-        public ReceivedPhotoEventArgs(OperationType type, String data)
+        public ReceivedPhotoEventArgs(Act act, String data)
         {
-            OperationType = type;
+            Act = act;
             Data = data;
         }
     }

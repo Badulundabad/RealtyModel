@@ -1,4 +1,4 @@
-﻿using RealtyModel.Model;
+﻿using RealtyModel.Model.Operations;
 
 namespace RealtyModel.Events
 {
