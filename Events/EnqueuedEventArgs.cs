@@ -1,6 +1,6 @@
 ﻿using RealtyModel.Model;
 
-namespace RealtyModel.Event.CommonEvents
+namespace RealtyModel.Events
 {
     public class EnqueuedEventArgs
     {

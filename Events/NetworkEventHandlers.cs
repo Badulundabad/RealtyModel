@@ -1,0 +1,6 @@
+﻿namespace RealtyModel.Events.Network
+{
+    public delegate void ConnectedEventHandler(object sender, ConnectedEventArgs e);
+    public delegate void DisconnectedEventHandler(object sender, DisconnectedEventArgs e);
+    public delegate void ReconnectedEventHandler(object sender, ReconnectedEventArgs e);
+}

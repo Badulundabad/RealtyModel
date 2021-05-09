@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RealtyModel.Event.RealtyEvents
+namespace RealtyModel.Events.Realty
 {
-    public class ReceivedHouseEventArgs
+    public class ReceivedHouseDeletionEventArgs
     {
         private House house;
         public House House { get => house; set => house = value; }
-        public ReceivedHouseEventArgs(House house)
+        public ReceivedHouseDeletionEventArgs(House house)
         {
             this.house = house;
         }

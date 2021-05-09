@@ -1,6 +1,4 @@
-﻿using RealtyModel.Event.RealtyEvents;
-
-namespace RealtyModel.Event
+﻿namespace RealtyModel.Events.Realty
 {
     public class RealtyEventHandlers
     {

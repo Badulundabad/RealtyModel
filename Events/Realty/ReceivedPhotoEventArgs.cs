@@ -1,11 +1,7 @@
-﻿using RealtyModel.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using RealtyModel.Model;
 
-namespace RealtyModel.Event.RealtyEvents
+namespace RealtyModel.Events.Realty
 {
     public class ReceivedPhotoEventArgs
     {

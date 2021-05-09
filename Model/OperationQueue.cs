@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using RealtyModel.Event.CommonEvents;
-using static RealtyModel.Event.CommonEventHandlers;
+﻿using RealtyModel.Events;
+using System.Collections.Generic;
 
 namespace RealtyModel.Model
 {

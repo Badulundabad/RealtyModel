@@ -4,7 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Windows.Threading;
-using RealtyModel.Event;
+using RealtyModel.Events;
+using RealtyModel.Events.Identity;
 
 namespace RealtyModel.Model
 {

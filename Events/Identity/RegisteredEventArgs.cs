@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RealtyModel.Event.IdentityEvents
+namespace RealtyModel.Events.Identity
 {
-    public class LoggingOutEventArgs
+    public class RegisteredEventArgs
     {
         private String name = "";
         public String Name { get => name; set => name = value; }
-        public LoggingOutEventArgs(String name)
+        public RegisteredEventArgs(String name)
         {
             this.name = name;
         }

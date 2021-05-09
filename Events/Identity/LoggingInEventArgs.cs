@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RealtyModel.Event
+namespace RealtyModel.Events.Identity
 {
     public class LoggingInEventArgs
     {

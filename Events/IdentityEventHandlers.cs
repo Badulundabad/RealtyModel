@@ -1,6 +1,4 @@
-﻿using RealtyModel.Event.IdentityEvents;
-
-namespace RealtyModel.Event
+﻿namespace RealtyModel.Events.Identity
 {
     public delegate void LoggedInEventHandler(object sender, LoggedInEventArgs e);
     public delegate void LoggedOutEventHandler(object sender, LoggedInEventArgs e);

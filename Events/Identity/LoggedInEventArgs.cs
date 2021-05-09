@@ -1,7 +1,7 @@
 ﻿using RealtyModel.Model;
 using System;
 
-namespace RealtyModel.Event
+namespace RealtyModel.Events.Identity
 {
     public class LoggedInEventArgs
     {

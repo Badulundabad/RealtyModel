@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RealtyModel.Event.RealtyEvents
+namespace RealtyModel.Events.UI
 {
     public class OpeningFlatFormEventArgs
     {

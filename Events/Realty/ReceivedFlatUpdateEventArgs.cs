@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RealtyModel.Event
+namespace RealtyModel.Events.Realty
 {
-    public class ReceivedFlatDeletionEventArgs
+    public class ReceivedFlatUpdateEventArgs
     {
         private Flat flat;
         public Flat Flat { get => flat; set => flat = value; }
 
-        public ReceivedFlatDeletionEventArgs(Flat flat)
+        public ReceivedFlatUpdateEventArgs(Flat flat)
         {
             this.flat = flat;
         }
