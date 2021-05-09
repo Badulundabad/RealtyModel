@@ -34,7 +34,7 @@ namespace RealtyModel.Model
         [NotMapped]
         public String IpAddress { get; set; }
         [NotMapped]
-        public Guid Token { get; set; }
+        public String Token { get; set; }
         [NotMapped]
         public Boolean IsLoggedIn
         {

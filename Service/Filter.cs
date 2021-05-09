@@ -49,29 +49,6 @@ namespace RealtyModel.Service
         private bool isAllDistricts = true;
         private string city = "";
         private string district = "";
-        private List<BaseRealtorObject> filteredObjects = new List<BaseRealtorObject>();
-        public List<BaseRealtorObject> CreateFilteredList(List<BaseRealtorObject> allObjects) {
-            FilteredObjects.Clear();
-            FilteredObjects.AddRange(allObjects.Where(x => MaximumPrice >= x.Cost.Price).Where(x => MinimumPrice <= x.Cost.Price).ToList());
-            FilteredObjects = FilteredObjects.Where(x => MaximumArea >= x.Cost.Area).Where(x => MinimumArea <= x.Cost.Area).ToList();
-            if (HasMortgage) {
-                FilteredObjects.RemoveAll(x => x.Cost.HasMortgage == false);
-            }
-            FilterByObjectType();
-            FilterByStatus();
-            FilterByCondition();
-            FilterByHeating();
-            FilterByHotWater();
-            FilterByLocation();
-            //------------------------------ Потом убрать --------------------------
-         
-                var newFilteredObjects = new List<BaseRealtorObject>();
-                int count = FilteredObjects.Count > 50 ? 50 : FilteredObjects.Count;
-                for (int i = 0; i < count; i++) { newFilteredObjects.Add(FilteredObjects[i]); }
-
-            //----------------------------------------------------------------------
-            return newFilteredObjects;
-        }
         private void FilterByLocation() {
             if (!IsAllCities) {
                 FilteredObjects.RemoveAll(x => !x.Location.City.Name.ToLower().Contains(City.ToLower()));
@@ -168,6 +145,7 @@ namespace RealtyModel.Service
                 FilteredObjects.RemoveAll(x => x.GeneralInfo.Condition == "Без внутренней отделки");
             }
         }
+        private List<BaseRealtorObject> filteredObjects = new List<BaseRealtorObject>();
 
         public int MinimumPrice {
             get => minimumPrice;
@@ -292,10 +270,6 @@ namespace RealtyModel.Service
             get => isElectro;
             set => isElectro = value;
         }
-        public List<BaseRealtorObject> FilteredObjects {
-            get => filteredObjects;
-            set => filteredObjects = value;
-        }
         public bool IsTPSWater {
             get => isTPSWater;
             set => isTPSWater = value;
@@ -365,6 +339,32 @@ namespace RealtyModel.Service
             }
         }
 
+        public List<BaseRealtorObject> FilteredObjects {
+            get => filteredObjects;
+            set => filteredObjects = value;
+        }
+        public List<BaseRealtorObject> CreateFilteredList(List<BaseRealtorObject> allObjects) {
+            FilteredObjects.Clear();
+            FilteredObjects.AddRange(allObjects.Where(x => MaximumPrice >= x.Cost.Price).Where(x => MinimumPrice <= x.Cost.Price).ToList());
+            FilteredObjects = FilteredObjects.Where(x => MaximumArea >= x.Cost.Area).Where(x => MinimumArea <= x.Cost.Area).ToList();
+            if (HasMortgage) {
+                FilteredObjects.RemoveAll(x => x.Cost.HasMortgage == false);
+            }
+            FilterByObjectType();
+            FilterByStatus();
+            FilterByCondition();
+            FilterByHeating();
+            FilterByHotWater();
+            FilterByLocation();
+            //------------------------------ Потом убрать --------------------------
+         
+                var newFilteredObjects = new List<BaseRealtorObject>();
+                int count = FilteredObjects.Count > 50 ? 50 : FilteredObjects.Count;
+                for (int i = 0; i < count; i++) { newFilteredObjects.Add(FilteredObjects[i]); }
+
+            //----------------------------------------------------------------------
+            return newFilteredObjects;
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string property = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));

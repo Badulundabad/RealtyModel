@@ -10,9 +10,9 @@ namespace RealtyModel.Event.RealtyEvents
     public class ReceivedPhotoEventArgs
     {
         public OperationType OperationType { get; set; }
-        public Byte[] Data { get; set; }
+        public String Data { get; set; }
 
-        public ReceivedPhotoEventArgs(OperationType type, Byte[] data)
+        public ReceivedPhotoEventArgs(OperationType type, String data)
         {
             OperationType = type;
             Data = data;
