@@ -2,6 +2,7 @@
 using RealtyModel.Model.RealtyObjects;
 using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
 
@@ -17,11 +18,16 @@ namespace RealtyModel.Model.Base
         private String agent = "";
         private Boolean isSold = false;
         private Boolean hasExclusive = false;
+        private Boolean hasBaseChanges = false;
+        private Boolean hasAlbumChanges = false;
+        private Boolean hasCustomerChanges = false;
+        private Boolean hasLocationChanges = false;
         private Status status = Status.Active;
         private Cost cost = new Cost();
         private BaseInfo generalInfo;
         private DateTime lastUpdateTime;
         private DateTime registrationDate;
+
 
         public Int32 Id
         {
@@ -130,6 +136,15 @@ namespace RealtyModel.Model.Base
                 registrationDate = value;
             }
         }
+
+        [NotMapped]
+        public Boolean HasBaseChanges { get => hasBaseChanges; set => hasBaseChanges = value; }
+        [NotMapped]
+        public Boolean HasAlbumChanges { get => hasAlbumChanges; set => hasAlbumChanges = value; }
+        [NotMapped]
+        public Boolean HasCustomerChanges { get => hasCustomerChanges; set => hasCustomerChanges = value; }
+        [NotMapped]
+        public Boolean HasLocationChanges { get => hasLocationChanges; set => hasLocationChanges = value; }
 
         public void OnPropertyChanged([CallerMemberName] String property = null)
         {
