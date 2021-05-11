@@ -17,7 +17,7 @@ namespace RealtyModel.Model.Operations
         Photo = 6,
         Agent = 7,
         Query = 8,
-        All = 9,
+        Lists = 9,
         None = 10
     }
 }

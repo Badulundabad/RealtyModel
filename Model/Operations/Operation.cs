@@ -24,5 +24,20 @@ namespace RealtyModel.Model.Operations
             IpAddress = ip;
             Number = number;
         }
+
+        public Operation GetCopy()
+        {
+            return new Operation()
+            {
+                Name = this.Name,
+                Token = this.Token,
+                IpAddress = this.IpAddress,
+                Number = this.Number,
+                Parameters = this.Parameters,
+                Data = this.Data,
+                IsBroadcast = this.IsBroadcast,
+                IsSuccessfully = this.IsSuccessfully
+            };
+        }
     }
 }
