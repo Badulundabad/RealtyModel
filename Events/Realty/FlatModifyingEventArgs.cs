@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RealtyModel.Events.Realty
 {
-    public class FlatChangingEventArgs
+    public class FlatModifyingEventArgs
     {
         private Flat flat = new Flat();
         public Flat Flat
@@ -16,10 +16,10 @@ namespace RealtyModel.Events.Realty
             set => flat = value;
         }
 
-        public FlatChangingEventArgs()
+        public FlatModifyingEventArgs()
         {
         }
-        public FlatChangingEventArgs(Flat flat)
+        public FlatModifyingEventArgs(Flat flat)
         {
             this.Flat = flat;
         }
