@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Model
 {
+    [Serializable]
     public class Customer : INotifyPropertyChanged
     {
         Int32 id;
@@ -56,6 +57,7 @@ namespace RealtyModel.Model
             }
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] String prop = null)
         {

@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Model.Base
 {
-    [ComplexType]
+    [ComplexType, Serializable]
     public class BaseInfo : INotifyPropertyChanged
     {
         private Int32 year = 1950;
@@ -19,6 +19,7 @@ namespace RealtyModel.Model.Base
         private string convenience = "";
         private string heating = "";
         private string condition = "";
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Water

@@ -8,6 +8,7 @@ using System.Text.Json.Serialization;
 
 namespace RealtyModel.Model.Base
 {
+    [Serializable]
     public class BaseRealtorObject : INotifyPropertyChanged
     {
         private Int32 id;
@@ -150,6 +151,7 @@ namespace RealtyModel.Model.Base
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

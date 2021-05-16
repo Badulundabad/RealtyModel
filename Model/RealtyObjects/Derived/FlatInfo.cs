@@ -6,7 +6,7 @@ using RealtyModel.Model.Base;
 
 namespace RealtyModel.Model.Derived
 {
-    [ComplexType]
+    [ComplexType, Serializable]
     public class FlatInfo : INotifyPropertyChanged
     {
         private string material = "";
@@ -231,6 +231,7 @@ namespace RealtyModel.Model.Derived
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

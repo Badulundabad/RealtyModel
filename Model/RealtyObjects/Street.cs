@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace RealtyModel.Model
 {
-     public class Street
+    [Serializable]
+    public class Street
     {
-        public override string ToString() {
+        public override string ToString()
+        {
             return this.Name;
         }
         public Int32 Id { get; set; }

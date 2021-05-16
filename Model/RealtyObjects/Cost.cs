@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Model
 {
-    [ComplexType]
+    [ComplexType, Serializable]
     public class Cost : INotifyPropertyChanged
     {
         Int32 area;
@@ -63,6 +63,7 @@ namespace RealtyModel.Model
         public void OnPropertyChanged([CallerMemberName] string property = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -10,6 +10,7 @@ using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Service
 {
+    [Serializable]
     public class Filter : INotifyPropertyChanged
     {
         private bool isFlat = true;
@@ -404,6 +405,7 @@ namespace RealtyModel.Service
                 filteredList.RemoveAll(x => x.GeneralInfo.Condition == "Без внутренней отделки");
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string property = null)
         {

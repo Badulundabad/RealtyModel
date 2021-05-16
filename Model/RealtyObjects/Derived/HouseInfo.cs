@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Model.Derived
 {
+    [Serializable]
     public class HouseInfo : INotifyPropertyChanged
     {
         string typeOfHouse = "";
@@ -154,6 +155,7 @@ namespace RealtyModel.Model.Derived
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

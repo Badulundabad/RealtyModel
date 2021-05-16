@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace RealtyModel.Model
 {
+    [Serializable]
     public class FlatOptions
     {
         readonly List<string> types = new List<string>() {

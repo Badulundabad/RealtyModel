@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace RealtyModel.Model
 {
+    [Serializable]
     public class LocationOptions
     {
         private ObservableCollection<City> cities = new ObservableCollection<City>();

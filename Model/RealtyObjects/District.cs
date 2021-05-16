@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace RealtyModel.Model
 {
+    [Serializable]
     public class District
     {
         public override string ToString() {

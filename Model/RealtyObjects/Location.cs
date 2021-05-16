@@ -6,6 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace RealtyModel.Model
 {
+    [Serializable]
     public class Location
     {
         public Int32 Id { get; set; }

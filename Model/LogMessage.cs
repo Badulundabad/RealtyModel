@@ -2,6 +2,7 @@
 
 namespace RealtyModel.Model
 {
+    [Serializable]
     public class LogMessage
     {
         public string DateTime { get; private set; }

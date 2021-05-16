@@ -3,6 +3,7 @@ using RealtyModel.Model.Base;
 
 namespace RealtyModel.Model.Derived
 {
+    [Serializable]
     public class Flat : BaseRealtorObject
     {
         public FlatInfo Info { get; set; }

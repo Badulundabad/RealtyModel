@@ -8,6 +8,7 @@ using System.Text.Json.Serialization;
 
 namespace RealtyModel.Model.RealtyObjects
 {
+    [Serializable]
     public class Photo
     {
         [Key]

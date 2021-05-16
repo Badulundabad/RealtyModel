@@ -2,6 +2,7 @@
 
 namespace RealtyModel.Model.Operations
 {
+    [Serializable]
     public class Operation
     {
         public String Name { get; set; }

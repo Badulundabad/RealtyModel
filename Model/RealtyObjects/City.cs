@@ -11,6 +11,7 @@ using System.Text.Json.Serialization;
 
 namespace RealtyModel.Model
 {
+    [Serializable]
     public class City : INotifyPropertyChanged
     {
         //private Int32 id;
@@ -39,6 +40,7 @@ namespace RealtyModel.Model
         public Int32 Id { get; set; }
         public String Name { get; set; }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = null)
         {

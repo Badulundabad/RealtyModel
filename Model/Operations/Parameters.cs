@@ -2,6 +2,7 @@
 
 namespace RealtyModel.Model.Operations
 {
+    [Serializable]
     public class Parameters
     {
         private Initiator initiator;
