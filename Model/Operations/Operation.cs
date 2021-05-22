@@ -11,7 +11,7 @@ namespace RealtyModel.Model.Operations
         public String IpAddress { get; set; }
         public String Number { get; set; }
         public Parameters Parameters { get; set; }
-        public String Data { get; set; }
+        public Byte[] Data { get; set; }
         public Boolean IsSuccessfully { get; set; }
 
         public Operation()
