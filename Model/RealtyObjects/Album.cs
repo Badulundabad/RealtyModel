@@ -16,11 +16,13 @@ namespace RealtyModel.Model
         public Int32 Id { get; set; }
         public String PhotoKeys { get; set; }
         public String Location { get; set; }
-        public String PreviewJson { get; set; }
-        
-        [JsonIgnore, NotMapped]
         public Byte[] Preview { get; set; }
-        [JsonIgnore, NotMapped]
+        
+        //[NotMapped]
+        //public Byte[] PhotoCollectionBytes { get; set; }
+        //[NotMapped]
+        //public Byte[] Preview { get; set; }
+        [NotMapped]
         public ObservableCollection<Byte[]> PhotoCollection { get; set; }
 
         public void GetPhotosFromCollection(IEnumerable<Photo> photos)

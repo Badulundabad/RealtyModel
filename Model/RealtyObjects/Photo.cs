@@ -15,15 +15,6 @@ namespace RealtyModel.Model.RealtyObjects
         public Int32 Id { get; set; }
         public String Location { get; set; }
         public Target ObjectType { get; set; }
-        public String DataJson { get; set; }
-
-        public void FillData()
-        {
-            Data = JsonSerializer.Deserialize<Byte[]>(DataJson);
-        }
-        [NotMapped, JsonIgnore]
         public Byte[] Data { get; set; }
-        [NotMapped, JsonIgnore]
-        public String Guid { get; set; }
     }
 }

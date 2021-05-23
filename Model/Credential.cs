@@ -37,20 +37,6 @@ namespace RealtyModel.Model
             this.dispatcher = dispatcher;
         }
 
-        [NotMapped]
-        public String IpAddress { get; set; }
-        [NotMapped]
-        public String Token { get; set; }
-        [NotMapped]
-        public Boolean IsLoggedIn
-        {
-            get => isLoggedIn;
-            private set
-            {
-                isLoggedIn = value;
-                OnPropertyChanged();
-            }
-        }
         public Int32 Id
         {
             get => id;
@@ -93,6 +79,20 @@ namespace RealtyModel.Model
             set
             {
                 registrationDate = value;
+                OnPropertyChanged();
+            }
+        }
+        [NotMapped]
+        public String IpAddress { get; set; }
+        [NotMapped]
+        public String Token { get; set; }
+        [NotMapped]
+        public Boolean IsLoggedIn
+        {
+            get => isLoggedIn;
+            private set
+            {
+                isLoggedIn = value;
                 OnPropertyChanged();
             }
         }
