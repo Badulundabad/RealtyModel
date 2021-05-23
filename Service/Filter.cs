@@ -5,6 +5,7 @@ using RealtyModel.Model.RealtyObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
@@ -308,11 +309,12 @@ namespace RealtyModel.Service
                 FilterByHeating();
                 FilterByHotWater();
                 FilterByLocation();
-                return FilterBy25();
+                return FilterBy25() ?? new Flat[0][];
             }
             catch
             {
-                return null;
+                Debug.WriteLine("Массив массивов = null");
+                return new Flat[0][];
             }
         }
         private Flat[][] FilterBy25()

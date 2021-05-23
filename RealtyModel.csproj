@@ -52,6 +52,7 @@
     <Compile Include="Events\Identity\LoggingOutEventArgs.cs" />
     <Compile Include="Events\Identity\RegisteredEventArgs.cs" />
     <Compile Include="Events\Identity\RegisteringEventArgs.cs" />
+    <Compile Include="Events\Realty\ListsArrivedEventArgs.cs" />
     <Compile Include="Events\NetworkEventHandlers.cs" />
     <Compile Include="Events\Network\ConnectedEventArgs.cs" />
     <Compile Include="Events\Network\ConnectingEventArgs.cs" />

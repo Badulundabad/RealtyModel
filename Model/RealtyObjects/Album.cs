@@ -18,10 +18,6 @@ namespace RealtyModel.Model
         public String Location { get; set; }
         public Byte[] Preview { get; set; }
         
-        //[NotMapped]
-        //public Byte[] PhotoCollectionBytes { get; set; }
-        //[NotMapped]
-        //public Byte[] Preview { get; set; }
         [NotMapped]
         public ObservableCollection<Byte[]> PhotoCollection { get; set; }
 
