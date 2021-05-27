@@ -309,27 +309,37 @@ namespace RealtyModel.Service
                 FilterByHeating();
                 FilterByHotWater();
                 FilterByLocation();
-                return FilterBy25() ?? new Flat[0][];
+                Debug.WriteLine(filteredList.Count);
+                return FilterBy25();
             }
-            catch
+            catch (Exception ex)
             {
-                Debug.WriteLine("Массив массивов = null");
-                return new Flat[0][];
+                Debug.WriteLine(ex.Message);
+                return null;
             }
         }
         private Flat[][] FilterBy25()
         {
-            Int32 arrayCount = (filteredList.Count / 25) + 1;
-            Int32 reminder = filteredList.Count % 25;
-            Flat[][] flats = new Flat[arrayCount][];
-            for (Int32 number = 0; number < arrayCount; number++)
+            if (filteredList.Count > 0)
             {
-                if (number != arrayCount)
-                    filteredList.CopyTo(number * 25, flats[number], 0, 25);
+                if (filteredList.Count > 25)
+                {
+                    Int32 arrayCount = (filteredList.Count / 25) + 1;
+                    Int32 reminder = filteredList.Count % 25;
+                    Flat[][] flats = new Flat[arrayCount][];
+                    for (Int32 number = 0; number < arrayCount; number++)
+                    {
+                        if (number != arrayCount)
+                            filteredList.CopyTo(number * 25, flats[number], 0, 25);
+                        else
+                            filteredList.CopyTo(number * 25, flats[number], 0, reminder);
+                    }
+                    return flats;
+                }
                 else
-                    filteredList.CopyTo(number * 25, flats[number], 0, reminder);
+                    return new Flat[][] { filteredList.ToArray() };
             }
-            return flats;
+            else return null;
         }
 
         private void FilterByLocation()
