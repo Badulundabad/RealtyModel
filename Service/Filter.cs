@@ -309,7 +309,6 @@ namespace RealtyModel.Service
                 FilterByHeating();
                 FilterByHotWater();
                 FilterByLocation();
-                Debug.WriteLine(filteredList.Count);
                 return FilterBy25();
             }
             catch (Exception ex)

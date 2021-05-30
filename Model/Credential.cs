@@ -16,9 +16,11 @@ namespace RealtyModel.Model
         private String name;
         private String password;
         private String email;
-        private Boolean isLoggedIn = false;
-        private DateTime registrationDate = new DateTime();
+        private Role role;
+        private Boolean isLoggedIn;
+        private DateTime registrationDate;
         private Dispatcher dispatcher;
+
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
         [field: NonSerialized]
@@ -35,6 +37,7 @@ namespace RealtyModel.Model
         public Credential(Dispatcher dispatcher)
         {
             this.dispatcher = dispatcher;
+            role = Role.User;
         }
 
         public Int32 Id
@@ -73,6 +76,7 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
+        public Role Role { get => role; set => role = value; }
         public DateTime RegistrationDate
         {
             get => registrationDate;
@@ -82,6 +86,7 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
+
         [NotMapped]
         public String IpAddress { get; set; }
         [NotMapped]

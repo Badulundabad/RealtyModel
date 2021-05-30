@@ -74,8 +74,10 @@
     <Compile Include="Events\Identity\LoggedInEventArgs.cs" />
     <Compile Include="Events\Identity\LoggingInEventArgs.cs" />
     <Compile Include="Events\Realty\FlatModifyingEventArgs.cs" />
+    <Compile Include="Exceptions\InformationalException.cs" />
     <Compile Include="Model\BinarySerializer.cs" />
     <Compile Include="Model\Operations\Initiator.cs" />
+    <Compile Include="Model\Role.cs" />
     <Compile Include="Model\RealtyObjects\City.cs" />
     <Compile Include="Interface\IDoubleNumericUpDown.cs" />
     <Compile Include="Interface\IIntegerNumericUpDown.cs" />
@@ -93,7 +95,6 @@
     <Compile Include="Model\RealtyObjects\FlatOptions.cs" />
     <Compile Include="Model\RealtyObjects\Location.cs" />
     <Compile Include="Model\RealtyObjects\LocationOptions.cs" />
-    <Compile Include="Model\LogMessage.cs" />
     <Compile Include="Model\Operations\Operation.cs" />
     <Compile Include="Model\Operations\Direction.cs" />
     <Compile Include="Model\Operations\Parameters.cs" />

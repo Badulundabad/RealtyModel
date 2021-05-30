@@ -28,17 +28,7 @@ namespace RealtyModel.Model.Operations
 
         public Operation GetCopy()
         {
-            return new Operation()
-            {
-                Name = this.Name,
-                Token = this.Token,
-                IpAddress = this.IpAddress,
-                Number = this.Number,
-                Parameters = this.Parameters,
-                Data = this.Data,
-                IsBroadcast = this.IsBroadcast,
-                IsSuccessfully = this.IsSuccessfully
-            };
+            return (Operation)this.MemberwiseClone();
         }
     }
 }
