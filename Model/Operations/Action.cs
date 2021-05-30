@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace RealtyModel.Model.Operations
 {
-    public enum Act
+    public enum Action
     {
         Register = 0,
-        Dismiss = 1,
-        Login = 2,
-        Logout = 3,
-        Add = 4,
-        Change = 5,
-        Delete = 6,
-        Request = 7
+        Login = 1,
+        Add = 2,
+        Change = 3,
+        Delete = 4,
+        Request = 5
     }
 }

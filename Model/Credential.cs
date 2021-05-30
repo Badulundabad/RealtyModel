@@ -18,25 +18,13 @@ namespace RealtyModel.Model
         private String email;
         private Boolean isLoggedIn = false;
         private DateTime registrationDate = new DateTime();
-        private Dispatcher dispatcher;
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
-        [field: NonSerialized]
-        public event LoggedInEventHandler LoggedIn;
-        [field: NonSerialized]
-        public event LoggedOutEventHandler LoggedOut;
-        [field: NonSerialized]
-        public event RegisteredEventHandler Registered;
 
         public Credential()
         {
 
         }
-        public Credential(Dispatcher dispatcher)
-        {
-            this.dispatcher = dispatcher;
-        }
-
         public Int32 Id
         {
             get => id;
@@ -97,24 +85,6 @@ namespace RealtyModel.Model
             }
         }
 
-        public void OnLoggedIn()
-        {
-            IsLoggedIn = true;
-            LoggedIn?.Invoke(this, new LoggedInEventArgs(Name));
-        }
-        public void OnLoggedOut()
-        {
-            IsLoggedIn = false;
-            LoggedOut?.Invoke(this, new LoggedInEventArgs(Name));
-        }
-        public void OnRegistered()
-        {
-            dispatcher.Invoke(new Action(() =>
-            {
-                IsLoggedIn = false;
-                Registered?.Invoke(this, new LoggedInEventArgs(Name));
-            }));
-        }
         public void OnPropertyChanged([CallerMemberName] String property = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));

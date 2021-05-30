@@ -5,40 +5,42 @@ namespace RealtyModel.Model.Operations
     [Serializable]
     public class Operation
     {
-        public String Name { get; set; }
-        public String Token { get; set; }
-        public Boolean IsBroadcast { get; set; }
-        public String IpAddress { get; set; }
-        public String Number { get; set; }
-        public Parameters Parameters { get; set; }
-        public Byte[] Data { get; set; }
-        public Boolean IsSuccessfully { get; set; }
-
-        public Operation()
-        {
+        private Target target;
+        private Action action;
+        private byte[] data;
+        public Operation() {
 
         }
-        public Operation(String name, String token, String ip, String number)
-        {
-            Name = name;
-            Token = token;
-            IpAddress = ip;
-            Number = number;
+        public Operation(Action action, Target target) {
+            this.action = action;
+            this.target = target;
         }
-
-        public Operation GetCopy()
-        {
-            return new Operation()
-            {
-                Name = this.Name,
-                Token = this.Token,
-                IpAddress = this.IpAddress,
-                Number = this.Number,
-                Parameters = this.Parameters,
-                Data = this.Data,
-                IsBroadcast = this.IsBroadcast,
-                IsSuccessfully = this.IsSuccessfully
-            };
+        public Operation(Action action) {
+            this.action = action;
+            this.Target = Target.None;
+        }
+        public Operation(byte[] data, Action action, Target target) {
+            this.Data = data;
+            this.action = action;
+            this.target = target;
+        }
+        public Operation(byte[] data, Action action) {
+            this.Data = data;
+            this.action = action;
+            this.Target = Target.None;
+        }
+        public Boolean IsSuccessfully {
+            get; set;
+        }
+        public byte[] Data {
+            get => data;
+            set => data = value;
+        }
+        public Target Target {
+            get => target; set => target = value;
+        }
+        public Action Action {
+            get => action; set => action = value;
         }
     }
 }

@@ -392,8 +392,6 @@ namespace RealtyModel.Service
         }
         private void FilterByObjectType()
         {
-            if (!IsPlot)
-                filteredList.RemoveAll(x => x.Type == Target.Plot);
             if (!IsHouse)
                 filteredList.RemoveAll(x => x.Type == Target.House);
             if (!IsFlat)

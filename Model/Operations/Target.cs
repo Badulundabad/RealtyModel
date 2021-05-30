@@ -10,14 +10,12 @@ namespace RealtyModel.Model.Operations
     {
         Flat = 0,
         House = 1,
-        Plot = 2,
-        City = 3,
-        District = 4,
-        Street = 5,
-        Photo = 6,
-        Agent = 7,
-        Query = 8,
-        Lists = 9,
-        None = 10
+        City = 2,
+        District = 3,
+        Street = 4,
+        Photo = 5,
+        Agent = 6,
+        Locations = 7,
+        None = 8
     }
 }
