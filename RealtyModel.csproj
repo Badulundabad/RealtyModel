@@ -76,6 +76,8 @@
     <Compile Include="Events\Realty\FlatModifyingEventArgs.cs" />
     <Compile Include="Model\BinarySerializer.cs" />
     <Compile Include="Model\Operations\Action.cs" />
+    <Compile Include="Model\Operations\Response.cs" />
+    <Compile Include="Model\Operations\ErrorCode.cs" />
     <Compile Include="Model\Operations\Initiator.cs" />
     <Compile Include="Model\RealtyObjects\City.cs" />
     <Compile Include="Interface\IDoubleNumericUpDown.cs" />

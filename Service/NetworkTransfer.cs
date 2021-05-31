@@ -1,4 +1,5 @@
 ﻿using RealtyModel.Model;
+using RealtyModel.Model.Operations;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,7 +12,7 @@ namespace RealtyModel.Service
 {
     public static class NetworkTransfer
     {
-        public static byte[] ReceiveData(NetworkStream stream) {
+        public static Operation ReceiveOperation(NetworkStream stream) {
             try {
                 List<byte> byteList = new List<byte>();
                 int size = GetSize(stream);
@@ -24,16 +25,43 @@ namespace RealtyModel.Service
                     byteList.AddRange(receivedData);
                 }
                 Debug.WriteLine($"Total bytes received {byteList.Count}");
-                return byteList.ToArray();
+                return BinarySerializer.Deserialize<Operation>(byteList.ToArray());
             } catch (Exception ex) {
                 Debug.WriteLine($"(ReceiveData) {ex.Message}");
-                return new byte[0];
+                return new Operation();
             }
         }
-        public static void SendData(byte[] data, NetworkStream stream) {
-            byte[] sizeBlob = BitConverter.GetBytes(data.Length);
+        public static Response ReceiveResponse(NetworkStream stream) {
+            try {
+                List<byte> byteList = new List<byte>();
+                int size = GetSize(stream);
+                while (byteList.Count < size) {
+                    byte[] buffer = new byte[8192];
+                    int bytes = stream.Read(buffer, 0, buffer.Length);
+                    Debug.WriteLine($"Received {bytes} bytes");
+                    byte[] receivedData = new byte[bytes];
+                    Array.Copy(buffer, receivedData, bytes);
+                    byteList.AddRange(receivedData);
+                }
+                Debug.WriteLine($"Total bytes received {byteList.Count}");
+                Response response = BinarySerializer.Deserialize<Response>(byteList.ToArray());
+                return response;
+            } catch (Exception ex) {
+                Debug.WriteLine($"(ReceiveData) {ex.Message}");
+                return new Response(Array.Empty<byte>(), ErrorCode.Unknown);
+            }
+        }
+        public static void SendOperation(Operation operation, NetworkStream stream) {
+            byte[] rawOperation = BinarySerializer.Serialize(operation);
+            byte[] sizeBlob = BitConverter.GetBytes(rawOperation.Length);
             stream.Write(sizeBlob, 0, 4);
-            stream.Write(data, 0, data.Length);
+            stream.Write(rawOperation, 0, rawOperation.Length);
+        }
+        public static void SendResponse(Response response, NetworkStream stream) {
+            byte[] rawResponse = BinarySerializer.Serialize(response);
+            byte[] sizeBlob = BitConverter.GetBytes(rawResponse.Length);
+            stream.Write(sizeBlob, 0, 4);
+            stream.Write(rawResponse, 0, rawResponse.Length);
         }
         private static int GetSize(NetworkStream stream) {
             byte[] buffer = new byte[4];
