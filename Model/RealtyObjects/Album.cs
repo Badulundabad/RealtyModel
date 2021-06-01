@@ -1,10 +1,5 @@
-﻿using RealtyModel.Model.RealtyObjects;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics;
-using System.Linq;
+﻿using System;
+
 namespace RealtyModel.Model
 {
     [Serializable]

@@ -14,6 +14,7 @@ namespace RealtyModel.Model.Base
         private Int32 id;
         private Int32 customerId;
         private Int32 albumId;
+        private Album album = new Album();
         private Int32 locationId;
         private Target type = Target.None;
         private String agent = "";
@@ -145,7 +146,11 @@ namespace RealtyModel.Model.Base
         }
 
         [NotMapped]
-        public Album Album { get; set; }
+        public Album Album
+        {
+            get => album;
+            set => album = value;
+        }
         [NotMapped]
         public Boolean HasBaseChanges { get => hasBaseChanges; set => hasBaseChanges = value; }
         [NotMapped]
