@@ -14,6 +14,7 @@ namespace RealtyModel.Model.Operations
         Unknown = 3,
         NoRequiredData = 4,
         FlatAddedSuccessfuly = 5,
-        NoCode = 6
+        NoCode = 6,
+        NoLocations = 7
     }
 }

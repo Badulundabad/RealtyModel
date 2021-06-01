@@ -51,6 +51,25 @@ namespace RealtyModel.Service
                 return new Response(Array.Empty<byte>(), ErrorCode.Unknown);
             }
         }
+        public static T ReceiveResponse<T>(NetworkStream stream) {
+            try {
+                List<byte> byteList = new List<byte>();
+                int size = GetSize(stream);
+                while (byteList.Count < size) {
+                    byte[] buffer = new byte[8192];
+                    int bytes = stream.Read(buffer, 0, buffer.Length);
+                    Debug.WriteLine($"Received {bytes} bytes");
+                    byte[] receivedData = new byte[bytes];
+                    Array.Copy(buffer, receivedData, bytes);
+                    byteList.AddRange(receivedData);
+                }
+                Debug.WriteLine($"Total bytes received {byteList.Count}");
+                return BinarySerializer.Deserialize<T>(byteList.ToArray());
+            } catch (Exception ex) {
+                Debug.WriteLine($"(ReceiveData) {ex.Message}");
+                return (T)Activator.CreateInstance(typeof(T));
+            }
+        }
         public static void SendOperation(Operation operation, NetworkStream stream) {
             byte[] rawOperation = BinarySerializer.Serialize(operation);
             byte[] sizeBlob = BitConverter.GetBytes(rawOperation.Length);

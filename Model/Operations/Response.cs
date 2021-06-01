@@ -11,6 +11,13 @@ namespace RealtyModel.Model.Operations
     {
         private byte[] data;
         private ErrorCode code;
+        /// <summary>
+        /// Принимает данные и устанавливает и присваивает ErrorCode.NoCode
+        /// </summary>
+        public Response(byte[] data) {
+            this.Data = data;
+            this.Code = ErrorCode.NoCode;
+        }
         public Response(byte[] data, ErrorCode error) {
             this.Data = data;
             this.Code = error;
