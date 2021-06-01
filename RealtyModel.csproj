@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BitmapImageTranscoder">
+      <HintPath>..\BitmapImageTranscoder\bin\Debug\BitmapImageTranscoder.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -75,7 +78,7 @@
     <Compile Include="Events\Identity\LoggingInEventArgs.cs" />
     <Compile Include="Events\Realty\FlatModifyingEventArgs.cs" />
     <Compile Include="Exceptions\InformationalException.cs" />
-    <Compile Include="Model\BinarySerializer.cs" />
+    <Compile Include="Service\BinarySerializer.cs" />
     <Compile Include="Model\Operations\Initiator.cs" />
     <Compile Include="Model\Role.cs" />
     <Compile Include="Model\RealtyObjects\City.cs" />
@@ -109,6 +112,5 @@
     <Compile Include="Service\CheckAndHeightPair.cs" />
     <Compile Include="Service\Filter.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,9 +1,10 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Windows.Media.Imaging;
 
-namespace RealtyModel.Model
+namespace RealtyModel.Service
 {
-    public class BinarySerializer
+    public static class BinarySerializer
     {
         public static byte[] Serialize<T>(T obj)
         {

@@ -28,7 +28,7 @@ namespace RealtyModel.Model.Base
         private BaseInfo generalInfo;
         private DateTime lastUpdateTime;
         private DateTime registrationDate;
-
+        private DateTime lastCallTime;
 
         public Int32 Id
         {
@@ -66,21 +66,13 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
+
         public String Agent
         {
             get => agent;
             set
             {
                 agent = value;
-                OnPropertyChanged();
-            }
-        }
-        public Target Type
-        {
-            get => type;
-            set
-            {
-                type = value;
                 OnPropertyChanged();
             }
         }
@@ -102,11 +94,21 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
+        public Target Type
+        {
+            get => type;
+            set
+            {
+                type = value;
+                OnPropertyChanged();
+            }
+        }
         public Status Status
         {
             get => status;
             set => status = value;
         }
+        public Byte[] Preview { get; set; }
         public Cost Cost
         {
             get => cost;
@@ -116,7 +118,6 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Album Album { get; set; }
         public Customer Customer { get; set; }
         public Location Location { get; set; }
         public BaseInfo GeneralInfo
@@ -137,7 +138,14 @@ namespace RealtyModel.Model.Base
                 registrationDate = value;
             }
         }
+        public DateTime LastCallTime 
+        { 
+            get => lastCallTime;
+            set => lastCallTime = value;
+        }
 
+        [NotMapped]
+        public Album Album { get; set; }
         [NotMapped]
         public Boolean HasBaseChanges { get => hasBaseChanges; set => hasBaseChanges = value; }
         [NotMapped]

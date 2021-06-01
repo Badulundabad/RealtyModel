@@ -15,9 +15,10 @@ namespace RealtyModel.Model.Operations
         District = 4,
         Street = 5,
         Photo = 6,
-        Agent = 7,
-        Query = 8,
-        Lists = 9,
-        None = 10
+        CompressedPhoto = 7,
+        Agent = 8,
+        Query = 9,
+        Lists = 10,
+        None = 11
     }
 }

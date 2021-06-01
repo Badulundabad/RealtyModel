@@ -1,10 +1,6 @@
-﻿using RealtyModel.Model.Operations;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using RealtyModel.Model.Operations;
 
 namespace RealtyModel.Model.RealtyObjects
 {
