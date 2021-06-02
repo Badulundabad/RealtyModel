@@ -15,6 +15,8 @@ namespace RealtyModel.Model.Operations
         NoRequiredData = 4,
         FlatAddedSuccessfuly = 5,
         NoCode = 6,
-        NoLocations = 7
+        NoLocations = 7,
+        ServerUnavailable = 8,
+        NoRealtorObjects = 9
     }
 }

@@ -15,14 +15,9 @@ namespace RealtyModel.Model.Base
         private Int32 customerId;
         private Int32 albumId;
         private Int32 locationId;
+        private bool hasExclusive;
         private Target type = Target.None;
         private String agent = "";
-        private Boolean isSold = false;
-        private Boolean hasExclusive = false;
-        private Boolean hasBaseChanges = false;
-        private Boolean hasAlbumChanges = false;
-        private Boolean hasCustomerChanges = false;
-        private Boolean hasLocationChanges = false;
         private Status status = Status.Active;
         private Cost cost = new Cost();
         private BaseInfo generalInfo;
@@ -84,24 +79,6 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Boolean IsSold
-        {
-            get => isSold;
-            set
-            {
-                isSold = value;
-                OnPropertyChanged();
-            }
-        }
-        public Boolean HasExclusive
-        {
-            get => hasExclusive;
-            set
-            {
-                hasExclusive = value;
-                OnPropertyChanged();
-            }
-        }
         public Status Status
         {
             get => status;
@@ -138,14 +115,13 @@ namespace RealtyModel.Model.Base
             }
         }
 
-        [NotMapped]
-        public Boolean HasBaseChanges { get => hasBaseChanges; set => hasBaseChanges = value; }
-        [NotMapped]
-        public Boolean HasAlbumChanges { get => hasAlbumChanges; set => hasAlbumChanges = value; }
-        [NotMapped]
-        public Boolean HasCustomerChanges { get => hasCustomerChanges; set => hasCustomerChanges = value; }
-        [NotMapped]
-        public Boolean HasLocationChanges { get => hasLocationChanges; set => hasLocationChanges = value; }
+        public bool HasExclusive {
+            get => hasExclusive;
+            set {
+                hasExclusive = value;
+                OnPropertyChanged();
+            }
+        }
 
         public void OnPropertyChanged([CallerMemberName] String property = null)
         {

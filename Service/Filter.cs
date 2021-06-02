@@ -52,6 +52,7 @@ namespace RealtyModel.Service
         private string district = "";
         private List<Flat> filteredList = new List<Flat>();
 
+        #region Properties
         public int MinimumPrice
         {
             get => minimumPrice;
@@ -293,24 +294,31 @@ namespace RealtyModel.Service
                 OnPropertyChanged();
             }
         }
-
-        public Flat[][] CreateFilteredList(IEnumerable<Flat> flats)
+        #endregion
+        public Flat[] FilterFlats(Flat[] flats)
         {
             try
             {
                 filteredList.Clear();
                 filteredList.AddRange(flats.Where(x => MaximumPrice >= x.Cost.Price).Where(x => MinimumPrice <= x.Cost.Price).ToList());
+                Debug.WriteLine($"Цены { filteredList.Count}");
                 filteredList = filteredList.Where(x => MaximumArea >= x.Cost.Area).Where(x => MinimumArea <= x.Cost.Area).ToList();
+                Debug.WriteLine($"Площадь { filteredList.Count}");
                 if (HasMortgage)
                     filteredList.RemoveAll(x => x.Cost.HasMortgage == false);
                 FilterByObjectType();
+                Debug.WriteLine($"Тип { filteredList.Count}");
                 FilterByStatus();
+                Debug.WriteLine($"Статус { filteredList.Count}");
                 FilterByCondition();
+                Debug.WriteLine($"Условия { filteredList.Count}");
                 FilterByHeating();
+                Debug.WriteLine($"Отопление{ filteredList.Count}");
                 FilterByHotWater();
+                Debug.WriteLine($"Вода{ filteredList.Count}");
                 FilterByLocation();
-                Debug.WriteLine(filteredList.Count);
-                return FilterBy25();
+                Debug.WriteLine($"Места { filteredList.Count}");
+                return filteredList.ToArray();
             }
             catch (Exception ex)
             {
@@ -318,29 +326,29 @@ namespace RealtyModel.Service
                 return null;
             }
         }
-        private Flat[][] FilterBy25()
-        {
-            if (filteredList.Count > 0)
-            {
-                if (filteredList.Count > 25)
-                {
-                    Int32 arrayCount = (filteredList.Count / 25) + 1;
-                    Int32 reminder = filteredList.Count % 25;
-                    Flat[][] flats = new Flat[arrayCount][];
-                    for (Int32 number = 0; number < arrayCount; number++)
-                    {
-                        if (number != arrayCount)
-                            filteredList.CopyTo(number * 25, flats[number], 0, 25);
-                        else
-                            filteredList.CopyTo(number * 25, flats[number], 0, reminder);
-                    }
-                    return flats;
-                }
-                else
-                    return new Flat[][] { filteredList.ToArray() };
-            }
-            else return null;
-        }
+        //private Flat[][] SplitBy()
+        //{
+        //    if (filteredList.Count > 0)
+        //    {
+        //        if (filteredList.Count > 25)
+        //        {
+        //            Int32 count = (filteredList.Count / 25) + 1;
+        //            Int32 reminder = filteredList.Count % 25;
+        //            Flat[][] flats = new Flat[count][];
+        //            for (Int32 number = 0; number < count; number++)
+        //            {
+        //                if (number != count)
+        //                    filteredList.CopyTo(number * 25, flats[number], 0, 25);
+        //                else
+        //                    filteredList.CopyTo(number * 25, flats[number], 0, reminder);
+        //            }
+        //            return flats;
+        //        }
+        //        else
+        //            return new Flat[][] { filteredList.ToArray() };
+        //    }
+        //    else return null;
+        //}
 
         private void FilterByLocation()
         {

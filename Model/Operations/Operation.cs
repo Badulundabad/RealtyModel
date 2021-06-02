@@ -11,23 +11,22 @@ namespace RealtyModel.Model.Operations
         public Operation() {
 
         }
+        public Operation(Action action, Target target, byte[] data) {
+            this.Action = action;
+            this.Target = target;
+            this.Data = data;
+        }
         public Operation(Action action, Target target) {
-            this.action = action;
-            this.target = target;
+            this.Action = action;
+            this.Target = target;
         }
         public Operation(Action action) {
-            this.action = action;
+            this.Action = action;
             this.Target = Target.None;
         }
-        public Operation(byte[] data, Action action, Target target) {
+        public Operation(Action action, byte[] data) {
+            this.Action = action;
             this.Data = data;
-            this.action = action;
-            this.target = target;
-        }
-        public Operation(byte[] data, Action action) {
-            this.Data = data;
-            this.action = action;
-            this.Target = Target.None;
         }
         public Boolean IsSuccessfully {
             get; set;

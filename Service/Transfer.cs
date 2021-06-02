@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RealtyModel.Service
 {
-    public static class NetworkTransfer
+    public static class Transfer
     {
         public static Operation ReceiveOperation(NetworkStream stream) {
             try {

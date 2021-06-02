@@ -16,6 +16,7 @@ namespace RealtyModel.Model.Operations
         Photo = 5,
         Agent = 6,
         Locations = 7,
-        None = 8
+        None = 8,
+        RealtorObjects = 9
     }
 }

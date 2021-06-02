@@ -107,7 +107,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\CustomCommand.cs" />
     <Compile Include="Service\Filter.cs" />
-    <Compile Include="Service\NetworkTransfer.cs" />
+    <Compile Include="Service\FlatFilter.cs" />
+    <Compile Include="Service\Transfer.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
