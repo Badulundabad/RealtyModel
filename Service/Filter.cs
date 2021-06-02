@@ -326,30 +326,6 @@ namespace RealtyModel.Service
                 return null;
             }
         }
-        //private Flat[][] SplitBy()
-        //{
-        //    if (filteredList.Count > 0)
-        //    {
-        //        if (filteredList.Count > 25)
-        //        {
-        //            Int32 count = (filteredList.Count / 25) + 1;
-        //            Int32 reminder = filteredList.Count % 25;
-        //            Flat[][] flats = new Flat[count][];
-        //            for (Int32 number = 0; number < count; number++)
-        //            {
-        //                if (number != count)
-        //                    filteredList.CopyTo(number * 25, flats[number], 0, 25);
-        //                else
-        //                    filteredList.CopyTo(number * 25, flats[number], 0, reminder);
-        //            }
-        //            return flats;
-        //        }
-        //        else
-        //            return new Flat[][] { filteredList.ToArray() };
-        //    }
-        //    else return null;
-        //}
-
         private void FilterByLocation()
         {
             if (!IsAllCities)
