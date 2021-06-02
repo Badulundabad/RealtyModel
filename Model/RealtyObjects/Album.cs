@@ -13,54 +13,25 @@ namespace RealtyModel.Model
     [Serializable]
     public class Album
     {
-        public Int32 Id { get; set; }
-        public String PhotoKeys { get; set; }
-        public String Location { get; set; }
-        public Byte[] Preview { get; set; }
-        
-        [NotMapped]
-        public ObservableCollection<Byte[]> PhotoCollection { get; set; }
+        public Int32 Id {
+            get; set;
+        }
+        public String Location {
+            get; set;
+        }
+        public Byte[] RawImages {
+            get; set;
+        }
+        public Byte[] Preview {
+            get; set;
+        }
 
-        public void GetPhotosFromCollection(IEnumerable<Photo> photos)
-        {
-            PhotoCollection = new ObservableCollection<byte[]>();
-            foreach (Photo photo in photos)
-                PhotoCollection.Add(photo.Data);
+        [NotMapped]
+        public ObservableCollection<Byte[]> PhotoCollection {
+            get; set;
         }
-        public void GetPhotosFromDbByKey(IEnumerable<Photo> database)
-        {
-            PhotoCollection = new ObservableCollection<byte[]>();
-            foreach (Int32 key in GetPhotoKeys())
-            {
-                Byte[] data = database.First<Photo>(p => p.Id == key)?.Data;
-                PhotoCollection.Add(data);
-            }
-        }
-        public void GetPhotosFromDbByLocation(IEnumerable<Photo> database)
-        {
-            PhotoCollection = new ObservableCollection<byte[]>();
-            foreach (Int32 key in GetPhotoKeys())
-            {
-                Byte[] data = database.First<Photo>(p => p.Id == key)?.Data;
-                PhotoCollection.Add(data);
-            }
-        }
-        public void UpdateKeys(IEnumerable<Photo> photos)
-        {
-            PhotoKeys = "";
-            foreach (Photo photo in photos)
-                PhotoKeys += $"{photo.Id}©";
-            PhotoKeys = PhotoKeys.TrimEnd('©');
-        }
-        public Int32[] GetPhotoKeys()
-        {
-            List<Int32> list = new List<Int32>();
-            foreach (String key in PhotoKeys.Split(';'))
-                list.Add(Int32.Parse(key));
-            return list?.ToArray();
-        }
-        public void WriteLocation(Location location)
-        {
+
+        public void WriteLocation(Location location) {
             Location = $"{location.City.Name};{location.District.Name};{location.Street.Name};{location.HouseNumber};{location.FlatNumber};";
         }
     }

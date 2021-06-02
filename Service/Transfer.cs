@@ -74,13 +74,17 @@ namespace RealtyModel.Service
             byte[] rawOperation = BinarySerializer.Serialize(operation);
             byte[] sizeBlob = BitConverter.GetBytes(rawOperation.Length);
             stream.Write(sizeBlob, 0, 4);
+            Debug.WriteLine($"Sent 4 bytes");
             stream.Write(rawOperation, 0, rawOperation.Length);
+            Debug.WriteLine($"Sent {rawOperation.Length} bytes");
         }
         public static void SendResponse(Response response, NetworkStream stream) {
             byte[] rawResponse = BinarySerializer.Serialize(response);
             byte[] sizeBlob = BitConverter.GetBytes(rawResponse.Length);
             stream.Write(sizeBlob, 0, 4);
+            Debug.WriteLine($"Sent 4 bytes");
             stream.Write(rawResponse, 0, rawResponse.Length);
+            Debug.WriteLine($"Sent {rawResponse.Length} bytes");
         }
         private static int GetSize(NetworkStream stream) {
             byte[] buffer = new byte[4];

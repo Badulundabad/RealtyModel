@@ -17,6 +17,8 @@ namespace RealtyModel.Model.Operations
         NoCode = 6,
         NoLocations = 7,
         ServerUnavailable = 8,
-        NoRealtorObjects = 9
+        NoRealtorObjects = 9,
+        WrongAgent = 10,
+        FlatUpdatedSuccessfuly = 11
     }
 }

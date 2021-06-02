@@ -11,7 +11,7 @@ namespace RealtyModel.Model.Operations
         Register = 0,
         Login = 1,
         Add = 2,
-        Change = 3,
+        Update = 3,
         Delete = 4,
         Request = 5
     }
