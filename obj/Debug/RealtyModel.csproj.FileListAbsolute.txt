@@ -22,7 +22,6 @@ C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\System.Threading.Tasks.Exten
 C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\System.Buffers.dll
 C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Badulundabad\Desktop\RealtyModel\obj\Debug\RealtyModel.csprojAssemblyReference.cache
 C:\Users\Badulundabad\Desktop\RealtyModel\obj\Debug\RealtyModel.csproj.CoreCompileInputs.cache
 C:\Users\Badulundabad\Desktop\RealtyModel\obj\Debug\RealtyModel.csproj.CopyComplete
 C:\Users\Badulundabad\Desktop\RealtyModel\obj\Debug\RealtyModel.dll
@@ -56,3 +55,6 @@ C:\Users\Gvozd\Documents\GitHub\RealtyModel\obj\Debug\RealtyModel.csproj.CoreCom
 C:\Users\Gvozd\Documents\GitHub\RealtyModel\obj\Debug\RealtyModel.csproj.CopyComplete
 C:\Users\Gvozd\Documents\GitHub\RealtyModel\obj\Debug\RealtyModel.dll
 C:\Users\Gvozd\Documents\GitHub\RealtyModel\obj\Debug\RealtyModel.pdb
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\NLog.dll
+C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\NLog.xml
+C:\Users\Badulundabad\Desktop\RealtyModel\obj\Debug\RealtyModel.csproj.AssemblyReference.cache
