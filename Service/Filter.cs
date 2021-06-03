@@ -301,23 +301,15 @@ namespace RealtyModel.Service
             {
                 filteredList.Clear();
                 filteredList.AddRange(flats.Where(x => MaximumPrice >= x.Cost.Price).Where(x => MinimumPrice <= x.Cost.Price).ToList());
-                Debug.WriteLine($"Цены { filteredList.Count}");
                 filteredList = filteredList.Where(x => MaximumArea >= x.Cost.Area).Where(x => MinimumArea <= x.Cost.Area).ToList();
-                Debug.WriteLine($"Площадь { filteredList.Count}");
                 if (HasMortgage)
                     filteredList.RemoveAll(x => x.Cost.HasMortgage == false);
                 FilterByObjectType();
-                Debug.WriteLine($"Тип { filteredList.Count}");
                 FilterByStatus();
-                Debug.WriteLine($"Статус { filteredList.Count}");
                 FilterByCondition();
-                Debug.WriteLine($"Условия { filteredList.Count}");
                 FilterByHeating();
-                Debug.WriteLine($"Отопление{ filteredList.Count}");
                 FilterByHotWater();
-                Debug.WriteLine($"Вода{ filteredList.Count}");
                 FilterByLocation();
-                Debug.WriteLine($"Места { filteredList.Count}");
                 return filteredList.ToArray();
             }
             catch (Exception ex)

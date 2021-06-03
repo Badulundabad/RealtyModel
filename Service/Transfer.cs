@@ -22,7 +22,6 @@ namespace RealtyModel.Service
                 {
                     byte[] buffer = new byte[8192];
                     int bytes = stream.Read(buffer, 0, buffer.Length);
-                    LogInfo($"Received {bytes} bytes");
                     byte[] receivedData = new byte[bytes];
                     Array.Copy(buffer, receivedData, bytes);
                     byteList.AddRange(receivedData);
@@ -46,7 +45,6 @@ namespace RealtyModel.Service
                 {
                     byte[] buffer = new byte[8192];
                     int bytes = stream.Read(buffer, 0, buffer.Length);
-                    LogInfo($"Received {bytes} bytes");
                     byte[] receivedData = new byte[bytes];
                     Array.Copy(buffer, receivedData, bytes);
                     byteList.AddRange(receivedData);
@@ -71,7 +69,6 @@ namespace RealtyModel.Service
                 {
                     byte[] buffer = new byte[8192];
                     int bytes = stream.Read(buffer, 0, buffer.Length);
-                    LogInfo($"Received {bytes} bytes");
                     byte[] receivedData = new byte[bytes];
                     Array.Copy(buffer, receivedData, bytes);
                     byteList.AddRange(receivedData);

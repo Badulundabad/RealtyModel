@@ -95,6 +95,7 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
+        public Byte[] Preview { get; set; }
         public Customer Customer { get; set; }
         public Location Location { get; set; }
         public BaseInfo GeneralInfo
@@ -120,7 +121,6 @@ namespace RealtyModel.Model.Base
             get => lastCallTime;
             set => lastCallTime = value;
         }
-
         public bool HasExclusive {
             get => hasExclusive;
             set {

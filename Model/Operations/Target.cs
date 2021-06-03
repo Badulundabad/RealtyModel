@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RealtyModel.Model.Operations
+﻿namespace RealtyModel.Model.Operations
 {
     public enum Target
     {
@@ -13,10 +7,10 @@ namespace RealtyModel.Model.Operations
         City = 2,
         District = 3,
         Street = 4,
-        Photo = 5,
+        Album = 5,
         Agent = 6,
         Locations = 7,
-        None = 8,
-        RealtorObjects = 9
+        RealtorObjects = 9,
+        None = 9
     }
 }
