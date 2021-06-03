@@ -17,8 +17,7 @@ namespace RealtyModel.Model.Derived
             return new Flat() {
                 //Agent = credential.Name,
                 Album = new Album() {
-                    Location = "sdsa",
-                    PhotoCollection = new ObservableCollection<byte[]>()
+                    Location = "sdsa"
                 },
                 Location = new Location() {
                     City = new City() { Name = "asd" },
@@ -82,8 +81,7 @@ namespace RealtyModel.Model.Derived
         public static Flat GetEmptyInstance() {
             return new Flat() {
                 Album = new Album() {
-                    Location = "",
-                    PhotoCollection = new ObservableCollection<Byte[]>()
+                    Location = ""
                 },
                 Location = new Location() {
                     City = new City(),

@@ -19,10 +19,12 @@ namespace RealtyModel.Model.Base
         private Target type = Target.None;
         private String agent = "";
         private Status status = Status.Active;
+        private Album album = new Album();
         private Cost cost = new Cost();
         private BaseInfo generalInfo;
         private DateTime lastUpdateTime;
         private DateTime registrationDate;
+        private DateTime lastCallTime;
 
 
         public Int32 Id
@@ -93,7 +95,6 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Album Album { get; set; }
         public Customer Customer { get; set; }
         public Location Location { get; set; }
         public BaseInfo GeneralInfo
@@ -114,6 +115,11 @@ namespace RealtyModel.Model.Base
                 registrationDate = value;
             }
         }
+        public DateTime LastCallTime
+        {
+            get => lastCallTime;
+            set => lastCallTime = value;
+        }
 
         public bool HasExclusive {
             get => hasExclusive;
@@ -123,6 +129,12 @@ namespace RealtyModel.Model.Base
             }
         }
 
+        [NotMapped]
+        public Album Album
+        {
+            get => album;
+            set => album = value;
+        }
         public void OnPropertyChanged([CallerMemberName] String property = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));

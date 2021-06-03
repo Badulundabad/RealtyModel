@@ -13,25 +13,18 @@ namespace RealtyModel.Model
     [Serializable]
     public class Album
     {
-        public Int32 Id {
+        public Int32 Id
+        {
             get; set;
         }
-        public String Location {
+        public String Location
+        {
             get; set;
         }
-        public Byte[] RawImages {
-            get; set;
-        }
-        public Byte[] Preview {
-            get; set;
-        }
+        public Byte[] PhotoCollection { get; set; }
 
-        [NotMapped]
-        public ObservableCollection<Byte[]> PhotoCollection {
-            get; set;
-        }
-
-        public void WriteLocation(Location location) {
+        public void WriteLocation(Location location)
+        {
             Location = $"{location.City.Name};{location.District.Name};{location.Street.Name};{location.HouseNumber};{location.FlatNumber};";
         }
     }
