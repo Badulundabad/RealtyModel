@@ -19,6 +19,8 @@ namespace RealtyModel.Model.Operations
         ServerUnavailable = 8,
         NoRealtorObjects = 9,
         WrongAgent = 10,
-        FlatUpdatedSuccessfuly = 11
+        FlatUpdatedSuccessfuly = 11,
+        WrongTarget = 12,
+        FlatDuplicate = 13
     }
 }

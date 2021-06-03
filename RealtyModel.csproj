@@ -104,7 +104,6 @@
     <Compile Include="Model\RealtyObjects\FlatOptions.cs" />
     <Compile Include="Model\RealtyObjects\Location.cs" />
     <Compile Include="Model\RealtyObjects\LocationOptions.cs" />
-    <Compile Include="Model\LogMessage.cs" />
     <Compile Include="Model\Operations\Operation.cs" />
     <Compile Include="Model\Operations\Direction.cs" />
     <Compile Include="Model\OperationQueue.cs" />
