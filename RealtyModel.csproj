@@ -94,7 +94,6 @@
     <Compile Include="Model\RealtyObjects\Base\BaseRealtorObject .cs" />
     <Compile Include="Model\RealtyObjects\Cost.cs" />
     <Compile Include="Model\Credential.cs" />
-    <Compile Include="Model\RealtyObjects\Customer.cs" />
     <Compile Include="Model\RealtyObjects\Derived\Flat.cs" />
     <Compile Include="Model\RealtyObjects\Derived\FlatInfo.cs" />
     <Compile Include="Model\RealtyObjects\Derived\House.cs" />

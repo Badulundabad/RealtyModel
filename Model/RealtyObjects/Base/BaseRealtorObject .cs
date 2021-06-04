@@ -12,7 +12,6 @@ namespace RealtyModel.Model.Base
     public class BaseRealtorObject : INotifyPropertyChanged
     {
         private Int32 id;
-        private Int32 customerId;
         private Int32 albumId;
         private Int32 locationId;
         private bool hasExclusive;
@@ -24,7 +23,6 @@ namespace RealtyModel.Model.Base
         private DateTime lastUpdateTime;
         private DateTime registrationDate;
         private DateTime lastCallTime;
-
 
         public Int32 Id
         {
@@ -41,15 +39,6 @@ namespace RealtyModel.Model.Base
             set
             {
                 albumId = value;
-                OnPropertyChanged();
-            }
-        }
-        public Int32 CustomerId
-        {
-            get => customerId;
-            set
-            {
-                customerId = value;
                 OnPropertyChanged();
             }
         }
@@ -80,6 +69,9 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
+        public Byte[] Preview { get; set; }
+        public String CustomerName { get; set; }
+        public String CustomerPhoneNumber { get; set; }
         public Cost Cost
         {
             get => cost;
@@ -89,8 +81,6 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Byte[] Preview { get; set; }
-        public Customer Customer { get; set; }
         public Location Location { get; set; }
         public BaseInfo GeneralInfo
         {

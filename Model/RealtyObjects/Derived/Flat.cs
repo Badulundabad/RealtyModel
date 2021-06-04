@@ -28,10 +28,6 @@ namespace RealtyModel.Model.Derived
                 Cost = new Cost() {
                     Price = 1220
                 },
-                Customer = new Customer() {
-                    Name = "asd",
-                    PhoneNumbers = "123213"
-                },
                 GeneralInfo = new BaseInfo() {
                     HasBanner = false,
                     HasExchange = false,
@@ -86,10 +82,6 @@ namespace RealtyModel.Model.Derived
                 Cost = new Cost() {
                     Price = 0
                 },
-                Customer = new Customer() {
-                    Name = "",
-                    PhoneNumbers = ""
-                },
                 GeneralInfo = new BaseInfo() {
                     HasBanner = false,
                     HasExchange = false,
@@ -128,15 +120,6 @@ namespace RealtyModel.Model.Derived
                 },
                 HasExclusive = false
             };
-        }
-
-        public Flat(bool isNewInstance)
-        {
-            Customer = new Customer();
-            Album = new Album();
-            Location = new Location();
-            if (isNewInstance)
-                this.RegistrationDate = DateTime.Now;
         }
     }
 }
