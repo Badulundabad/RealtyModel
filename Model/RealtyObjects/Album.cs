@@ -15,9 +15,14 @@ namespace RealtyModel.Model
         }
         public Byte[] PhotoCollection { get; set; }
 
+        public Album()
+        {
+            PhotoCollection = Array.Empty<Byte>();
+        }
+
         public void WriteLocation(Location location)
         {
-            Location = $"{location.City.Name};{location.District.Name};{location.Street.Name};{location.HouseNumber};{location.FlatNumber};";
+            Location = $"{location.City};{location.District};{location.Street.Name};{location.HouseNumber};{location.FlatNumber};";
         }
     }
 }

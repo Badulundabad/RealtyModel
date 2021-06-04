@@ -14,12 +14,12 @@ namespace RealtyModel.Model.Base
         private Int32 id;
         private Int32 albumId;
         private Int32 locationId;
-        private bool hasExclusive;
+        private bool hasExclusive = false;
         private String type = "";
         private String agent = "";
         private Album album = new Album();
         private Cost cost = new Cost();
-        private BaseInfo generalInfo;
+        private BaseInfo generalInfo = new BaseInfo();
         private DateTime lastUpdateTime;
         private DateTime registrationDate;
         private DateTime lastCallTime;

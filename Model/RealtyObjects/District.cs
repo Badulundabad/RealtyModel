@@ -1,19 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RealtyModel.Model
+﻿namespace RealtyModel.Model.RealtyObjects
 {
-    [Serializable]
-    public class District
+    public enum District
     {
-        public override string ToString() {
-            return this.Name;
-        }
-        public Int32 Id { get; set; }
-        public String Name { get; set; }
+        Авиагородок = 1,
+        Авиаторов_сквер = 2,
+        Азовский = 3,
+        Ветлечебница = 4,
+        ВЖМ = 5,
+        Гайдара = 6,
+        Залесье = 7,
+        Заря = 8,
+        ЗЖМ = 9,
+        Красный_сад = 10,
+        Наливная = 11,
+        ПЧЛ = 12,
+        РДВС = 13,
+        СЖМ = 14,
+        Солёное_озеро = 15,
+        Солнечный = 16,
+        Центр = 17
     }
 }

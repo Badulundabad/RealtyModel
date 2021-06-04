@@ -1,6 +1,6 @@
 ﻿using System;
 using RealtyModel.Model.Base;
-using Status = RealtyModel.Model.RealtyObjects.Status;
+using RealtyModel.Model.RealtyObjects;
 
 namespace RealtyModel.Model.Derived
 {
@@ -11,7 +11,10 @@ namespace RealtyModel.Model.Derived
 
         public Flat()
         {
+            this.Type = "Квартира";
+            Info = new FlatInfo();
         }
+
         public static Flat CreateTestFlat() {
             return new Flat() {
                 //Agent = credential.Name,
@@ -19,8 +22,8 @@ namespace RealtyModel.Model.Derived
                     Location = "sdsa"
                 },
                 Location = new Location() {
-                    City = new City() { Name = "asd" },
-                    District = new District() { Name = "asd" },
+                    City = City.Ростов_на_Дону,
+                    District = District.Центр,
                     Street = new Street() { Name = "asd" },
                     HouseNumber = "1",
                     FlatNumber = 1
@@ -64,7 +67,8 @@ namespace RealtyModel.Model.Derived
                     TypeOfRooms = "asdsa",
                     Windows = "asdsad"
                 },
-                HasExclusive = false
+                HasExclusive = false,
+                Type = "Квартира"
             };
         }
         public static Flat GetEmptyInstance() {
@@ -118,7 +122,8 @@ namespace RealtyModel.Model.Derived
                     TypeOfRooms = "",
                     Windows = ""
                 },
-                HasExclusive = false
+                HasExclusive = false,
+                Type = "Квартира"
             };
         }
     }

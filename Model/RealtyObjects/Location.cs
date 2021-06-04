@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RealtyModel.Model.RealtyObjects;
+using System;
 
 namespace RealtyModel.Model
 {
@@ -17,22 +18,11 @@ namespace RealtyModel.Model
 
         public Boolean CompareWith(Location location)
         {
-            return this.City.Name == location.City.Name
-                && this.District.Name == location.District.Name
+            return this.City == location.City
+                && this.District == location.District
                 && this.Street.Name == location.Street.Name
                 && this.HouseNumber == location.HouseNumber
                 && this.FlatNumber == location.FlatNumber;
-        }
-        public Location GetCopy()
-        {
-            return new Location()
-            {
-                City = new City() { Name = this.City.Name },
-                District = new District() { Name = this.District.Name },
-                Street = new Street() { Name = this.Street.Name },
-                HouseNumber = this.HouseNumber,
-                FlatNumber = this.FlatNumber
-            };
         }
     }
 }

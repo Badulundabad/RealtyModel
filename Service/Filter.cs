@@ -48,8 +48,8 @@ namespace RealtyModel.Service
         private bool isActive = true;
         private bool isAllCities = true;
         private bool isAllDistricts = true;
-        private string city = "";
-        private string district = "";
+        private City city;
+        private District district;
         private List<Flat> filteredList = new List<Flat>();
 
         #region Properties
@@ -276,7 +276,7 @@ namespace RealtyModel.Service
                 OnPropertyChanged();
             }
         }
-        public string City
+        public City City
         {
             get => city;
             set
@@ -285,7 +285,7 @@ namespace RealtyModel.Service
                 OnPropertyChanged();
             }
         }
-        public string District
+        public District District
         {
             get => district;
             set
@@ -320,9 +320,9 @@ namespace RealtyModel.Service
         private void FilterByLocation()
         {
             if (!IsAllCities)
-                filteredList.RemoveAll(x => !x.Location.City.Name.ToLower().Contains(City.ToLower()));
+                filteredList.RemoveAll(x => x.Location.City != City);
             if (!IsAllDistricts)
-                filteredList.RemoveAll(x => !x.Location.District.Name.ToLower().Contains(District.ToLower()));
+                filteredList.RemoveAll(x => x.Location.District != District);
         }
         private void FilterByHotWater()
         {
