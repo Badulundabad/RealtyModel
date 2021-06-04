@@ -7,9 +7,7 @@ namespace RealtyModel.Model
     public class Location
     {
         public Int32 Id { get; set; }
-        public Int32 CityId { get; set; }
         public City City { get; set; }
-        public Int32 DistrictId { get; set; }
         public District District { get; set; }
         public Int32 StreetId { get; set; }
         public Street Street { get; set; }
