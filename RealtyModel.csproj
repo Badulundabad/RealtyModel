@@ -106,7 +106,6 @@
     <Compile Include="Model\RealtyObjects\LocationOptions.cs" />
     <Compile Include="Model\Operations\Operation.cs" />
     <Compile Include="Model\Operations\Direction.cs" />
-    <Compile Include="Model\OperationQueue.cs" />
     <Compile Include="Model\RealtyObjects\Photo.cs" />
     <Compile Include="Model\RealtyObjects\Status.cs" />
     <Compile Include="Model\RealtyObjects\Street.cs" />

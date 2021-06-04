@@ -10,6 +10,8 @@ namespace RealtyModel.Model.Base
     {
         private Int32 year = 1950;
         private Int32 roomCount = 0;
+        private Int32 levelCount = 0;
+        private Int32 currentLevel = 0;
         private Single general = 0;
         private Single living = 0;
         private Single kitchen = 0;
@@ -91,6 +93,24 @@ namespace RealtyModel.Model.Base
                     roomCount = value;
                     OnPropertyChanged();
                 }
+            }
+        }
+        public Int32 LevelCount
+        {
+            get => levelCount;
+            set
+            {
+                levelCount = value;
+                OnPropertyChanged();
+            }
+        }
+        public Int32 CurrentLevel
+        {
+            get=> currentLevel;
+            set
+            {
+                currentLevel = value;
+                OnPropertyChanged();
             }
         }
         public Single General
