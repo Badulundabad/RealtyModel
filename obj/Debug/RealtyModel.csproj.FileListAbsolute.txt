@@ -58,3 +58,5 @@ C:\Users\Gvozd\Documents\GitHub\RealtyModel\obj\Debug\RealtyModel.pdb
 C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\NLog.dll
 C:\Users\Badulundabad\Desktop\RealtyModel\bin\Debug\NLog.xml
 C:\Users\Badulundabad\Desktop\RealtyModel\obj\Debug\RealtyModel.csproj.AssemblyReference.cache
+C:\Users\Бадулундабад\Desktop\RealtyModel\bin\Debug\NLog.dll
+C:\Users\Бадулундабад\Desktop\RealtyModel\bin\Debug\NLog.xml

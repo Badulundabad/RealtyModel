@@ -13,7 +13,6 @@ namespace RealtyModel.Model.Derived
         private string fund = "";
         private string type = "";
         private string windows = "";
-        private Int32 kvl = 0;
         private bool isPrivatised = false;
         private bool hasImprovedLayout = false;
         private bool hasRenovation = false;
@@ -110,18 +109,6 @@ namespace RealtyModel.Model.Derived
                 if (value.Length <= 25)
                 {
                     windows = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-        public int Kvl
-        {
-            get => kvl;
-            set
-            {
-                if (value < 100)
-                {
-                    kvl = value;
                     OnPropertyChanged();
                 }
             }

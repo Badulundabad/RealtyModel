@@ -15,12 +15,12 @@ namespace RealtyModel.Model.Base
         private Single general = 0;
         private Single living = 0;
         private Single kitchen = 0;
-        private string description = "";
-        private string water = "";
         private Single ceiling = 0;
-        private string convenience = "";
-        private string heating = "";
-        private string condition = "";
+        private String description = "";
+        private String water = "";
+        private String convenience = "";
+        private String heating = "";
+        private String condition = "";
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -155,6 +155,8 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
+        public Boolean HasBanner { get; set; }
+        public Boolean HasExchange { get; set; }
 
         public void OnPropertyChanged([CallerMemberName] string property = null)
         {

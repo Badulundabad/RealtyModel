@@ -13,5 +13,4 @@ namespace RealtyModel.Events.Realty
     public delegate void FlatModificationRegisteredEventHandler(object sender, FlatModificationRegisteredEventArgs e);
 
     public delegate void PhotoSavedEventHandler(object sender, PhotoSavedEventArgs e);
-    public delegate void PhotoReceivedEventHandler(object sender, PhotoReceivedEventArgs e);
 }

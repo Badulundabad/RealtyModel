@@ -70,7 +70,6 @@
     <Compile Include="Events\Realty\FlatModificationRegisteredEventArgs.cs" />
     <Compile Include="Events\Realty\FlatRegisteredEventArgs.cs" />
     <Compile Include="Events\Realty\LocationOptionsReceivedEventArgs.cs" />
-    <Compile Include="Events\Realty\PhotoReceivedEventArgs.cs" />
     <Compile Include="Events\Realty\PhotoSavedEventArgs.cs" />
     <Compile Include="Events\Realty\QueryCreatedEventArgs.cs" />
     <Compile Include="Events\Realty\QueryResultReceivedEventArgs.cs" />
@@ -106,7 +105,6 @@
     <Compile Include="Model\RealtyObjects\LocationOptions.cs" />
     <Compile Include="Model\Operations\Operation.cs" />
     <Compile Include="Model\Operations\Direction.cs" />
-    <Compile Include="Model\RealtyObjects\Photo.cs" />
     <Compile Include="Model\RealtyObjects\Status.cs" />
     <Compile Include="Model\RealtyObjects\Street.cs" />
     <Compile Include="Model\Operations\Target.cs" />

@@ -301,11 +301,10 @@ namespace RealtyModel.Service
             {
                 filteredList.Clear();
                 filteredList.AddRange(flats.Where(x => MaximumPrice >= x.Cost.Price).Where(x => MinimumPrice <= x.Cost.Price).ToList());
-                filteredList = filteredList.Where(x => MaximumArea >= x.Cost.Area).Where(x => MinimumArea <= x.Cost.Area).ToList();
+                filteredList = filteredList.Where(x => MaximumArea >= x.GeneralInfo.General).Where(x => MinimumArea <= x.GeneralInfo.General).ToList();
                 if (HasMortgage)
                     filteredList.RemoveAll(x => x.Cost.HasMortgage == false);
                 FilterByObjectType();
-                FilterByStatus();
                 FilterByCondition();
                 FilterByHeating();
                 FilterByHotWater();
@@ -324,15 +323,6 @@ namespace RealtyModel.Service
                 filteredList.RemoveAll(x => !x.Location.City.Name.ToLower().Contains(City.ToLower()));
             if (!IsAllDistricts)
                 filteredList.RemoveAll(x => !x.Location.District.Name.ToLower().Contains(District.ToLower()));
-        }
-        private void FilterByStatus()
-        {
-            if (!IsActive)
-                filteredList.RemoveAll(x => x.Status == Status.Active);
-            if (!IsPlanned)
-                filteredList.RemoveAll(x => x.Status == Status.Planned);
-            if (!IsArchived)
-                filteredList.RemoveAll(x => x.Status == Status.Archived);
         }
         private void FilterByHotWater()
         {
@@ -369,9 +359,9 @@ namespace RealtyModel.Service
         private void FilterByObjectType()
         {
             if (!IsHouse)
-                filteredList.RemoveAll(x => x.Type == Target.House);
+                filteredList.RemoveAll(x => x.Type == "House");
             if (!IsFlat)
-                filteredList.RemoveAll(x => x.Type == Target.Flat);
+                filteredList.RemoveAll(x => x.Type == "Flat");
         }
         private void FilterByCondition()
         {

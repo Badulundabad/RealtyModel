@@ -8,24 +8,8 @@ namespace RealtyModel.Model
     [ComplexType, Serializable]
     public class Cost : INotifyPropertyChanged
     {
-        Int32 area;
         Int32 price;
-        bool hasVAT; // НДС
         bool hasMortgage; //Ипотека
-        bool hasPercents;
-        public Int32 Area {
-            get => area;
-            set {
-                if (value < 0) {
-                    area = 0;
-                } else if (value > 1500) {
-                    area = 1500;
-                } else {
-                    area = value;
-                }
-                OnPropertyChanged();
-            }
-        }
         public Int32 Price {
             get => price;
             set {
@@ -39,24 +23,10 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-        public bool HasVAT {
-            get => hasVAT;
-            set {
-                hasVAT = value;
-                OnPropertyChanged();
-            }
-        }
         public bool HasMortgage {
             get => hasMortgage;
             set {
                 hasMortgage = value;
-                OnPropertyChanged();
-            }
-        }
-        public bool HasPercents {
-            get => hasPercents;
-            set {
-                hasPercents = value;
                 OnPropertyChanged();
             }
         }

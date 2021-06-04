@@ -1,8 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.CompilerServices;
-using System.Text.Json.Serialization;
 
 namespace RealtyModel.Model
 {
@@ -16,10 +12,8 @@ namespace RealtyModel.Model
         public District District { get; set; }
         public Int32 StreetId { get; set; }
         public Street Street { get; set; }
-        public Int16 HouseNumber { get; set; }
+        public String HouseNumber { get; set; }
         public Int16 FlatNumber { get; set; }
-        public Boolean HasBanner { get; set; }
-        public Boolean HasExchange { get; set; }
 
         public Boolean CompareWith(Location location)
         {

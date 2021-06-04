@@ -16,9 +16,8 @@ namespace RealtyModel.Model.Base
         private Int32 albumId;
         private Int32 locationId;
         private bool hasExclusive;
-        private Target type = Target.None;
+        private String type = "";
         private String agent = "";
-        private Status status = Status.Active;
         private Album album = new Album();
         private Cost cost = new Cost();
         private BaseInfo generalInfo;
@@ -72,7 +71,7 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Target Type
+        public String Type
         {
             get => type;
             set
@@ -80,11 +79,6 @@ namespace RealtyModel.Model.Base
                 type = value;
                 OnPropertyChanged();
             }
-        }
-        public Status Status
-        {
-            get => status;
-            set => status = value;
         }
         public Cost Cost
         {

@@ -101,9 +101,8 @@ namespace RealtyModel.Model
         };
         readonly List<string> balconies = new List<string>() {
             "Нет",
-            "Консольные балки",
-            "Консольная плита",
-            "Внешние опоры",
+            "Застекленная",
+            "Не застекленная",
         };
         readonly List<string> multipliers = new List<string>() {
             "Тыс. руб",

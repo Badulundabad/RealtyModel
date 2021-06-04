@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using RealtyModel.Model.Base;
 using Status = RealtyModel.Model.RealtyObjects.Status;
 
@@ -13,7 +12,7 @@ namespace RealtyModel.Model.Derived
         public Flat()
         {
         }
-        public Flat CreateTestFlat() {
+        public static Flat CreateTestFlat() {
             return new Flat() {
                 //Agent = credential.Name,
                 Album = new Album() {
@@ -23,16 +22,10 @@ namespace RealtyModel.Model.Derived
                     City = new City() { Name = "asd" },
                     District = new District() { Name = "asd" },
                     Street = new Street() { Name = "asd" },
-                    HouseNumber = 1,
-                    FlatNumber = 1,
-                    HasBanner = false,
-                    HasExchange = false
+                    HouseNumber = "1",
+                    FlatNumber = 1
                 },
                 Cost = new Cost() {
-                    Area = 10,
-                    HasMortgage = false,
-                    HasPercents = false,
-                    HasVAT = false,
                     Price = 1220
                 },
                 Customer = new Customer() {
@@ -40,6 +33,8 @@ namespace RealtyModel.Model.Derived
                     PhoneNumbers = "123213"
                 },
                 GeneralInfo = new BaseInfo() {
+                    HasBanner = false,
+                    HasExchange = false,
                     Ceiling = 10,
                     Condition = "asdsa",
                     Convenience = "asd",
@@ -66,7 +61,6 @@ namespace RealtyModel.Model.Derived
                     IsCorner = false,
                     IsPrivatised = false,
                     IsSeparated = false,
-                    Kvl = 10,
                     Loggia = "asd",
                     Material = "asd",
                     Rooms = "asdsad",
@@ -74,8 +68,7 @@ namespace RealtyModel.Model.Derived
                     TypeOfRooms = "asdsa",
                     Windows = "asdsad"
                 },
-                HasExclusive = false,
-                Status = Status.Active
+                HasExclusive = false
             };
         }
         public static Flat GetEmptyInstance() {
@@ -87,16 +80,10 @@ namespace RealtyModel.Model.Derived
                     City = new City(),
                     District = new District(),
                     Street = new Street(),
-                    HouseNumber = 0,
-                    FlatNumber = 0,
-                    HasBanner = false,
-                    HasExchange = false
+                    HouseNumber = "",
+                    FlatNumber = 0
                 },
                 Cost = new Cost() {
-                    Area = 0,
-                    HasMortgage = false,
-                    HasPercents = false,
-                    HasVAT = false,
                     Price = 0
                 },
                 Customer = new Customer() {
@@ -104,6 +91,8 @@ namespace RealtyModel.Model.Derived
                     PhoneNumbers = ""
                 },
                 GeneralInfo = new BaseInfo() {
+                    HasBanner = false,
+                    HasExchange = false,
                     Ceiling = 0,
                     Condition = "",
                     Convenience = "",
@@ -130,7 +119,6 @@ namespace RealtyModel.Model.Derived
                     IsCorner = false,
                     IsPrivatised = false,
                     IsSeparated = false,
-                    Kvl = 0,
                     Loggia = "",
                     Material = "",
                     Rooms = "",
@@ -138,8 +126,7 @@ namespace RealtyModel.Model.Derived
                     TypeOfRooms = "",
                     Windows = ""
                 },
-                Status = Status.Active,
-                HasExclusive = false,
+                HasExclusive = false
             };
         }
 
