@@ -5,9 +5,10 @@ namespace RealtyModel.Model.Operations
     [Serializable]
     public class Operation
     {
+        private byte[] data;
+        private String name;
         private Target target;
         private Action action;
-        private byte[] data;
         public Operation() {
 
         }
@@ -30,6 +31,11 @@ namespace RealtyModel.Model.Operations
         }
         public Boolean IsSuccessfully {
             get; set;
+        }
+        public String Name
+        {
+            get => name;
+            set => name = value;
         }
         public byte[] Data {
             get => data;

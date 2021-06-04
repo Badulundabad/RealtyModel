@@ -26,8 +26,9 @@ namespace RealtyModel.Service
                     Array.Copy(buffer, receivedData, bytes);
                     byteList.AddRange(receivedData);
                 }
-                LogInfo($"Total bytes received {byteList.Count}");
-                return BinarySerializer.Deserialize<Operation>(byteList.ToArray());
+                Operation operation = BinarySerializer.Deserialize<Operation>(byteList.ToArray());
+                LogInfo($"Total bytes received {byteList.Count} from {operation.Name}");
+                return operation;
             }
             catch (Exception ex)
             {
@@ -132,11 +133,15 @@ namespace RealtyModel.Service
         private static void LogInfo(String text)
         {
             Debug.WriteLine($"{DateTime.Now} INFO    {text}");
+            Console.WriteLine($"{DateTime.Now} INFO    {text}");
             logger.Info($"    {text}");
         }
         private static void LogError(String text)
         {
             Debug.WriteLine($"\n{DateTime.Now} ERROR    {text}\n");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{DateTime.Now} ERROR    {text}");
+            Console.ForegroundColor = ConsoleColor.White;
             logger.Error($"    {text}");
         }
     }

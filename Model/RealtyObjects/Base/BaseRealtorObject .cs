@@ -71,7 +71,7 @@ namespace RealtyModel.Model.Base
         }
         public Byte[] Preview { get; set; }
         public String CustomerName { get; set; }
-        public String CustomerPhoneNumber { get; set; }
+        public String CustomerPhoneNumbers { get; set; }
         public Cost Cost
         {
             get => cost;
@@ -105,9 +105,11 @@ namespace RealtyModel.Model.Base
             get => lastCallTime;
             set => lastCallTime = value;
         }
-        public bool HasExclusive {
+        public bool HasExclusive
+        {
             get => hasExclusive;
-            set {
+            set
+            {
                 hasExclusive = value;
                 OnPropertyChanged();
             }
@@ -119,6 +121,8 @@ namespace RealtyModel.Model.Base
             get => album;
             set => album = value;
         }
+        [NotMapped]
+        public String[] PhoneNumberList => CustomerPhoneNumbers.Split(new char[] { ';', ',' });
         public void OnPropertyChanged([CallerMemberName] String property = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
