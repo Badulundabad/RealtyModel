@@ -21,6 +21,8 @@ namespace RealtyModel.Model.Operations
         WrongAgent = 10,
         FlatUpdatedSuccessfuly = 11,
         WrongTarget = 12,
-        FlatDuplicate = 13
+        FlatDuplicate = 13,
+        NotFilled = 14,
+        WrongFormat = 15
     }
 }

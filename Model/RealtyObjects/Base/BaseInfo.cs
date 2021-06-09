@@ -38,8 +38,20 @@ namespace RealtyModel.Model.Base
             get => ceiling;
             set
             {
-                if (value >= 0 && value <= 10f) {
+                
+                if (value >= 0 && value <= 10f)
+                {
                     ceiling = value;
+                    OnPropertyChanged();
+                }
+                else if (value < 0)
+                {
+                    ceiling = 0;
+                    OnPropertyChanged();
+                }
+                else if (value > 10)
+                {
+                    ceiling = 10;
                     OnPropertyChanged();
                 }
             }
@@ -78,8 +90,19 @@ namespace RealtyModel.Model.Base
             get => year;
             set
             {
-                if (value >= 1950 && value <= 2050) {
+                if (value >= 1950 && value <= 2050)
+                {
                     year = value;
+                    OnPropertyChanged();
+                }
+                else if (value < 1950)
+                {
+                    year = 1950;
+                    OnPropertyChanged();
+                }
+                else if (value > 2050)
+                {
+                    year = 2050;
                     OnPropertyChanged();
                 }
             }
@@ -89,8 +112,19 @@ namespace RealtyModel.Model.Base
             get => roomCount;
             set
             {
-                if (value >= 0 && value <= 100) {
+                if (value >= 0 && value <= 100)
+                {
                     roomCount = value;
+                    OnPropertyChanged();
+                }
+                else if (value < 0)
+                {
+                    roomCount = 0;
+                    OnPropertyChanged();
+                }
+                else if (value > 100)
+                {
+                    roomCount = 100;
                     OnPropertyChanged();
                 }
             }
@@ -100,17 +134,43 @@ namespace RealtyModel.Model.Base
             get => levelCount;
             set
             {
-                levelCount = value;
-                OnPropertyChanged();
+                if (value >= 0 && value <= 100)
+                {
+                    levelCount = value;
+                    OnPropertyChanged();
+                }
+                else if (value < 0)
+                {
+                    levelCount = 0;
+                    OnPropertyChanged();
+                }
+                else if (value > 100)
+                {
+                    levelCount = 100;
+                    OnPropertyChanged();
+                }
             }
         }
         public Int32 CurrentLevel
         {
-            get=> currentLevel;
+            get => currentLevel;
             set
             {
-                currentLevel = value;
-                OnPropertyChanged();
+                if (value >= 0 && value <= 100)
+                {
+                    currentLevel = value;
+                    OnPropertyChanged();
+                }
+                else if (value < 0)
+                {
+                    currentLevel = 0;
+                    OnPropertyChanged();
+                }
+                else if (value > 100)
+                {
+                    currentLevel = 100;
+                    OnPropertyChanged();
+                }
             }
         }
         public Single General
@@ -118,8 +178,19 @@ namespace RealtyModel.Model.Base
             get => general;
             set
             {
-                if (value >= 0 && value <= 500f) {
+                if (value >= 0 && value <= 5000f)
+                {
                     general = value;
+                    OnPropertyChanged();
+                }
+                else if (value < 0)
+                {
+                    general = 0;
+                    OnPropertyChanged();
+                }
+                else if (value > 5000)
+                {
+                    general = 5000;
                     OnPropertyChanged();
                 }
             }
@@ -129,8 +200,19 @@ namespace RealtyModel.Model.Base
             get => living;
             set
             {
-                if (value >= 0 && value <= 500f) {
+                if (value >= 0 && value <= 500f)
+                {
                     living = value;
+                    OnPropertyChanged();
+                }
+                else if (value < 0)
+                {
+                    living = 0;
+                    OnPropertyChanged();
+                }
+                else if (value > 500)
+                {
+                    living = 500;
                     OnPropertyChanged();
                 }
             }
@@ -140,8 +222,19 @@ namespace RealtyModel.Model.Base
             get => kitchen;
             set
             {
-                if (value >= 0 && value <= 500f) {
+                if (value >= 0 && value <= 500f)
+                {
                     kitchen = value;
+                    OnPropertyChanged();
+                }
+                else if (value < 0)
+                {
+                    kitchen = 0;
+                    OnPropertyChanged();
+                }
+                else if (value > 500)
+                {
+                    kitchen = 500;
                     OnPropertyChanged();
                 }
             }
