@@ -22,5 +22,18 @@ namespace RealtyModel.Model
                 && this.HouseNumber == location.HouseNumber
                 && this.FlatNumber == location.FlatNumber;
         }
+        public override Boolean Equals(object obj)
+        {
+            Location location = obj as Location;
+            return City == location.City &&
+                   District == location.District &&
+                   Street.Name == location.Street.Name &&
+                   HouseNumber.Equals(location.HouseNumber) &&
+                   FlatNumber == FlatNumber;
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

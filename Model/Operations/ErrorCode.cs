@@ -23,6 +23,7 @@ namespace RealtyModel.Model.Operations
         WrongTarget = 12,
         FlatDuplicate = 13,
         NotFilled = 14,
-        WrongFormat = 15
+        WrongFormat = 15,
+        AgentExists = 16
     }
 }
