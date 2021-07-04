@@ -1,9 +1,10 @@
 ﻿using RealtyModel.Model.RealtyObjects;
 using System;
+using PropertyChanged;
 
 namespace RealtyModel.Model
 {
-    [Serializable]
+    [Serializable, AddINotifyPropertyChangedInterface]
     public class Location
     {
         public Int32 Id { get; set; }

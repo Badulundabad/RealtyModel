@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace RealtyModel.Model
 {
@@ -7,6 +10,7 @@ namespace RealtyModel.Model
     {
         public Int32 Id { get; set; }
         public String Name { get; set; }
+
         public override string ToString()
         {
             return this.Name;

@@ -24,7 +24,7 @@ namespace RealtyModel.Model.Derived
                 Location = new Location() {
                     City = City.Ростов_на_Дону,
                     District = District.Центр,
-                    Street = new Street() { Name = "asd" },
+                    Street = new Street(),
                     HouseNumber = "1",
                     FlatNumber = 1
                 },
