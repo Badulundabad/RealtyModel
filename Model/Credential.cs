@@ -10,11 +10,10 @@ namespace RealtyModel.Model
     [Serializable]
     public class Credential : INotifyPropertyChanged
     {
-        private Int32 id;
-        private String name;
-        private String password;
-        private String email;
-        private Boolean isLoggedIn = false;
+        private Int32 id = 0;
+        private String name = "";
+        private String password = "";
+        private String email = "";
         private DateTime registrationDate = new DateTime();
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
@@ -72,17 +71,6 @@ namespace RealtyModel.Model
         public String IpAddress { get; set; }
         [NotMapped]
         public String Token { get; set; }
-        [NotMapped]
-        public Boolean IsLoggedIn
-        {
-            get => isLoggedIn;
-            private set
-            {
-                isLoggedIn = value;
-                OnPropertyChanged();
-            }
-        }
-
         public void OnPropertyChanged([CallerMemberName] String property = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));

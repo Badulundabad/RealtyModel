@@ -70,16 +70,11 @@
     <Compile Include="Model\RealtyObjects\Album.cs" />
     <Compile Include="Model\RealtyObjects\Base\BaseInfo.cs" />
     <Compile Include="Model\RealtyObjects\Base\BaseRealtorObject .cs" />
-    <Compile Include="Model\RealtyObjects\City.cs" />
-    <Compile Include="Model\RealtyObjects\Cost.cs" />
     <Compile Include="Model\Credential.cs" />
-    <Compile Include="Model\RealtyObjects\District.cs" />
     <Compile Include="Model\RealtyObjects\Derived\Flat.cs" />
     <Compile Include="Model\RealtyObjects\Derived\FlatInfo.cs" />
     <Compile Include="Model\RealtyObjects\Derived\House.cs" />
     <Compile Include="Model\RealtyObjects\Derived\HouseInfo.cs" />
-    <Compile Include="Model\RealtyObjects\EnumExtension.cs" />
-    <Compile Include="Model\RealtyObjects\FlatOptions.cs" />
     <Compile Include="Model\RealtyObjects\Location.cs" />
     <Compile Include="Model\Operations\Operation.cs" />
     <Compile Include="Model\Operations\Direction.cs" />

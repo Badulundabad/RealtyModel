@@ -13,11 +13,9 @@ namespace RealtyModel.Model.Derived
         private string fund = "";
         private string type = "";
         private string windows = "";
-        private bool isPrivatised = false;
         private bool hasImprovedLayout = false;
         private bool hasRenovation = false;
         private bool hasChute = false;
-        private string typeOfRooms = "";
         private string rooms = "";
         private bool hasGarage = false;
         private bool hasElevator = false;
@@ -113,15 +111,6 @@ namespace RealtyModel.Model.Derived
                 }
             }
         }
-        public bool IsPrivatised
-        {
-            get => isPrivatised;
-            set
-            {
-                isPrivatised = value;
-                OnPropertyChanged();
-            }
-        }
         public bool HasImprovedLayout
         {
             get => hasImprovedLayout;
@@ -146,15 +135,6 @@ namespace RealtyModel.Model.Derived
             set
             {
                 hasChute = value;
-                OnPropertyChanged();
-            }
-        }
-        public string TypeOfRooms
-        {
-            get => typeOfRooms;
-            set
-            {
-                typeOfRooms = value;
                 OnPropertyChanged();
             }
         }
@@ -203,14 +183,7 @@ namespace RealtyModel.Model.Derived
             set
             {
                 isSeparated = value;
-                if (isSeparated)
-                {
-                    TypeOfRooms = "Раздельные";
-                }
-                else
-                {
-                    TypeOfRooms = "Смежные";
-                }
+                OnPropertyChanged();
             }
         }
 

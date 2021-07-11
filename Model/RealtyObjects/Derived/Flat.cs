@@ -1,128 +1,73 @@
 ﻿using System;
 using RealtyModel.Model.Base;
-using RealtyModel.Model.RealtyObjects;
 
 namespace RealtyModel.Model.Derived
 {
     [Serializable]
     public class Flat : BaseRealtorObject
     {
-        public FlatInfo Info { get; set; }
+        private FlatInfo info = new FlatInfo();
 
-        public Flat()
-        {
+        public Flat() {
             this.Type = "Квартира";
-            Info = new FlatInfo();
         }
 
+        public FlatInfo Info {
+            get => info;
+            set => info = value;
+        }
+        public Flat GetCopy() {
+            return (Flat)this.MemberwiseClone();
+        }
         public static Flat CreateTestFlat() {
             return new Flat() {
-                //Agent = credential.Name,
-                Album = new Album() {
-                    Location = "sdsa"
-                },
+                HasMortgage = true,
+                CustomerName = "Петров Петр Петрович",
+                CustomerPhoneNumbers = "88005553535 ; 89515038517",
                 Location = new Location() {
-                    City = City.Ростов_на_Дону,
-                    District = District.Центр,
-                    Street = new Street(),
-                    HouseNumber = "1",
+                    City = "Батайск",
+                    District = "РДВС",
+                    Street  = "Добролюбова",
+                    HouseNumber = "3А",
                     FlatNumber = 1
                 },
-                Cost = new Cost() {
-                    Price = 1220
-                },
+                Price = 1300,
                 GeneralInfo = new BaseInfo() {
-                    HasBanner = false,
-                    HasExchange = false,
-                    Ceiling = 10,
-                    Condition = "asdsa",
-                    Convenience = "asd",
-                    Description = "asd",
+                    HasBanner = true,
+                    HasExchange = true,
+                    Ceiling = 2.3f,
+                    Condition = "Требуется косметический ремонт",
+                    Convenience = "Частичные",
+                    Description = "Тут что-то должно быть написано",
                     General = 10,
-                    Heating = "asd",
-                    Kitchen = 10,
+                    Kitchen = 10.5f,
                     Living = 10,
-                    RoomCount = 10,
-                    Water = "asdsad",
-                    Year = 1950
+                    Heating = "Котел",
+                    RoomCount = 5,
+                    Water = "Нет",
+                    Year = 1990, 
+                    CurrentLevel = 3,
+                    LevelCount = 9
                 },
                 Info = new FlatInfo() {
-                    Balcony = "asd",
-                    Bath = "asd",
-                    Bathroom = "asd",
-                    Floor = "asd",
-                    Fund = "asd",
-                    HasChute = false,
-                    HasElevator = false,
-                    HasGarage = false,
-                    HasImprovedLayout = false,
-                    HasRenovation = false,
-                    IsCorner = false,
-                    IsPrivatised = false,
-                    IsSeparated = false,
-                    Loggia = "asd",
-                    Material = "asd",
-                    Rooms = "asdsad",
-                    Type = "asd",
-                    TypeOfRooms = "asdsa",
-                    Windows = "asdsad"
+                    Balcony = "Нет",
+                    Bath = "Нет",
+                    Bathroom = "Нет",
+                    Floor = "Деревянный",
+                    Fund = "Новый",
+                    HasChute = true,
+                    HasElevator = true,
+                    HasGarage = true,
+                    HasImprovedLayout = true,
+                    HasRenovation = true,
+                    IsCorner = true,
+                    IsSeparated = true,
+                    Loggia = "Нет",
+                    Material = "Кирпичный",
+                    Rooms = "Тут что-то написано",
+                    Type = "Изолированная",
+                    Windows = "Тут что-то написано"
                 },
-                HasExclusive = false,
-                Type = "Квартира"
-            };
-        }
-        public static Flat GetEmptyInstance() {
-            return new Flat() {
-                Album = new Album() {
-                    Location = ""
-                },
-                Location = new Location() {
-                    City = new City(),
-                    District = new District(),
-                    Street = new Street(),
-                    HouseNumber = "",
-                    FlatNumber = 0
-                },
-                Cost = new Cost() {
-                    Price = 0
-                },
-                GeneralInfo = new BaseInfo() {
-                    HasBanner = false,
-                    HasExchange = false,
-                    Ceiling = 0,
-                    Condition = "",
-                    Convenience = "",
-                    Description = "",
-                    General = 0,
-                    Heating = "",
-                    Kitchen = 0,
-                    Living = 0,
-                    RoomCount = 0,
-                    Water = "",
-                    Year = 1950
-                },
-                Info = new FlatInfo() {
-                    Balcony = "",
-                    Bath = "",
-                    Bathroom = "",
-                    Floor = "",
-                    Fund = "",
-                    HasChute = false,
-                    HasElevator = false,
-                    HasGarage = false,
-                    HasImprovedLayout = false,
-                    HasRenovation = false,
-                    IsCorner = false,
-                    IsPrivatised = false,
-                    IsSeparated = false,
-                    Loggia = "",
-                    Material = "",
-                    Rooms = "",
-                    Type = "",
-                    TypeOfRooms = "",
-                    Windows = ""
-                },
-                HasExclusive = false,
                 Type = "Квартира"
             };
         }

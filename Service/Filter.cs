@@ -1,7 +1,6 @@
 ﻿using RealtyModel.Model.Base;
 using RealtyModel.Model.Derived;
 using RealtyModel.Model.Operations;
-using RealtyModel.Model.RealtyObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,8 +47,8 @@ namespace RealtyModel.Service
         private bool isActive = true;
         private bool isAllCities = true;
         private bool isAllDistricts = true;
-        private City city;
-        private District district;
+        private string city;
+        private string district;
         private List<Flat> filteredList = new List<Flat>();
 
         #region Properties
@@ -276,7 +275,7 @@ namespace RealtyModel.Service
                 OnPropertyChanged();
             }
         }
-        public City City
+        public string City
         {
             get => city;
             set
@@ -285,7 +284,7 @@ namespace RealtyModel.Service
                 OnPropertyChanged();
             }
         }
-        public District District
+        public string District
         {
             get => district;
             set
@@ -300,10 +299,10 @@ namespace RealtyModel.Service
             try
             {
                 filteredList.Clear();
-                filteredList.AddRange(flats.Where(x => MaximumPrice >= x.Cost.Price).Where(x => MinimumPrice <= x.Cost.Price).ToList());
+                filteredList.AddRange(flats.Where(x => MaximumPrice >= x.Price).Where(x => MinimumPrice <= x.Price).ToList());
                 filteredList = filteredList.Where(x => MaximumArea >= x.GeneralInfo.General).Where(x => MinimumArea <= x.GeneralInfo.General).ToList();
                 if (HasMortgage)
-                    filteredList.RemoveAll(x => x.Cost.HasMortgage == false);
+                    filteredList.RemoveAll(x => x.HasMortgage == false);
                 FilterByObjectType();
                 FilterByCondition();
                 FilterByHeating();
@@ -320,9 +319,9 @@ namespace RealtyModel.Service
         private void FilterByLocation()
         {
             if (!IsAllCities)
-                filteredList.RemoveAll(x => x.Location.City != City);
+                filteredList.RemoveAll(x => !x.Location.City.Equals(City));
             if (!IsAllDistricts)
-                filteredList.RemoveAll(x => x.Location.District != District);
+                filteredList.RemoveAll(x => !x.Location.District.Equals(District));
         }
         private void FilterByHotWater()
         {
