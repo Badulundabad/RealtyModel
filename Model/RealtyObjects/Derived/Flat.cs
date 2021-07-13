@@ -9,9 +9,8 @@ namespace RealtyModel.Model.Derived
         private FlatInfo info = new FlatInfo();
 
         public Flat() {
-            this.Type = "Квартира";
+            this.GeneralInfo.ObjectType = "Квартира";
         }
-
         public FlatInfo Info {
             get => info;
             set => info = value;
@@ -33,6 +32,7 @@ namespace RealtyModel.Model.Derived
                 },
                 Price = 1300,
                 GeneralInfo = new BaseInfo() {
+                    ObjectType = "Квартира",
                     HasBanner = true,
                     HasExchange = true,
                     Ceiling = 2.3f,
@@ -68,7 +68,6 @@ namespace RealtyModel.Model.Derived
                     Type = "Изолированная",
                     Windows = "Тут что-то написано"
                 },
-                Type = "Квартира"
             };
         }
     }

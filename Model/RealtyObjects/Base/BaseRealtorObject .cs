@@ -12,7 +12,6 @@ namespace RealtyModel.Model.Base
     {
         private Int32 id = 0;
         private Int32 albumId = 0;
-        private String type = "";
         private String agent = "";
         private Album album = new Album();
         private BaseInfo generalInfo = new BaseInfo();
@@ -63,13 +62,6 @@ namespace RealtyModel.Model.Base
             get => agent;
             set {
                 agent = value;
-                OnPropertyChanged();
-            }
-        }
-        public String Type {
-            get => type;
-            set {
-                type = value;
                 OnPropertyChanged();
             }
         }

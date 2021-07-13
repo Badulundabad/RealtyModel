@@ -12,15 +12,16 @@ namespace RealtyModel.Model.Base
         private Int32 roomCount = 0;
         private Int32 levelCount = 0;
         private Int32 currentLevel = 0;
-        private Single general = 0;
-        private Single living = 0;
-        private Single kitchen = 0;
-        private Single ceiling = 0;
+        private float general = 0;
+        private float living = 0;
+        private float kitchen = 0;
+        private float ceiling = 0;
         private String description = "";
         private String water = "";
         private String convenience = "";
         private String heating = "";
         private String condition = "";
+        private string objectType = "";
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -31,7 +32,7 @@ namespace RealtyModel.Model.Base
                 OnPropertyChanged();
             }
         }
-        public Single Ceiling {
+        public float Ceiling {
             get => ceiling;
             set {
 
@@ -47,7 +48,7 @@ namespace RealtyModel.Model.Base
                 }
             }
         }
-        public Single General {
+        public float General {
             get => general;
             set {
                 if (value >= 0 && value <= 5000f) {
@@ -113,6 +114,12 @@ namespace RealtyModel.Model.Base
                     roomCount = 100;
                     OnPropertyChanged();
                 }
+                if (value == 1 && ObjectType == "Квартира") {
+                    ObjectType = "Комната";
+                }
+                if (value != 1 && ObjectType == "Комната") {
+                    ObjectType = "Квартира";
+                }
             }
         }
         public Int32 LevelCount {
@@ -136,7 +143,7 @@ namespace RealtyModel.Model.Base
             }
         }
 
-        public Single Living {
+        public float Living {
             get => living;
             set {
                 if (value >= 0 && value <= 500f) {
@@ -151,7 +158,7 @@ namespace RealtyModel.Model.Base
                 }
             }
         }
-        public Single Kitchen {
+        public float Kitchen {
             get => kitchen;
             set {
                 if (value >= 0 && value <= 500f) {
@@ -178,6 +185,13 @@ namespace RealtyModel.Model.Base
         }
         public Boolean HasExchange {
             get; set;
+        }
+        public string ObjectType {
+            get => objectType;
+            set {
+                objectType = value;
+                OnPropertyChanged();
+            }
         }
 
         public void OnPropertyChanged([CallerMemberName] string property = null) {

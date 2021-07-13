@@ -9,6 +9,7 @@ namespace RealtyModel.Model.Operations
         private String name;
         private Target target;
         private Action action;
+        private string ip = "";
         public Operation() {
 
         }
@@ -17,9 +18,20 @@ namespace RealtyModel.Model.Operations
             this.Target = target;
             this.Data = data;
         }
+        public Operation(Action action, Target target, byte[] data, string name) {
+            this.Action = action;
+            this.Target = target;
+            this.Data = data;
+            this.Name = name;
+        }
         public Operation(Action action, Target target) {
             this.Action = action;
             this.Target = target;
+        }
+        public Operation(Action action, Target target, string name) {
+            this.Action = action;
+            this.Target = target;
+            this.Name = name;
         }
         public Operation(Action action) {
             this.Action = action;
@@ -29,11 +41,15 @@ namespace RealtyModel.Model.Operations
             this.Action = action;
             this.Data = data;
         }
+        public Operation(Action action, byte[] data, string name) {
+            this.Action = action;
+            this.Data = data;
+            this.Name = name;
+        }
         public Boolean IsSuccessfully {
             get; set;
         }
-        public String Name
-        {
+        public String Name {
             get => name;
             set => name = value;
         }
@@ -46,6 +62,10 @@ namespace RealtyModel.Model.Operations
         }
         public Action Action {
             get => action; set => action = value;
+        }
+        public string Ip {
+            get => ip;
+            set => ip = value;
         }
     }
 }

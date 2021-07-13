@@ -8,20 +8,18 @@ namespace RealtyModel.Model.Derived
     [Serializable]
     public class HouseInfo : INotifyPropertyChanged
     {
-        string typeOfHouse = "";
-        int levels = 0;
-        int floors = 0;
-        bool hasDemarcation = false; //межевание
-        string earthCategory = "";
-        bool hasSlope = false;
-        Single hundreds = 0f;
-        Single hectar = 0f;
-        bool hasElectricity = false;
-        string walls = "";
-        string yard = "";
-        string roof = "";
-        string sewerage = "";
-        string gas = "";
+        private string demarcation = "";
+        private string earthCategory = "";
+        private bool hasSlope = false;
+        private float hundreds = 0f;
+        private float hectar = 0f;
+        private bool hasElectricity = false;
+        private string walls = "";
+        private string yard = "";
+        private string roof = "";
+        private string sewerage = "";
+        private string gas = "";
+        private float facadeLength = 0;
 
         public string Walls
         {
@@ -68,40 +66,12 @@ namespace RealtyModel.Model.Derived
                 OnPropertyChanged();
             }
         }
-
-        public string TypeOfHouse
+        public string Demarcation
         {
-            get => typeOfHouse;
+            get => demarcation;
             set
             {
-                typeOfHouse = value;
-                OnPropertyChanged();
-            }
-        }
-        public int Levels
-        {
-            get => levels;
-            set
-            {
-                levels = value;
-                OnPropertyChanged();
-            }
-        }
-        public int Floors
-        {
-            get => floors;
-            set
-            {
-                floors = value;
-                OnPropertyChanged();
-            }
-        }
-        public bool HasDemarcation
-        {
-            get => hasDemarcation;
-            set
-            {
-                hasDemarcation = value;
+                demarcation = value;
                 OnPropertyChanged();
             }
         }
@@ -123,7 +93,7 @@ namespace RealtyModel.Model.Derived
                 OnPropertyChanged();
             }
         }
-        public Single Hundreds
+        public float Hundreds
         {
             get => hundreds;
             set
@@ -132,7 +102,7 @@ namespace RealtyModel.Model.Derived
                 OnPropertyChanged();
             }
         }
-        public Single Hectar
+        public float Hectar
         {
             get => hectar;
             set
@@ -147,6 +117,14 @@ namespace RealtyModel.Model.Derived
             set
             {
                 hasElectricity = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public float FacadeLength {
+            get => facadeLength;
+            set {
+                facadeLength = value;
                 OnPropertyChanged();
             }
         }

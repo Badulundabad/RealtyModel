@@ -357,10 +357,10 @@ namespace RealtyModel.Service
         }
         private void FilterByObjectType()
         {
-            if (!IsHouse)
-                filteredList.RemoveAll(x => x.Type == "House");
-            if (!IsFlat)
-                filteredList.RemoveAll(x => x.Type == "Flat");
+            //if (!IsHouse)
+            //    filteredList.RemoveAll(x => x.Type == "House");
+            //if (!IsFlat)
+            //    filteredList.RemoveAll(x => x.Type == "Flat");
         }
         private void FilterByCondition()
         {
