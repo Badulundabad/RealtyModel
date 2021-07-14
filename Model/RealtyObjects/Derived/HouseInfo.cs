@@ -11,8 +11,8 @@ namespace RealtyModel.Model.Derived
         private string demarcation = "";
         private string earthCategory = "";
         private bool hasSlope = false;
-        private float hundreds = 0f;
-        private float hectar = 0f;
+        private int hundreds = 0;
+        private int hectar = 0;
         private bool hasElectricity = false;
         private string walls = "";
         private string yard = "";
@@ -21,101 +21,91 @@ namespace RealtyModel.Model.Derived
         private string gas = "";
         private float facadeLength = 0;
 
-        public string Walls
-        {
+        public string Walls {
             get => walls;
-            set
-            {
+            set {
                 walls = value;
                 OnPropertyChanged();
             }
         }
-        public string Yard
-        {
+        public string Yard {
             get => yard;
-            set
-            {
+            set {
                 yard = value;
                 OnPropertyChanged();
             }
         }
-        public string Roof
-        {
+        public string Roof {
             get => roof;
-            set
-            {
+            set {
                 roof = value;
                 OnPropertyChanged();
             }
         }
-        public string Sewerage
-        {
+        public string Sewerage {
             get => sewerage;
-            set
-            {
+            set {
                 sewerage = value;
                 OnPropertyChanged();
             }
         }
-        public string Gas
-        {
+        public string Gas {
             get => gas;
-            set
-            {
+            set {
                 gas = value;
                 OnPropertyChanged();
             }
         }
-        public string Demarcation
-        {
+        public string Demarcation {
             get => demarcation;
-            set
-            {
+            set {
                 demarcation = value;
                 OnPropertyChanged();
             }
         }
-        public string EarthCategory
-        {
+        public string EarthCategory {
             get => earthCategory;
-            set
-            {
+            set {
                 earthCategory = value;
                 OnPropertyChanged();
             }
         }
-        public bool HasSlope
-        {
+        public bool HasSlope {
             get => hasSlope;
-            set
-            {
+            set {
                 hasSlope = value;
                 OnPropertyChanged();
             }
         }
-        public float Hundreds
-        {
+        public int Hundreds {
             get => hundreds;
-            set
-            {
-                hundreds = value;
+            set {
+                if (value >= 0 && value <= 50) {
+                    hundreds = value;
+                } else if (value > 50) {
+                    hundreds = 50;
+                } else if (value < 0) {
+                    hundreds = 0;
+                }
                 OnPropertyChanged();
             }
         }
-        public float Hectar
-        {
+        public int Hectar {
             get => hectar;
-            set
-            {
-                hectar = value;
+            set {
+                if (value >= 0 && value <= 50) {
+                    hectar = value;
+                } else if (value > 50) {
+                    hectar = 50;
+                } else if (value < 0) {
+                    hectar = 0;
+                }
                 OnPropertyChanged();
             }
         }
-        public bool HasElectricity
-        {
+        public bool HasElectricity {
             get => hasElectricity;
-            set
-            {
+            set {
                 hasElectricity = value;
                 OnPropertyChanged();
             }
@@ -129,8 +119,7 @@ namespace RealtyModel.Model.Derived
             }
         }
 
-        public void OnPropertyChanged([CallerMemberName] string property = null)
-        {
+        public void OnPropertyChanged([CallerMemberName] string property = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
         [field: NonSerialized]

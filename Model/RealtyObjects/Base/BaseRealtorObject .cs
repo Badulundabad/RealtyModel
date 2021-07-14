@@ -29,8 +29,8 @@ namespace RealtyModel.Model.Base
             set {
                 if (value < 0) {
                     price = 0;
-                } else if (value > 20000000) {
-                    price = 20000000;
+                } else if (value > 40000) {
+                    price = 40000;
                 } else {
                     price = value;
                 }

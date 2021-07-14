@@ -51,14 +51,14 @@ namespace RealtyModel.Model.Base
         public float General {
             get => general;
             set {
-                if (value >= 0 && value <= 5000f) {
+                if (value >= 0 && value <= 400) {
                     general = value;
                     OnPropertyChanged();
                 } else if (value < 0) {
                     general = 0;
                     OnPropertyChanged();
-                } else if (value > 5000) {
-                    general = 5000;
+                } else if (value > 400) {
+                    general = 400;
                     OnPropertyChanged();
                 }
             }
