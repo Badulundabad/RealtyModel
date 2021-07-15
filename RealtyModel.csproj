@@ -61,12 +61,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\BinarySerializer.cs" />
+    <Compile Include="Model\CityOptions.cs" />
+    <Compile Include="Model\ConditionOptions.cs" />
+    <Compile Include="Model\DistrictOptions.cs" />
+    <Compile Include="Model\HeatingOptions.cs" />
+    <Compile Include="Model\ObjectTypeOptions.cs" />
     <Compile Include="Model\Operations\Action.cs" />
     <Compile Include="Model\Operations\Response.cs" />
     <Compile Include="Model\Operations\ErrorCode.cs" />
     <Compile Include="Model\Operations\Initiator.cs" />
-    <Compile Include="Interface\IDoubleNumericUpDown.cs" />
-    <Compile Include="Interface\IIntegerNumericUpDown.cs" />
     <Compile Include="Model\RealtyObjects\Album.cs" />
     <Compile Include="Model\RealtyObjects\Base\BaseInfo.cs" />
     <Compile Include="Model\RealtyObjects\Base\BaseRealtorObject .cs" />
@@ -80,9 +83,10 @@
     <Compile Include="Model\Operations\Direction.cs" />
     <Compile Include="Model\RealtyObjects\Street.cs" />
     <Compile Include="Model\Operations\Target.cs" />
+    <Compile Include="Model\SymmetricEncryption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\CustomCommand.cs" />
-    <Compile Include="Service\Filter.cs" />
+    <Compile Include="Service\Filtration.cs" />
     <Compile Include="Service\Transfer.cs" />
   </ItemGroup>
   <ItemGroup>

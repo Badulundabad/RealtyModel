@@ -24,6 +24,7 @@ namespace RealtyModel.Model.Operations
         NotFilled,
         WrongFormat,
         AgentExists,
-        ObjectUpdatedSuccessfuly
+        ObjectUpdatedSuccessfuly,
+        CredentialUpdatedSuccessfuly
     }
 }

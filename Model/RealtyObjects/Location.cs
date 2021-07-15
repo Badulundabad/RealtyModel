@@ -49,23 +49,7 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
-
-
-        public Boolean CompareWith(Location location) {
-            return this.City == location.City
-                && this.District == location.District
-                && this.Street == location.Street
-                && this.HouseNumber == location.HouseNumber
-                && this.FlatNumber == location.FlatNumber;
-        }
-        public override Boolean Equals(object obj) {
-            Location location = obj as Location;
-            return City == location.City &&
-                   District == location.District &&
-                   Street == location.Street &&
-                   HouseNumber.Equals(location.HouseNumber) &&
-                   FlatNumber == FlatNumber;
-        }
+        
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string property = null) {

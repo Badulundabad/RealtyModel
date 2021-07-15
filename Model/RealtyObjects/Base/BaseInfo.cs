@@ -9,9 +9,9 @@ namespace RealtyModel.Model.Base
     public class BaseInfo : INotifyPropertyChanged
     {
         private Int32 year = 2000;
-        private Int32 roomCount = 0;
-        private Int32 levelCount = 0;
-        private Int32 currentLevel = 0;
+        private Int32 roomCount = 1;
+        private Int32 levelCount = 1;
+        private Int32 currentLevel = 1;
         private float general = 0;
         private float living = 0;
         private float kitchen = 0;
