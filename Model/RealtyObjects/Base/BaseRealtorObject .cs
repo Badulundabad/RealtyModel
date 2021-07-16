@@ -11,6 +11,7 @@ namespace RealtyModel.Model.Base
     public class BaseRealtorObject : INotifyPropertyChanged
     {
         private Int32 id = 0;
+        private Int32 agentId = 0;
         private Int32 albumId = 0;
         private String agent = "";
         private Album album = new Album();
@@ -112,6 +113,10 @@ namespace RealtyModel.Model.Base
         public Location Location {
             get => location;
             set => location = value;
+        }
+        public int AgentId {
+            get => agentId;
+            set => agentId = value;
         }
 
         public void OnPropertyChanged([CallerMemberName] String property = null) {

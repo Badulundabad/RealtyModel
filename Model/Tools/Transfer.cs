@@ -7,7 +7,7 @@ using System.Net.Sockets;
 using NLog;
 using System.Runtime.CompilerServices;
 
-namespace RealtyModel.Service
+namespace RealtyModel.Model.Tools
 {
     public static class Transfer
     {

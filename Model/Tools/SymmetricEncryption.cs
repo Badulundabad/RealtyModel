@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace RealtyModel.Model
+namespace RealtyModel.Model.Tools
 {
     [Serializable]
     public class SymmetricEncryption

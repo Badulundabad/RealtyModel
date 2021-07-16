@@ -5,7 +5,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace RealtyModel.Model
+namespace RealtyModel.Model.Tools
 {
     public class BinarySerializer
     {
@@ -13,7 +13,7 @@ namespace RealtyModel.Model
 
         public static byte[] Serialize<T>(T obj)
         {
-            try {
+            //try {
                 if (obj == null) {
                     return null;
                 }
@@ -22,14 +22,14 @@ namespace RealtyModel.Model
                     bf.Serialize(ms, obj);
                     return ms.ToArray();
                 }
-            } catch {
-                LogError("Data serializing error");
-                return Array.Empty<byte>();
-            }
+            //} catch {
+            //    LogError("Data serializing error");
+            //    return Array.Empty<byte>();
+            //}
         }
         public static T Deserialize<T>(byte[] data)
         {
-            try {
+            //try {
                 if (data == null) {
                     return default(T);
                 }
@@ -38,10 +38,10 @@ namespace RealtyModel.Model
                     object obj = bf.Deserialize(ms);
                     return (T)obj;
                 }
-            } catch {
-                LogError("Data deserializing error");
-                return default(T);
-            }
+            //} catch {
+            //    LogError("Data deserializing error");
+            //    return default(T);
+            //}
         }
         private static void LogError(String text) {
             Debug.WriteLine($"{DateTime.Now} ERROR    {text}");

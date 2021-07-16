@@ -60,7 +60,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\BinarySerializer.cs" />
+    <Compile Include="Model\Agent.cs" />
+    <Compile Include="Model\Tools\BinarySerializer.cs" />
     <Compile Include="Model\CityOptions.cs" />
     <Compile Include="Model\ConditionOptions.cs" />
     <Compile Include="Model\DistrictOptions.cs" />
@@ -69,7 +70,6 @@
     <Compile Include="Model\Operations\Action.cs" />
     <Compile Include="Model\Operations\Response.cs" />
     <Compile Include="Model\Operations\ErrorCode.cs" />
-    <Compile Include="Model\Operations\Initiator.cs" />
     <Compile Include="Model\RealtyObjects\Album.cs" />
     <Compile Include="Model\RealtyObjects\Base\BaseInfo.cs" />
     <Compile Include="Model\RealtyObjects\Base\BaseRealtorObject .cs" />
@@ -80,14 +80,13 @@
     <Compile Include="Model\RealtyObjects\Derived\HouseInfo.cs" />
     <Compile Include="Model\RealtyObjects\Location.cs" />
     <Compile Include="Model\Operations\Operation.cs" />
-    <Compile Include="Model\Operations\Direction.cs" />
     <Compile Include="Model\RealtyObjects\Street.cs" />
     <Compile Include="Model\Operations\Target.cs" />
-    <Compile Include="Model\SymmetricEncryption.cs" />
+    <Compile Include="Model\Tools\SymmetricEncryption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\CustomCommand.cs" />
-    <Compile Include="Service\Filtration.cs" />
-    <Compile Include="Service\Transfer.cs" />
+    <Compile Include="Model\Tools\CustomCommand.cs" />
+    <Compile Include="Model\Tools\Filtration.cs" />
+    <Compile Include="Model\Tools\Transfer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

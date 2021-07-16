@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace RealtyModel.Service
+namespace RealtyModel.Model.Tools
 {
     [Serializable]
     public class Filtration : INotifyPropertyChanged
