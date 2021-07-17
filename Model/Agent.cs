@@ -11,15 +11,16 @@ namespace RealtyModel.Model
     [Serializable]
     public class Agent : INotifyPropertyChanged
     {
-        int id = 0;
-        string nickName = String.Empty;
-        string name = String.Empty;
-        string surname = String.Empty;
-        string patronymic = String.Empty;
-        string password = String.Empty;
-        string phoneNumber = String.Empty;
-        DateTime registrationDate = new DateTime();
-        string email = String.Empty;
+        private int id = 0;
+        private string nickName = String.Empty;
+        private string name = String.Empty;
+        private string surname = String.Empty;
+        private string patronymic = String.Empty;
+        private string password = String.Empty;
+        private string phoneNumber = String.Empty;
+        private DateTime registrationDate = new DateTime();
+        private string email = String.Empty;
+        private int objectCount = 0;
 
         public int Id {
             get => id;
@@ -84,6 +85,12 @@ namespace RealtyModel.Model
                 OnPropertyChanged();
             }
         }
+
+        public int ObjectCount {
+            get => objectCount;
+            set => objectCount = value;
+        }
+
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string property = "") {
