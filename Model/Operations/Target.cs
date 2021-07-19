@@ -10,7 +10,8 @@
         Album = 5,
         Agent = 6,
         Locations = 7,
-        RealtorObjects = 9,
-        None = 9
+        RealtorObjects = 8,
+        None = 9,
+        Calleable = 10
     }
 }
